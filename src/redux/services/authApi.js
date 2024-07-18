@@ -14,7 +14,6 @@ export const authAPI = createApi({
       }),
     }),
 
-
     forgotPassword: builder.mutation({
       query: (credentials) => ({
         url: "/forgot-password",
@@ -23,12 +22,10 @@ export const authAPI = createApi({
       }),
     }),
 
-
     verifyToken: builder.mutation({
       query: (credentials) => ({
         url: `/verify-token?token=${credentials}`,
         method: "GET",
-     
       }),
     }),
 
@@ -37,7 +34,6 @@ export const authAPI = createApi({
         url: `/update-password`,
         method: "PATCH",
         body: payload,
-     
       }),
     }),
 
@@ -45,10 +41,16 @@ export const authAPI = createApi({
       query: (payload) => ({
         url: "/register",
         method: "POST",
-        body: { ...payload, role: "interpreter" },
+        body: { ...payload, role: "teacher" },
       }),
     }),
   }),
 });
 
-export const { useLoginUserMutation, useRegisterInterpreterMutation, useForgotPasswordMutation, useVerifyTokenMutation, useUpdatePasswordMutation } = authAPI;
+export const {
+  useLoginUserMutation,
+  useRegisterInterpreterMutation,
+  useForgotPasswordMutation,
+  useVerifyTokenMutation,
+  useUpdatePasswordMutation,
+} = authAPI;

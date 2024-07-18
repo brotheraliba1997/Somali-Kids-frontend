@@ -1,7 +1,5 @@
 import { fetchBaseQuery } from "@reduxjs/toolkit/query";
 
-
-
 // Base query function without authorization headers
 export const baseQueryWithoutAuth = fetchBaseQuery({
   baseUrl: `${process.env.NEXT_PUBLIC_API_BASE_URL}/auth`,

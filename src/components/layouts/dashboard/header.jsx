@@ -1,6 +1,14 @@
-import React from "react";
+import { logout } from "@/redux/slices/auth";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 function Header() {
+  const [openDropDown, setOpenDropDown] = useState(false);
+  const dispatch = useDispatch();
+
+  const logoutHandler = async () => {
+    dispatch(logout());
+  };
   return (
     <nav className="main-header navbar navbar-expand navbar-light shadow text-sm">
       {/* Left navbar links */}
@@ -38,7 +46,7 @@ function Header() {
               <span className="sr-only">Toggle Dropdown</span>
             </button>
             <div
-              className="dropdown-menu"
+              className="dropdown-menu show"
               role="menu"
               style={{ left: 0, right: "inherit" }}
             >
@@ -46,9 +54,13 @@ function Header() {
                 <span className="fa fa-user" /> My Account
               </a>
               <div className="dropdown-divider" />
-              <a className="dropdown-item" href="login.html">
+              <div
+                className="dropdown-item"
+                href="login.html"
+                onClick={logoutHandler}
+              >
                 <span className="fas fa-sign-out-alt" /> Logout
-              </a>
+              </div>
             </div>
           </div>
         </li>
