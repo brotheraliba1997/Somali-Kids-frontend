@@ -1,7 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 function Sidebar() {
+
+  const [upload,setUpload ] = useState(false)
+  const [setting, setSetting] = useState(false)
+ 
   return (
     <aside className="main-sidebar sidebar-dark-navy navbar-dark elevation-4 sidebar-no-expand">
       <a href="index.html" className="brand-link bg-navy text-sm ">
@@ -56,26 +60,26 @@ function Sidebar() {
                       <p>Customer Registration</p>
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <a href="#" className="nav-link">
+                  <li className={ `nav-item ${upload ? "menu-is-opening menu-open": ""}` } >
+                    <div href="#" className="nav-link" onClick={() => setUpload(!upload)}>
                       <i className="nav-icon fas fa-video" />
                       <p>
                         Resources
                         <i className="right fas fa-angle-left" />
                       </p>
-                    </a>
+                    </div>
                     <ul
                       className="nav nav-treeview"
-                      style={{ display: "none" }}
+                      style={{ display: upload ? "none" : "block" }}
                     >
                       <li className="nav-item">
-                        <a
-                          href="uploadvideo-list.html"
+                        <Link
+                          href="/dashboard/upload-video"
                           className="nav-link tree-item nav-upload_video"
                         >
                           <i className="far fa-circle nav-icon" />
                           <p>Upload Video</p>
-                        </a>
+                        </Link>
                       </li>
                     </ul>
                   </li>
@@ -89,26 +93,26 @@ function Sidebar() {
                       <p>Users</p>
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <a href="#" className="nav-link">
+                  <li className={ `nav-item ${setting ? "menu-is-opening menu-open": "" }` }>
+                    <span href="#" className="nav-link" onClick={() => setSetting(!setting)}>
                       <i className="nav-icon fas fa-tools" />
-                      <p>
+                      <p >
                         Setting
                         <i className="right fas fa-angle-left" />
                       </p>
-                    </a>
+                    </span>
                     <ul
                       className="nav nav-treeview"
-                      style={{ display: "none" }}
+                      style={{ display: setting ? "none" : "block" }}
                     >
                       <li className="nav-item">
-                        <a
-                          href="#"
+                        <Link
+                          href="/dashboard/category"
                           className="nav-link tree-item nav-categories"
                         >
                           <i className="far fa-circle nav-icon" />
                           <p>Categories</p>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
                         <a
@@ -127,7 +131,7 @@ function Sidebar() {
                       </li>
                       <li className="nav-item">
                         <a
-                          href="permissions.html"
+                          href="#"
                           className="nav-link tree-item nav-permission"
                         >
                           <i className="far fa-circle nav-icon" />

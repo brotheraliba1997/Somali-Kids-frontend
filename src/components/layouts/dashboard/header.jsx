@@ -1,3 +1,4 @@
+"use client"
 import { logout } from "@/redux/slices/auth";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
@@ -9,6 +10,10 @@ function Header() {
   const logoutHandler = async () => {
     dispatch(logout());
   };
+
+
+  console.log(openDropDown , "openDropDown")
+
   return (
     <nav className="main-header navbar navbar-expand navbar-light shadow text-sm">
       {/* Left navbar links */}
@@ -31,6 +36,7 @@ function Header() {
           <div className="btn-group nav-link">
             <button
               type="button"
+              onClick={() => setOpenDropDown(!openDropDown)}
               className="btn btn-rounded badge badge-light dropdown-toggle dropdown-icon"
               data-toggle="dropdown"
               aria-expanded="false"
@@ -46,7 +52,8 @@ function Header() {
               <span className="sr-only">Toggle Dropdown</span>
             </button>
             <div
-              className="dropdown-menu show"
+             
+              className={`dropdown-menu ${openDropDown ? "show" : " "}  `}
               role="menu"
               style={{ left: 0, right: "inherit" }}
             >
