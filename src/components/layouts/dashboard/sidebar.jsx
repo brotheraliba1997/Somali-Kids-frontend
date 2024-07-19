@@ -1,18 +1,20 @@
+"use client";
 import Link from "next/link";
 import React, { useState } from "react";
+import logo from "../../../assets/images/logo.png";
+import Image from "next/image";
 
 function Sidebar() {
+  const [upload, setUpload] = useState(false);
+  const [setting, setSetting] = useState(false);
 
-  const [upload,setUpload ] = useState(false)
-  const [setting, setSetting] = useState(false)
- 
   return (
     <aside className="main-sidebar sidebar-dark-navy navbar-dark elevation-4 sidebar-no-expand">
       <a href="index.html" className="brand-link bg-navy text-sm ">
-        <img
-          src="assets/images/logo.png"
+        <Image
+          src={logo}
           alt="Store Logo"
-          className="brand-image  elevation-3"
+          className="brand-image  elevation-3 "
         />
         <span className="brand-text font-weight-light text-light">
           Somali ABC
@@ -60,8 +62,17 @@ function Sidebar() {
                       <p>Customer Registration</p>
                     </Link>
                   </li>
-                  <li className={ `nav-item ${upload ? "menu-is-opening menu-open": ""}` } >
-                    <div href="#" className="nav-link" onClick={() => setUpload(!upload)}>
+                  <li
+                    className={`nav-item `}
+                    // className={`nav-item ${
+                    //   upload ? "menu-is-opening menu-open" : ""
+                    // }`}
+                  >
+                    <div
+                      href="#"
+                      className="nav-link"
+                      onClick={() => setUpload(!upload)}
+                    >
                       <i className="nav-icon fas fa-video" />
                       <p>
                         Resources
@@ -69,8 +80,14 @@ function Sidebar() {
                       </p>
                     </div>
                     <ul
-                      className="nav nav-treeview"
-                      style={{ display: upload ? "none" : "block" }}
+                      className={`nav nav-subitem ${upload ? "show" : ""}`}
+                      // style={{ display: upload ? "none" : "block" }}
+                      // style={{
+                      //   // width: upload ? "100%" : "",
+                      //   height: upload ? "400px" : "0px",
+
+                      //   transition: "all 5s",
+                      // }}
                     >
                       <li className="nav-item">
                         <Link
@@ -93,10 +110,18 @@ function Sidebar() {
                       <p>Users</p>
                     </Link>
                   </li>
-                  <li className={ `nav-item ${setting ? "menu-is-opening menu-open": "" }` }>
-                    <span href="#" className="nav-link" onClick={() => setSetting(!setting)}>
+                  <li
+                    className={`nav-item ${
+                      setting ? "menu-is-opening menu-open" : ""
+                    }`}
+                  >
+                    <span
+                      href="#"
+                      className="nav-link"
+                      onClick={() => setSetting(!setting)}
+                    >
                       <i className="nav-icon fas fa-tools" />
-                      <p >
+                      <p>
                         Setting
                         <i className="right fas fa-angle-left" />
                       </p>

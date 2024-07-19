@@ -1,4 +1,5 @@
 import CategoryList from "@/components/dashboard/category";
+import Link from "next/link";
 import React from "react";
 
 function Category() {
@@ -8,13 +9,13 @@ function Category() {
         <div className="card-header">
           <h3 className="card-title">List of Categories</h3>
           <div className="card-tools">
-            <a
-              href="video-upload.html"
+            <Link
+              href="/dashboard/category/add"
               id="create_new"
               className="btn btn-flat btn-primary"
             >
               <span className="fas fa-plus" /> Add Category
-            </a>
+            </Link>
           </div>
         </div>
 

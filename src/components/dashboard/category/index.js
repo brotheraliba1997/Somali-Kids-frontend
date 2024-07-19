@@ -74,11 +74,11 @@ function CategoryList() {
   return (
     <>
       <Table
-        dataSource={data || []}
+        dataSource={data?.results || []}
         isLoading={isLoading}
         columns={columns}
         totalPages={data?.totalPages}
-        totalEntries={data?.totalEntries}
+        totalEntries={data?.totalResults}
         page={page}
         setPage={setPage}
         pageSize={pageSize}

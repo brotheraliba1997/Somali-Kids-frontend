@@ -1,7 +1,9 @@
-"use client"
+"use client";
 import { logout } from "@/redux/slices/auth";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import logoHeader from "@/assets/images/avatars/1.png";
+import Image from "next/image";
 
 function Header() {
   const [openDropDown, setOpenDropDown] = useState(false);
@@ -11,8 +13,7 @@ function Header() {
     dispatch(logout());
   };
 
-
-  console.log(openDropDown , "openDropDown")
+  console.log(openDropDown, "openDropDown");
 
   return (
     <nav className="main-header navbar navbar-expand navbar-light shadow text-sm">
@@ -40,19 +41,22 @@ function Header() {
               className="btn btn-rounded badge badge-light dropdown-toggle dropdown-icon"
               data-toggle="dropdown"
               aria-expanded="false"
+              style={{ color: "black" }}
             >
               <span>
-                <img
-                  src="assets/images/avatars/1.png"
+                <Image
+                  src={logoHeader}
                   className="img-circle elevation-2 user-img"
                   alt="User Image "
                 />
               </span>
-              <span className="ml-4"> Admin</span>
+              <span className="ml-4 " style={{ color: "black" }}>
+                {" "}
+                Admin
+              </span>
               <span className="sr-only">Toggle Dropdown</span>
             </button>
             <div
-             
               className={`dropdown-menu ${openDropDown ? "show" : " "}  `}
               role="menu"
               style={{ left: 0, right: "inherit" }}

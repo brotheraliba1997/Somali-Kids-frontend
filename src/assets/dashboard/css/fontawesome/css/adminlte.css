@@ -11974,9 +11974,13 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
 }
 
 .nav-sidebar .nav-treeview {
-  display: none;
+ 
   list-style: none;
   padding: 0;
+}
+
+.nav-sidebar .nav-treeview .show {
+  
 }
 
 .nav-sidebar .nav-treeview > .nav-item > .nav-link > .nav-icon {
