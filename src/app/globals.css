@@ -154,3 +154,20 @@ a {
   transition: max-height 0.55s ease-in;
   background-color: #3e444a;
 }
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6 !important;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 2px solid #dee2e6;
+}
+
+table th,
+table td {
+  padding: 0.75rem;
+  vertical-align: top;
+  border-top: 1px solid #dee2e6 !important;
+}
