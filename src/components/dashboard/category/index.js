@@ -1,15 +1,14 @@
 "use client";
+import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
 import { useGetCategoryQuery } from "@/redux/services/categoryAPI";
 import Link from "next/link";
 import React, { useState } from "react";
 
 function CategoryList() {
-  const interpreters = {
-    data: ["hamza"],
-  };
-
   const { data, isLoading } = useGetCategoryQuery();
+  const [openActionBtn, setOpenActionBtn] = useState(null);
+
   console.log(data, "data");
 
   const columns = [
@@ -57,20 +56,19 @@ function CategoryList() {
       displayName: "Action",
       key: "",
       displayField: (e) => (
-        <div className="d-flex justify-content-start align-items-center gap-4 position-relative">
-          {/* <Link href="" className="mr-2" to="" title="Update Rider">
-                      <i className="fas fa-edit text-primary" />
-                    </Link> */}
-          <Link className="mr-2" href="">
-            <i className="fas fa-ellipsis-v text-secondary" sss />
-          </Link>
-        </div>
+        <>
+          
+
+        <ActionButton  data={e?.id}  openActionBtn={openActionBtn} setOpenActionBtn={setOpenActionBtn} />
+        </>
+       
       ),
       searchAble: true,
     },
   ];
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
+  const [sorting, setSorting] = useState(false);
   return (
     <>
       <Table

@@ -1,6 +1,12 @@
 @import url("../assets/dashboard/css/fontawesome/css/adminlte.css");
 /* @import url("../assets/dashboard/css/fontawesome/css/adminlte.min.css"); */
 @import url("../assets/dashboard/css/fontawesome/css/custom.css");
+@import url("../assets/dashboard/css/fontawesome/css/dataTables.bootstrap4.css");
+
+
+
+
+
 /* @import url("../assets/dashboard/css/fontawesome/css/alt/adminlte.components.css");
 @import url("../assets/dashboard/css/fontawesome/css/alt/adminlte.components.min.css");
 @import url("../assets/dashboard/css/fontawesome/css/alt/adminlte.core.css");
@@ -171,3 +177,17 @@ table td {
   vertical-align: top;
   border-top: 1px solid #dee2e6 !important;
 }
+
+.ActionClosedAndOpen{
+  position: absolute;
+    transform: translateX(-50%);
+    top: 110%;
+    left: 50%;
+    will-change: transform;
+    display: block;
+}
+
+
+
+
+

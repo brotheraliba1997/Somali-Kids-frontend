@@ -1,6 +1,7 @@
 "use client";
 import DotsLoader from "../loaders/dotsLoader";
 import TableHead from "./tableHead";
+import TableHeaderCell from "./tableHeaderCell";
 import TablePagination from "./tablePagination";
 import TableRow from "./tableRow";
 // import DataNotFound from "../../assets/images/table-data-not-found.jpg";
@@ -18,6 +19,8 @@ function Table({
   setPage,
   pageSize,
   setPageSize,
+  setSorting,
+  sorting,
 }) {
   //   const { title, columns, dataSource, onRowClick, isLoading } = props;
   // let searchList = columns.filter((x) => x.searchAble);
@@ -100,7 +103,6 @@ function Table({
                   Processing...
                 </div>
                 <table
-            
                   className="table table-hover table-striped table-bordered dataTable no-footer"
                   id="dataTableBuilder"
                   role="grid"
@@ -123,18 +125,9 @@ function Table({
                       </th>
                       {columns && Array.isArray(columns) && columns.length > 0
                         ? columns.map((x, i) => (
-                            <th
-                              title="No"
-                              // width={60}
-                              // className="sorting"
-                              rowSpan={1}
-                              colSpan={1}
-                              // style={{ width: 60 }}
-                              aria-label="No"
-                              key={i}
-                            >
-                              {x.displayName}
-                            </th>
+                            <>
+                           <TableHeaderCell key={i}  displayName={x.displayName} />
+                            </>
                           ))
                         : null}
                     </tr>
