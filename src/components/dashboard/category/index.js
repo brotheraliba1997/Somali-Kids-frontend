@@ -57,11 +57,13 @@ function CategoryList() {
       key: "",
       displayField: (e) => (
         <>
-          
-
-        <ActionButton  data={e?.id}  openActionBtn={openActionBtn} setOpenActionBtn={setOpenActionBtn} />
+          <ActionButton
+            data={e?.id}
+            openActionBtn={openActionBtn}
+            setOpenActionBtn={setOpenActionBtn}
+            routeChange={`/dashboard/categories/${e?.id}/edit`}
+          />
         </>
-       
       ),
       searchAble: true,
     },

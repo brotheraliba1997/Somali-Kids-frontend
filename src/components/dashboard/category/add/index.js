@@ -108,7 +108,6 @@ function AddCategoryComponents({ categoryValueHandler, handleChange }) {
                       </div>
                     </div>
                   </div>
-
                   <div className=" py-1 text-center">
                     <button className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white">
                       <i className="fa fa-save" /> Save

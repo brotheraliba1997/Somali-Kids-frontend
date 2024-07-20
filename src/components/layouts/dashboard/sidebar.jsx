@@ -132,7 +132,7 @@ function Sidebar() {
                     >
                       <li className="nav-item">
                         <Link
-                          href="/dashboard/category"
+                          href="/dashboard/categories"
                           className="nav-link tree-item nav-categories"
                         >
                           <i className="far fa-circle nav-icon" />
