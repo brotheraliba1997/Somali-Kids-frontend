@@ -10,7 +10,7 @@ function Category() {
           <h3 className="card-title">List of Categories</h3>
           <div className="card-tools">
             <Link
-              href="/dashboard/category/add"
+              href="/dashboard/categories/add"
               id="create_new"
               className="btn btn-flat btn-primary"
             >

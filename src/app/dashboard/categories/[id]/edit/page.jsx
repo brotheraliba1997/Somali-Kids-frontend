@@ -1,15 +1,21 @@
 "use client";
 import AddCategoryComponents from "@/components/dashboard/category/add";
-import { useUploadCategoryMutation } from "@/redux/services/categoryAPI";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import {
+  useGetSingleCategoryQuery,
+  useUploadCategoryMutation,
+} from "@/redux/services/categoryAPI";
+import { useParams, useRouter } from "next/navigation";
+import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 function EditCategory() {
   const router = useRouter();
+  const { id } = useParams();
 
-  
- 
+  const { data: singleData } = useGetSingleCategoryQuery(id);
+
+  console.log(singleData, "singleData");
+
   const [formatData, setFormatData] = useState();
   const [UpdateCategory, { data, isLoading }] = useUploadCategoryMutation();
 
@@ -17,7 +23,7 @@ function EditCategory() {
     e.preventDefault();
     console.log("bhai chal");
     try {
-      await UpdateCategory(formatData).unwrap();
+      await UpdateCategory({ payload: formatData, id }).unwrap();
       router.push("/dashboard/categories");
     } catch (err) {
       console.error("Failed to create category:", err);
@@ -31,12 +37,20 @@ function EditCategory() {
     });
   };
 
+  useEffect(() => {
+    if(singleData){
+      const {id, ...res} = singleData 
+      setFormatData(res);
+    }
+   
+  }, [singleData]);
   console.log(formatData, "formatData");
   return (
     <>
       <AddCategoryComponents
         categoryValueHandler={categoryValueHandler}
         handleChange={handleChange}
+        values={formatData}
       />
     </>
   );

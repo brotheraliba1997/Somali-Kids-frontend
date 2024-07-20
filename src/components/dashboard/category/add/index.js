@@ -1,7 +1,11 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 
-function AddCategoryComponents({ categoryValueHandler, handleChange }) {
+function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
+  
+  
+ 
+
   return (
     <div className="container-fluid">
       <div className="content py-4 bg-gradient-navy px-3">
@@ -26,6 +30,8 @@ function AddCategoryComponents({ categoryValueHandler, handleChange }) {
                           id="firstname"
                           required="required"
                           defaultValue=""
+
+                          value={values?.name}
                           onChange={handleChange}
                         />
                       </div>

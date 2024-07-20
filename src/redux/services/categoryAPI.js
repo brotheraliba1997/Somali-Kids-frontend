@@ -24,8 +24,16 @@ export const categoryAPI = createApi({
     }),
 
 
+    getSingleCategory: builder.query({
+      query: (id) => ({
+        url: `/category/${id}`,
+        method: "GET",
+       
+      }),
+    }),
+
     uploadCategory: builder.mutation({
-      query: ({id ,payload}) => ({
+      query: ({payload, id}) => ({
         url: `/category/${id}`,
         method: "PATCH",
         body: payload
@@ -38,4 +46,5 @@ export const {
   useGetCategoryQuery,
   useCreateCategoryMutation,
   useUploadCategoryMutation,
+  useGetSingleCategoryQuery
 } = categoryAPI;
