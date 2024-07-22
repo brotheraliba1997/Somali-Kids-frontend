@@ -2,10 +2,6 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 
 function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
-  
-  
- 
-
   return (
     <div className="container-fluid">
       <div className="content py-4 bg-gradient-navy px-3">
@@ -18,10 +14,10 @@ function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
               <div className="container-fluid">
                 <form onSubmit={categoryValueHandler}>
                   <div className="row">
-                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div className="col-lg-12 col-md-6 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="firstname" className="control-label">
-                          First Name
+                          Name
                         </label>
                         <input
                           type="text"
@@ -30,86 +26,8 @@ function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
                           id="firstname"
                           required="required"
                           defaultValue=""
-
                           value={values?.name}
                           onChange={handleChange}
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                      <div className="form-group">
-                        <label htmlFor="lastname" className="control-label">
-                          Last Name
-                        </label>
-                        <input
-                          type="text"
-                          className="form-control form-control-sm rounded-0"
-                          name="lastname"
-                          id="lastname"
-                          required="required"
-                          defaultValue=""
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="form-group">
-                        <label htmlFor="email" className="control-label">
-                          Email{" "}
-                        </label>
-                        <input
-                          type="email"
-                          className="form-control form-control-sm rounded-0"
-                          name="email"
-                          id="email"
-                          required="required"
-                          defaultValue=""
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="form-group">
-                        <label htmlFor="phone" className="control-label">
-                          Phone{" "}
-                        </label>
-                        <input
-                          type="tel"
-                          className="form-control form-control-sm rounded-0"
-                          name="phone"
-                          id="phone"
-                          required="required"
-                          defaultValue=""
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="form-group">
-                        <label htmlFor="select-user" className="control-label">
-                          User type
-                        </label>
-                        <select
-                          className="form-control form-control-sm rounded-0"
-                          name="select-user"
-                          id="select-user"
-                          required="required"
-                        >
-                          <option value="Admin">Admin</option>
-                          <option value="Parent">Parent</option>
-                          <option value="Teacher">Teacher</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                      <div className="form-group">
-                        <label htmlFor="password" className="control-label">
-                          Password{" "}
-                        </label>
-                        <input
-                          type="password"
-                          className="form-control form-control-sm rounded-0"
-                          name="Password"
-                          id="Password"
-                          required="required"
-                          defaultValue=""
                         />
                       </div>
                     </div>

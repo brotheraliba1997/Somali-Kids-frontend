@@ -1,5 +1,6 @@
 "use client";
 import AddCategoryComponents from "@/components/dashboard/category/add";
+import { notifyFailure, notifySuccess } from "@/components/toast/toast";
 import { useCreateCategoryMutation } from "@/redux/services/categoryAPI";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
@@ -11,12 +12,14 @@ function AddCategory() {
 
   const categoryValueHandler = async (e) => {
     e.preventDefault();
-    console.log("bhai chal");
+
     try {
       await createCategory(formatData).unwrap();
-      router.push("/dashboard/category");
+      notifySuccess("create category successfully!");
+      router.push("/dashboard/categories");
     } catch (err) {
       console.error("Failed to create category:", err);
+      notifyFailure(err.data.message);
     }
   };
 

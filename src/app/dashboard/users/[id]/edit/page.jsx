@@ -1,11 +1,8 @@
 "use client";
-import AddCategoryComponents from "@/components/dashboard/category/add";
+import AddUserDashboard from "@/components/dashboard/addUser";
 import { notifyFailure, notifySuccess } from "@/components/toast/toast";
-import {
-  useGetSingleCategoryQuery,
-  useUpdateCategoryMutation,
- 
-} from "@/redux/services/categoryAPI";
+
+import { useGetUserByIdQuery, useUpdateUsersMutation } from "@/redux/services/userApi";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -13,16 +10,16 @@ import { useSelector } from "react-redux";
 function EditCategory() {
   const router = useRouter();
   const { id } = useParams();
-  const { data: singleData } = useGetSingleCategoryQuery(id);
+  const { data: singleData } = useGetUserByIdQuery(id);
   const [formatData, setFormatData] = useState();
-  const [UpdateCategory, { data, isLoading }] = useUpdateCategoryMutation();
+  const [UpdateUser, { data, isLoading }] = useUpdateUsersMutation();
 
   const categoryValueHandler = async (e) => {
     e.preventDefault();
     try {
-      await UpdateCategory({ payload: formatData, id }).unwrap();
-      router.push("/dashboard/categories");
-      notifySuccess("update category successfully!");
+      await UpdateUser({ payload: formatData, id }).unwrap();
+      router.push("/dashboard/users");
+      notifySuccess("update user successfully!");
     } catch (err) {
       console.error("Failed to create category:", err);
       notifyFailure(err.data.message);
@@ -41,10 +38,12 @@ function EditCategory() {
     }
    
   }, [singleData]);
-  console.log(formatData, "formatData");
+
+  console.log(singleData, "singa")
+ 
   return (
     <>
-      <AddCategoryComponents
+      <AddUserDashboard
         categoryValueHandler={categoryValueHandler}
         handleChange={handleChange}
         values={formatData}

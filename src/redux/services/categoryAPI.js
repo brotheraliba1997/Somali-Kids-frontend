@@ -4,7 +4,7 @@ import { baseQueryWithAuth } from "./api";
 export const categoryAPI = createApi({
   reducerPath: "categoryAPI",
   baseQuery: baseQueryWithAuth,
-  tagTypes: ["refetchTransactions"],
+  tagTypes: ["refetchCategories"],
 
   endpoints: (builder) => ({
     getCategory: builder.query({
@@ -12,6 +12,7 @@ export const categoryAPI = createApi({
         url: "/category",
         method: "GET",
       }),
+      providesTags: ["refetchCategories"],
     }),
 
 
@@ -21,6 +22,7 @@ export const categoryAPI = createApi({
         method: "POST",
         body: payload
       }),
+      invalidatesTags: ["refetchCategories"],
     }),
 
 
@@ -32,19 +34,22 @@ export const categoryAPI = createApi({
       }),
     }),
 
-    uploadCategory: builder.mutation({
+    updateCategory: builder.mutation({
       query: ({payload, id}) => ({
         url: `/category/${id}`,
         method: "PATCH",
         body: payload
       }),
+      invalidatesTags: ["refetchCategories"],
     }),
   }),
+
+
 });
 
 export const {
   useGetCategoryQuery,
   useCreateCategoryMutation,
-  useUploadCategoryMutation,
+  useUpdateCategoryMutation,
   useGetSingleCategoryQuery
 } = categoryAPI;

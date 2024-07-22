@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddUserDashboard() {
+function AddUserDashboard({ categoryValueHandler, handleChange, values }) {
   return (
     <div className="container-fluid">
       <div className="content py-4 bg-gradient-navy px-3">
@@ -11,7 +11,7 @@ function AddUserDashboard() {
           <div className="card rounded-0 shadow">
             <div className="card-body">
               <div className="container-fluid">
-                <form action="" id="inmate-form">
+                <form onSubmit={categoryValueHandler}>
                   <div className="row">
                     <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                       <div className="form-group">
@@ -21,10 +21,12 @@ function AddUserDashboard() {
                         <input
                           type="text"
                           className="form-control form-control-sm rounded-0"
-                          name="firstname"
+                          name="firstName"
                           id="firstname"
                           required="required"
                           defaultValue=""
+                          value={values?.firstName}
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
@@ -36,14 +38,16 @@ function AddUserDashboard() {
                         <input
                           type="text"
                           className="form-control form-control-sm rounded-0"
-                          name="lastname"
+                          name="lastName"
                           id="lastname"
                           required="required"
                           defaultValue=""
+                          onChange={handleChange}
+                          value={values?.lastName}
                         />
                       </div>
                     </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="email" className="control-label">
                           Email{" "}
@@ -55,10 +59,12 @@ function AddUserDashboard() {
                           id="email"
                           required="required"
                           defaultValue=""
+                          onChange={handleChange}
+                          value={values?.email}
                         />
                       </div>
                     </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="phone" className="control-label">
                           Phone{" "}
@@ -70,27 +76,31 @@ function AddUserDashboard() {
                           id="phone"
                           required="required"
                           defaultValue=""
+                          onChange={handleChange}
+                          value={values?.phone}
                         />
                       </div>
                     </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="select-user" className="control-label">
                           User type
                         </label>
                         <select
                           className="form-control form-control-sm rounded-0"
-                          name="select-user"
+                          name="role"
                           id="select-user"
                           required="required"
+                          onChange={handleChange}
+                          value={values?.role}
                         >
-                          <option value="Admin">Admin</option>
-                          <option value="Parent">Parent</option>
-                          <option value="Teacher">Teacher</option>
+                          <option value="admin">Admin</option>
+                          <option value="parent">Parent</option>
+                          <option value="teacher">Teacher</option>
                         </select>
                       </div>
                     </div>
-                    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="password" className="control-label">
                           Password{" "}
@@ -98,30 +108,102 @@ function AddUserDashboard() {
                         <input
                           type="password"
                           className="form-control form-control-sm rounded-0"
-                          name="Password"
+                          name="password"
                           id="Password"
                           required="required"
                           defaultValue=""
+                          value={values?.password}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                      <div className="form-group">
+                        <label htmlFor="password" className="control-label">
+                          Address{" "}
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-sm rounded-0"
+                          name="address"
+                          id="Password"
+                          required="required"
+                          defaultValue=""
+                          value={values?.address}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                      <div className="form-group">
+                        <label htmlFor="password" className="control-label">
+                          City{" "}
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-sm rounded-0"
+                          name="city"
+                          id="Password"
+                          required="required"
+                          defaultValue=""
+                          value={values?.city}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                      <div className="form-group">
+                        <label htmlFor="password" className="control-label">
+                          State{" "}
+                        </label>
+                        <input
+                          type="text"
+                          className="form-control form-control-sm rounded-0"
+                          name="state"
+                          id="Password"
+                          required="required"
+                          defaultValue=""
+                          value={values?.state}
+                          onChange={handleChange}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                      <div className="form-group">
+                        <label htmlFor="password" className="control-label">
+                          ZipCode{" "}
+                        </label>
+                        <input
+                           type="text"
+                          className="form-control form-control-sm rounded-0"
+                          name="zipCode"
+                          id="Password"
+                          required="required"
+                          defaultValue=""
+                          value={values?.zipCode}
+                          onChange={handleChange}
                         />
                       </div>
                     </div>
                   </div>
+
+                  <div className=" py-1 text-center">
+                    <button className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white">
+                      <i className="fa fa-save" /> Save
+                    </button>
+                    <a
+                      className="btn btn-flat btn-sm btn-light bg-gradient-light border"
+                      href=""
+                    >
+                      <i className="fa fa-close" /> Cancel
+                    </a>
+                  </div>
                 </form>
               </div>
-            </div>
-            <div className="card-footer py-1 text-center">
-              <button
-                className="btn btn-flat btn-sm btn-navy bg-gradient-navy"
-                form="inmate-form"
-              >
-                <i className="fa fa-save" /> Save
-              </button>
-              <a
-                className="btn btn-flat btn-sm btn-light bg-gradient-light border"
-                href=""
-              >
-                <i className="fa fa-close" /> Cancel
-              </a>
             </div>
           </div>
         </div>

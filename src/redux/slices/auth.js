@@ -55,13 +55,13 @@ const slice = createSlice({
         }
       )
 
-      .addMatcher(
-        userAPI.endpoints.updateProfile.matchFulfilled,
-        (state, { payload }) => {
-          state.user = { ...state.user, ...payload };
-          localStorage.setItem("user", JSON.stringify(state.user));
-        }
-      )
+      // .addMatcher(
+      //   userAPI.endpoints.updateProfile.matchFulfilled,
+      //   (state, { payload }) => {
+      //     state.user = { ...state.user, ...payload };
+      //     localStorage.setItem("user", JSON.stringify(state.user));
+      //   }
+      // )
       .addMatcher(authAPI.endpoints.loginUser.matchRejected, (state) => {
         state.auth = null;
       })

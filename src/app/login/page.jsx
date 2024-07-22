@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import CustomButton from "@/components/customButton";
+import Toast, {
+  notifyFailure,
+  notifySuccess,
+} from "@/components/toast/toast";
 
 function Login() {
   const router = useRouter();
@@ -30,11 +34,12 @@ function Login() {
     try {
       const { data } = await loginUser(formData).unwrap();
       console.log(data, "respones");
-      //   notifySuccess("Logged in successfully!");
+        notifySuccess("Logged in successfully!");
       router.push("/dashboard");
     } catch (error) {
       console.log("err", error.data.message);
-      //   notifyFailure(error.data.message);
+        notifyFailure(error.data.message);
+        console.log(error)
     }
   };
 

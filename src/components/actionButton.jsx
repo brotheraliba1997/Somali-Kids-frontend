@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange }) {
+function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, deleteHandler }) {
   console.log(openActionBtn, "sssss");
 
   return (
@@ -32,14 +32,15 @@ function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange }) {
             <span className="fa fa-edit text-primary" /> Edit
           </Link>
           <div className="dropdown-divider" />
-          <a
+          <div
             className="dropdown-item delete_data"
-            href="javascript:void(0)"
+            href="#"
             data-id={3}
+            onClick={deleteHandler}
           >
-            <span className="fa fa-trash text-danger" />
+            <span className="fa fa-trash text-danger mr-2"  />
             Delete
-          </a>
+          </div>
         </div>
       </div>
     </>
