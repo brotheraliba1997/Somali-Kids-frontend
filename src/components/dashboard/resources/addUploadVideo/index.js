@@ -38,7 +38,7 @@ function AddUploadList() {
                         Language
                       </label>
                       <select
-                        className="form-control form-control-sm rounded-0 "
+                        className="form-control form-control-sm rounded-0"
                         name="select-Language"
                         id="select-Language"
                         required="required"
@@ -59,7 +59,7 @@ function AddUploadList() {
                         Categories
                       </label>
                       <select
-                        className="form-control form-control-sm rounded-0 "
+                        className="form-control form-control-sm rounded-0"
                         name="select-Categories"
                         id="select-Categories"
                         required="required"
