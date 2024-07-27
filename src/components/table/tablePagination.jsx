@@ -55,7 +55,6 @@ function TablePagination({
                 Previous
               </span>
             </li>
-
             {pageNumbers.map((item, index) =>
               item === "dots" ? (
                 <span key={index} className="ellipsis">

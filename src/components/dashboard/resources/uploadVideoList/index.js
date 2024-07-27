@@ -92,13 +92,13 @@ function UploadVideoList() {
           <div className="card-header">
             <h3 className="card-title">List of Uploaded Videos</h3>
             <div className="card-tools">
-              <a
-                href="video-upload.html"
+              <Link
+                href="/dashboard/upload-video/add"
                 id="create_new"
                 className="btn btn-flat btn-primary"
               >
                 <span className="fas fa-plus" /> Upload Video
-              </a>
+              </Link>
             </div>
           </div>
 

@@ -24,7 +24,7 @@ function TableHeaderCell({ displayName }) {
           } text-dark`}
           style={{ height: "35px", width: "10px" }}
           onClick={() => setSorting(!sorting)}
-        >
+        > 
           {" "}
         </div>
       </th>

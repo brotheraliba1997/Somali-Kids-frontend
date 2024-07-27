@@ -1,10 +1,16 @@
 "use client";
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
+
 import {
   useGetCategoryQuery,
   useUpdateCategoryMutation,
 } from "@/redux/services/categoryAPI";
+import {
+  useGetCategoryQuery,
+  useUpdateCategoryMutation,
+} from "@/redux/services/categoryAPI";
+
 import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
