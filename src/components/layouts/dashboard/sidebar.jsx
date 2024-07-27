@@ -140,13 +140,13 @@ function Sidebar() {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <a
-                          href="#"
+                        <Link
+                          href="/dashboard/language"
                           className="nav-link tree-item nav-languages"
                         >
                           <i className="far fa-circle nav-icon" />
                           <p>Languages</p>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
                         <a href="#" className="nav-link tree-item nav-packages">

@@ -1,25 +1,21 @@
 "use client";
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
-
-
-import {
-  useGetCategoryQuery,
-  useUpdateCategoryMutation,
-} from "@/redux/services/categoryAPI";
-
+import { useGetlanguageQuery, useUpdateLanguageMutation } from "@/redux/services/languageAPI";
 import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function CategoryList() {
-  const { data, isLoading } = useGetCategoryQuery();
+function LanguageList() {
+  const { data, isLoading } = useGetlanguageQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
   console.log(data, "data");
 
-  const [uploadCategory, { data: dataUpload, isLoading: loading }] =
-    useUpdateCategoryMutation();
+  
+  const [uploadLanguage, { data: dataUpload, isLoading: loading }] =
+  useUpdateLanguageMutation();
+
 
   const deleteHandler = (id) => {
     Swal.fire({
@@ -33,7 +29,7 @@ function CategoryList() {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await uploadCategory({
+          await uploadLanguage({
             payload: { softDelete: true },
             id: id,
           }).unwrap();
@@ -98,8 +94,8 @@ function CategoryList() {
             data={e?.id}
             openActionBtn={openActionBtn}
             setOpenActionBtn={setOpenActionBtn}
-            routeChange={`/dashboard/categories/${e?.id}/edit`}
-            deleteHandler={() => deleteHandler(e?.id)}
+            routeChange={`/dashboard/language/${e?.id}/edit`}
+            deleteHandler={()=> deleteHandler(e?.id)}
           />
         </>
       ),
@@ -108,7 +104,7 @@ function CategoryList() {
   ];
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
-
+  
   return (
     <>
       <Table
@@ -126,4 +122,4 @@ function CategoryList() {
   );
 }
 
-export default CategoryList;
+export default LanguageList;

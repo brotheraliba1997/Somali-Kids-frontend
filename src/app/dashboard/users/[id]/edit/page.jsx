@@ -2,7 +2,10 @@
 import AddUserDashboard from "@/components/dashboard/addUser";
 import { notifyFailure, notifySuccess } from "@/components/toast/toast";
 
-import { useGetUserByIdQuery, useUpdateUsersMutation } from "@/redux/services/userApi";
+import {
+  useGetUserByIdQuery,
+  useUpdateUsersMutation,
+} from "@/redux/services/userApi";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
@@ -32,22 +35,27 @@ function EditCategory() {
     });
   };
   useEffect(() => {
-    if(singleData){
-      const {id, ...res} = singleData 
+    if (singleData) {
+      const { id, ...res } = singleData;
       setFormatData(res);
     }
-   
   }, [singleData]);
 
-  console.log(singleData, "singa")
- 
+  console.log(singleData, "singa");
+
   return (
     <>
-      <AddUserDashboard
-        categoryValueHandler={categoryValueHandler}
-        handleChange={handleChange}
-        values={formatData}
-      />
+      <div className="container-fluid">
+        <div className="content py-4 bg-gradient-navy px-3">
+          <h4 className="mb-0"> Edit User</h4>
+        </div>
+        <AddUserDashboard
+          categoryValueHandler={categoryValueHandler}
+          handleChange={handleChange}
+          values={formatData}
+          hidePassword={true}
+        />
+      </div>
     </>
   );
 }

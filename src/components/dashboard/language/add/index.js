@@ -1,9 +1,9 @@
 import Link from "next/link";
 import React, { useEffect } from "react";
 
-function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
+function AddLanguageComponents({ categoryValueHandler, handleChange, values }) {
   return (
-   
+    
       <div className="row mt-n3 justify-content-center align-items-center flex-column">
         <div className="col-md-8">
           <div className="card rounded-0 shadow">
@@ -35,7 +35,7 @@ function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
                     </button>
                     <Link
                       className="btn btn-flat btn-sm btn-light bg-gradient-light border"
-                      href="#"
+                      href="/dashboard/language"
                     >
                       <i className="fa fa-close" /> Cancel
                     </Link>
@@ -46,8 +46,8 @@ function AddCategoryComponents({ categoryValueHandler, handleChange, values }) {
           </div>
         </div>
       </div>
-  
+   
   );
 }
 
-export default AddCategoryComponents;
+export default AddLanguageComponents;
