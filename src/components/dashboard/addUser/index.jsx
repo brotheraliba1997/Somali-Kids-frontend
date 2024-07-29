@@ -1,11 +1,8 @@
 import React from "react";
 
-function AddUserDashboard({ categoryValueHandler, handleChange, values }) {
+function AddUserDashboard({ categoryValueHandler, handleChange, values , hidePassword}) {
   return (
-    <div className="container-fluid">
-      <div className="content py-4 bg-gradient-navy px-3">
-        <h4 className="mb-0"> Add User</h4>
-      </div>
+  
       <div className="row mt-n3 justify-content-center align-items-center flex-column">
         <div className="col-md-8">
           <div className="card rounded-0 shadow">
@@ -100,7 +97,7 @@ function AddUserDashboard({ categoryValueHandler, handleChange, values }) {
                         </select>
                       </div>
                     </div>
-                    <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                    {!hidePassword  &&   <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="password" className="control-label">
                           Password{" "}
@@ -110,13 +107,14 @@ function AddUserDashboard({ categoryValueHandler, handleChange, values }) {
                           className="form-control form-control-sm rounded-0"
                           name="password"
                           id="Password"
-                          required="required"
+                          // required="required"
                           defaultValue=""
                           value={values?.password}
                           onChange={handleChange}
                         />
                       </div>
-                    </div>
+                    </div> }
+                   
 
                     <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
@@ -208,7 +206,7 @@ function AddUserDashboard({ categoryValueHandler, handleChange, values }) {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
 

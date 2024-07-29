@@ -1,87 +1,87 @@
 "use client";
 import Table from "@/components/table";
+import { useGetVideoQuery } from "@/redux/services/videoAPI";
 import Link from "next/link";
 import React, { useState } from "react";
 
 function UploadVideoList() {
-  const interpreters = {
-    data: ["hamza"],
-  };
+ 
 
-  const isLoading = false;
+  const { data, isLoading } = useGetVideoQuery();
+
+  
   const columns = [
     {
       displayName: "Name/Email",
       displayField: (e) => (
         <>
-          <div className="d-flex gap-2">
-            <div>ssss</div>
+        
+       
             <div>
-              <p className="text-secondary"> sssss </p>
+              <p className="text-secondary"> {e?.name} </p>
             </div>
-          </div>
+          
         </>
       ),
       searchable: true,
     },
 
-    {
-      displayName: "Phone",
-      displayField: (e) => <>{"sssss"}</>,
-      searchable: true,
-    },
+    
 
     {
-      displayName: "Join Date",
+      displayName: "Language",
       displayField: (e) => (
         <>
-          <p className="text-secondary"> ssss</p>
+          <p className="text-secondary"> {e?.language?.name}</p>
         </>
       ),
       searchable: true,
     },
 
-    // {
-    //   displayName: "State/Country",
-    //   displayField: (e) => (
-    //     <>
-    //       <p className="text-secondary">
-    //         {" "}
-    //         {e.state}, {e.country}{" "}
-    //       </p>
-    //     </>
-    //   ),
-    //   searchable: true,
-    // },
+   
 
     {
-      key: "status",
-      displayName: "Status",
+      key: "Category",
+      displayName: "Category",
       displayField: (e) => (
         <>
-          {e.status === "active" ? (
-            <span className="text-capitalize badge bg-success"> ssss</span>
-          ) : (
-            <span className="text-capitalize badge bg-danger"> sss</span>
-          )}
+          <p className="text-secondary"> {e?.category?.name}</p>
         </>
       ),
     },
+
+
     {
-      displayName: "Action",
-      key: "",
+      key: "Thumbnail",
+      displayName: "Thumbnail",
       displayField: (e) => (
-        <div className="d-flex justify-content-start align-items-center gap-4 position-relative">
-          {/* <Link href="" className="mr-2" to="" title="Update Rider">
-                  <i className="fas fa-edit text-primary" />
-                </Link> */}
-          <Link className="mr-2" href="">
-            <i className="fas fa-ellipsis-v text-secondary" sss />
-          </Link>
-        </div>
+        <>
+          <p className="text-secondary"> {e?.thumbnail}</p>
+        </>
       ),
-      searchAble: true,
     },
+
+    {
+      key: "Video ",
+      displayName: "Video",
+      displayField: (e) => (
+        <>
+          <p className="text-secondary"> {e?.videoUpload}</p>
+        </>
+      ),
+    },
+
+
+    {
+      key: "Description ",
+      displayName: "Description",
+      displayField: (e) => (
+        <>
+          <p className="text-secondary"> {e?.Description}</p>
+        </>
+      ),
+    },
+
   ];
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
@@ -105,11 +105,11 @@ function UploadVideoList() {
           
 
           <Table
-            dataSource={interpreters?.data || []}
+           dataSource={data?.results || []}
             isLoading={isLoading}
             columns={columns}
-            totalPages={interpreters?.totalPages}
-            totalEntries={interpreters?.totalEntries}
+            totalPages={data?.totalPages}
+            totalEntries={data?.totalEntries}
             page={page}
             setPage={setPage}
             pageSize={pageSize}

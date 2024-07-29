@@ -4,6 +4,8 @@ import { authAPI } from "./services/authApi";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { userAPI } from "./services/userApi";
 import { categoryAPI } from "./services/categoryAPI";
+import { LanguageAPI } from "./services/languageAPI";
+import { VideoUploadAPI } from "./services/videoAPI";
 
 export const store = configureStore({
   reducer: {
@@ -11,8 +13,10 @@ export const store = configureStore({
     [userAPI.reducerPath]: userAPI.reducer,
     [authAPI.reducerPath]: authAPI.reducer,
     [categoryAPI.reducerPath]: categoryAPI.reducer,
+    [LanguageAPI.reducerPath]: LanguageAPI.reducer,
+    [VideoUploadAPI.reducerPath]: VideoUploadAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(authAPI.middleware, userAPI.middleware, categoryAPI.middleware),
+    getDefaultMiddleware().concat(authAPI.middleware, userAPI.middleware, categoryAPI.middleware, LanguageAPI.middleware, VideoUploadAPI.middleware),
 });
 setupListeners(store.dispatch);

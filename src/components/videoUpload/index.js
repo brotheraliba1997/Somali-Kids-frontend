@@ -1,6 +1,8 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { ProgressBar } from "react-bootstrap";
+import { notifyFailure, notifySuccess } from "../toast/toast";
 
 function UploadVideo() {
   const [file, setFile] = useState(null);
@@ -47,9 +49,10 @@ function UploadVideo() {
       const parts = [];
       let uploadedBytes = 0;
       let totalBytes = 0;
-
-
+      let currentIndex = 0;
+      let uploadProgress = 0;
       for (let i = 0; i < numChunks; i++) {
+        currentIndex = i;
         const start = i * chunkSize;
         const end = Math.min(start + chunkSize, totalSize);
         const chunk = file.slice(start, end);
@@ -63,13 +66,23 @@ function UploadVideo() {
             uploadedBytes += event.loaded;
             totalBytes += event.total;
 
-            setProgress(Math.round(((uploadedBytes * 100) / totalSize) / numChunks));
-          console.log(uploadedBytes ,totalSize,event,totalBytes,i, "progress")
-
+            uploadProgress += event.progress;
+            const uploadPercante = uploadProgress * 100;
+            // setProgress(Math.round(uploadPercante));
+            // setProgress(Math.round((start * 100) / totalSize));
+            setProgress(Math.round(((i + 1) / numChunks) * 100));
+            console.log(i, numChunks, "numChunks");
+            console.log(
+              uploadedBytes,
+              totalSize,
+              event,
+              totalBytes,
+              i,
+              "progress"
+            );
           },
         });
 
-  
         // console.log(progress, "progress" )
 
         const response = await uploadPromise;
@@ -89,41 +102,49 @@ function UploadVideo() {
       );
 
       if (completeUpload) {
-        alert("File uploaded successfully.");
         setIsUploading(false);
+        notifySuccess("Upload Successfully");
         // setProgress(0);
       } else {
-        alert("Upload failed.");
+        setIsUploading(true);
       }
     } catch (error) {
-      alert("Upload failed.");
+      // alert("Upload failed.");
+      notifyFailure("Upload failed.");
     }
   };
 
-  console.log(progress, "setProgress")
+  useEffect(() => {
+    if (file) handleUpload();
+  }, [file]);
+
+  console.log(progress, "setProgress");
 
   return (
-    <div>
-      <h1>Multipart Upload</h1>
-      <br />
-      <input type="file" onChange={handleFileChange} name="file" id="myFile" />
-      <button
-        onClick={handleUpload}
-        disabled={isUploading}
-        className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
-      >
-        {isUploading ? "Uploading..." : "Upload"}
-      </button>
-      {isUploading && (
-        <div className="w-full bg-gray-200 rounded-full mt-4">
-          <div
-            className="bg-blue-600 text-xs font-medium text-blue-100 text-center p-0.5 leading-none rounded-full"
-            style={{ width: `${progress}%` }}
-          >
-            {progress}%
-          </div>
+    <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div className="form-group">
+        <label htmlFor="" className="control-label">
+          Upload Video
+        </label>
+        <div className="custom-file custom-file-sm rounded-0">
+          <input
+            type="file"
+            className="custom-file-input rounded-0"
+            id="customFile1"
+            name="img"
+            onChange={handleFileChange}
+          />
+          <label className="custom-file-label rounded-0" htmlFor="customFile1">
+            Choose file
+          </label>
         </div>
-      )}
+
+        {isUploading && (
+          <div className="mt-4">
+            <ProgressBar now={progress} label={`${progress}%`} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

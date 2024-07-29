@@ -80,6 +80,16 @@ function UsersDashboard() {
     },
 
     {
+      displayName: "Role",
+      displayField: (e) => (
+        <>
+          <p className="text-secondary"> {e?.role}</p>
+        </>
+      ),
+      searchable: true,
+    },
+
+    {
       displayName: "Address",
       displayField: (e) => (
         <>
