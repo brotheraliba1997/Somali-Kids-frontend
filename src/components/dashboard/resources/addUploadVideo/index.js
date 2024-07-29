@@ -62,9 +62,12 @@ function AddUpload() {
 
     if(file)handleUploadThumbnail()
   },[file])
+
+}
   
   
-  return (
+return(
+ 
     <section className="content  text-dark">
   <div className="container-fluid">
     <div className="content py-4 bg-gradient-navy px-3">
@@ -170,32 +173,30 @@ function AddUpload() {
                         defaultValue={""}
                       />
                     </div>
-                  </div>
+                  </form>
                 </div>
-              </form>
+              </div>
+              <div className="card-footer py-1 text-center">
+                <button
+                  className="btn btn-flat btn-sm btn-navy bg-gradient-navy"
+                  form="inmate-form"
+                >
+                  <i className="fa fa-save" /> Save
+                </button>
+                <a
+                  className="btn btn-flat btn-sm btn-light bg-gradient-light border"
+                  href=""
+                >
+                  <i className="fa fa-close" /> Cancel
+                </a>
+              </div>
             </div>
-          </div>
-          <div className="card-footer py-1 text-center">
-            <button
-              className="btn btn-flat btn-sm btn-navy bg-gradient-navy"
-              form="inmate-form"
-            >
-              <i className="fa fa-save" /> Save
-            </button>
-            <a
-              className="btn btn-flat btn-sm btn-light bg-gradient-light border"
-              href=""
-            >
-              <i className="fa fa-close" /> Cancel
-            </a>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+)
 
-  )
-}
+
 
 export default AddUpload

@@ -1,7 +1,16 @@
 "use client";
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
-import { useGetCategoryQuery, useUpdateCategoryMutation } from "@/redux/services/categoryAPI";
+
+import {
+  useGetCategoryQuery,
+  useUpdateCategoryMutation,
+} from "@/redux/services/categoryAPI";
+import {
+  useGetCategoryQuery,
+  useUpdateCategoryMutation,
+} from "@/redux/services/categoryAPI";
+
 import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
@@ -12,10 +21,8 @@ function CategoryList() {
 
   console.log(data, "data");
 
-  
   const [uploadCategory, { data: dataUpload, isLoading: loading }] =
-  useUpdateCategoryMutation();
-
+    useUpdateCategoryMutation();
 
   const deleteHandler = (id) => {
     Swal.fire({
@@ -95,7 +102,7 @@ function CategoryList() {
             openActionBtn={openActionBtn}
             setOpenActionBtn={setOpenActionBtn}
             routeChange={`/dashboard/categories/${e?.id}/edit`}
-            deleteHandler={()=> deleteHandler(e?.id)}
+            deleteHandler={() => deleteHandler(e?.id)}
           />
         </>
       ),
@@ -104,7 +111,7 @@ function CategoryList() {
   ];
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
-  
+
   return (
     <>
       <Table
