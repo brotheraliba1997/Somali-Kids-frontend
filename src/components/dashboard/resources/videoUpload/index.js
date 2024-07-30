@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ProgressBar } from "react-bootstrap";
-import { notifyFailure, notifySuccess } from "../toast/toast";
+import { notifyFailure, notifySuccess } from "../../../toast/toast";
 
-function UploadVideo() {
+function UploadVideo({setVideo}) {
   const [file, setFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -22,14 +22,16 @@ function UploadVideo() {
     try {
       setIsUploading(true);
       setProgress(0);
+      const fileLocation = `video-Uploads/${file?.name}`;
 
       const response = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}video-upload/start-multipart-upload`,
         {
-          fileName: file.name,
+          fileName: fileLocation,
           contentType: file.type,
         }
       );
+      console.log(fileLocation, "start-multipart-upload")
 
       const { uploadId } = response.data;
       const totalSize = file.size;
@@ -39,11 +41,13 @@ function UploadVideo() {
       const presignedUrlsResponse = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}video-upload/generate-presigned-url`,
         {
-          fileName: file.name,
+          fileName: fileLocation,
           uploadId: uploadId,
           partNumbers: numChunks,
         }
       );
+
+      console.log(fileLocation, "generate-presigned-url")
 
       const presignedUrls = presignedUrlsResponse?.data?.presignedUrls;
       const parts = [];
@@ -95,15 +99,18 @@ function UploadVideo() {
       const completeUpload = await axios.post(
         `${process.env.NEXT_PUBLIC_API_BASE_URL}video-upload/complete-multipart-upload`,
         {
-          fileName: file.name,
+          fileName: fileLocation,
           uploadId: uploadId,
           parts: parts,
         }
       );
+      
+      console.log(fileLocation, "complete-multipart-upload")
 
       if (completeUpload) {
         setIsUploading(false);
         notifySuccess("Upload Successfully");
+        setVideo(fileLocation)
         // setProgress(0);
       } else {
         setIsUploading(true);

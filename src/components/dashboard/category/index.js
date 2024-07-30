@@ -2,10 +2,7 @@
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
 
-import {
-  useGetCategoryQuery,
-  useUpdateCategoryMutation,
-} from "@/redux/services/categoryAPI";
+
 import {
   useGetCategoryQuery,
   useUpdateCategoryMutation,
