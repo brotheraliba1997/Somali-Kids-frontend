@@ -34,6 +34,8 @@ export const VideoUploadAPI = createApi({
       }),
     }),
 
+    
+
     updateVideo: builder.mutation({
       query: ({payload, id}) => ({
         url: `/video/${id}`,

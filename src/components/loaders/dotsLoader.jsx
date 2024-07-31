@@ -2,10 +2,10 @@
 import React from "react";
 import { ThreeDots } from "react-loader-spinner";
 
-function DotsLoader({ dark, size }) {
+function DotsLoader({ dark, size, center }) {
   return (
     <div className=" text-center h-100 w-100">
-      <div className="react-loader-spinner">
+      <div className={`react-loader-spinner ${!center ? "d-flex justify-content-center align-items-center " : ""}`} >
         <ThreeDots
           height={size ? size : "27"}
           width={size ? size : "27"}

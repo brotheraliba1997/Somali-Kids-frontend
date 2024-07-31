@@ -95,11 +95,11 @@ function CategoryList() {
       displayField: (e) => (
         <>
           <ActionButton
-            data={e?.id}
+            data={e?._id}
             openActionBtn={openActionBtn}
             setOpenActionBtn={setOpenActionBtn}
-            routeChange={`/dashboard/categories/${e?.id}/edit`}
-            deleteHandler={() => deleteHandler(e?.id)}
+            routeChange={`/dashboard/categories/${e?._id}/edit`}
+            deleteHandler={() => deleteHandler(e?._id)}
           />
         </>
       ),

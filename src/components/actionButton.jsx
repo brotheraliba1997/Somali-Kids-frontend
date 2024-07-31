@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, deleteHandler }) {
+function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, deleteHandler , viewRouteChange }) {
   console.log(openActionBtn, "sssss");
 
   return (
@@ -14,7 +14,7 @@ function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, dele
           aria-expanded="false"
           onClick={() => setOpenActionBtn(openActionBtn === data ? null : data)}
         >
-          Actionsss
+          Action
           <span className="sr-only">Toggle Dropdown</span>
         </button>
 
@@ -24,7 +24,7 @@ function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, dele
           }`}
           role="menu"
         >
-          <Link className="dropdown-item view-data" href="#">
+          <Link className="dropdown-item view-data" href={viewRouteChange} >
             <span className="fa fa-eye text-dark" /> View
           </Link>
           <div className="dropdown-divider" />
