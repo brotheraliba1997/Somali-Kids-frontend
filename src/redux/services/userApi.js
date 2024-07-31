@@ -8,10 +8,10 @@ export const userAPI = createApi({
   endpoints: (builder) => ({
     // Client Queries
     getUsers: builder.query({
-      query: ({ page = 1, pageSize = 10, sort = "asc" }) => ({
+      query: () => ({
         url: "/users",
         method: "GET",
-        // params: { page, pageSize, sort },
+       
       }),
       providesTags: ["refetchUser"],
     }),
