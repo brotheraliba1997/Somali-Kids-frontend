@@ -46,7 +46,7 @@ function LanguageList() {
 
   const columns = [
     {
-      displayName: "Name/Email",
+      displayName: "Name",
       displayField: (e) => (
         <>
           <div>
@@ -57,31 +57,18 @@ function LanguageList() {
       searchable: true,
     },
 
-    {
-      displayName: "Phone",
-      displayField: (e) => <>{"sssss"}</>,
-      searchable: true,
-    },
+    
 
-    {
-      displayName: "Join Date",
-      displayField: (e) => (
-        <>
-          <p className="text-secondary"> ssss</p>
-        </>
-      ),
-      searchable: true,
-    },
+  
     {
       key: "status",
       displayName: "Status",
       displayField: (e) => (
         <>
-          {e.status === "active" ? (
-            <span className="text-capitalize badge bg-success"> ssss</span>
-          ) : (
-            <span className="text-capitalize badge bg-danger"> sss</span>
-          )}
+        
+          
+            <span className="text-capitalize badge bg-danger"> Active</span>
+         
         </>
       ),
     },
@@ -91,11 +78,12 @@ function LanguageList() {
       displayField: (e) => (
         <>
           <ActionButton
-            data={e?.id}
+            data={e?._id}
             openActionBtn={openActionBtn}
             setOpenActionBtn={setOpenActionBtn}
-            routeChange={`/dashboard/language/${e?.id}/edit`}
-            deleteHandler={()=> deleteHandler(e?.id)}
+            routeChange={`/dashboard/language/${e?._id}/edit`}
+            deleteHandler={()=> deleteHandler(e?._id)}
+            showView={true}
           />
         </>
       ),

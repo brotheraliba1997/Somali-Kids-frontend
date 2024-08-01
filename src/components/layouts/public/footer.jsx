@@ -15,7 +15,7 @@ function Footer() {
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="footer-logo">
                 <a href="index.html">
-                  <Image src={footer} alt="" />
+                  <Image src={footer} alt="footer-logo" />
                 </a>
               </div>
             </div>

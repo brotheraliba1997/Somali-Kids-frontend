@@ -109,6 +109,7 @@ const deleteHandler = (id) => {
             routeChange={`/dashboard/upload-video/${e?._id}/edit`}
             deleteHandler={() => deleteHandler(e?._id)}
             viewRouteChange={`/dashboard/upload-video/${e?._id}/view`}
+            showView={false}
           />
         </>
       ),

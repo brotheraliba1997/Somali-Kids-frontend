@@ -1,4 +1,5 @@
 import React from 'react'
+import { LuClock9 } from "react-icons/lu";
 
 function Contact() {
   return (
@@ -57,7 +58,10 @@ function Contact() {
             </div>
             <div className="d-flex gap-3 align-items-center">
               <div className="icongbg">
-                <i className="fa fa-clock-o" />
+                {/* <i className="fa fa-clock-o" /> */}
+                <i>
+                  <LuClock9/>
+                </i>
               </div>
               <div>
                 <p className="mt-3">

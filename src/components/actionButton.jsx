@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, deleteHandler , viewRouteChange="#" }) {
+function ActionButton({showView, data, openActionBtn, setOpenActionBtn, routeChange, deleteHandler , viewRouteChange="#" }) {
   console.log(openActionBtn, "sssss");
 
   return (
@@ -24,10 +24,14 @@ function ActionButton({ data, openActionBtn, setOpenActionBtn, routeChange, dele
           }`}
           role="menu"
         >
+          {!showView &&
+          <>
           <Link className="dropdown-item view-data" href={viewRouteChange} >
             <span className="fa fa-eye text-dark" /> View
           </Link>
           <div className="dropdown-divider" />
+          </> 
+           }
           <Link className="dropdown-item edit-data" href={routeChange }>
             <span className="fa fa-edit text-primary" /> Edit
           </Link>

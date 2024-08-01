@@ -1,4 +1,7 @@
 import React from 'react'
+import AbtImage from "@/assets/public/images/abt-img.png"
+import Image from 'next/image'
+
 
 function About() {
   return (
@@ -19,7 +22,9 @@ function About() {
       <div className="row align-items-center">
         <div className="col-lg-6 col-md-6 col-sm-12 mb-5 mb-sm-0">
           <div className="abt-img">
-            <img src="assets/images/abt-img.png" alt="" />
+          <Image src={AbtImage} alt="AbtImage" />
+
+            {/* <img src="assets/images/abt-img.png" alt="" /> */}
           </div>
         </div>
         <div className="col-lg-6 col-md-6 col-sm-12">

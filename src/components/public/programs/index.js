@@ -1,4 +1,13 @@
 import React from 'react'
+import proimg from "@/assets/public/images/proimg-1.png"
+import proimg2 from "@/assets/public/images/proimg-2.png"
+import proimg3 from "@/assets/public/images/proimg-3.png"
+import pro4 from "@/assets/public/images/pro-4.png"
+import pro6 from "@/assets/public/images/pro-6.png"
+import pro5 from "@/assets/public/images/pro-5.png"
+import pro7 from "@/assets/public/images/pro-7.png"
+import Image from 'next/image'
+
 
 function ProgramsComponents() {
   return (
@@ -25,7 +34,9 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg1">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/proimg-1.png" alt="" />
+          <Image src={proimg} alt="proimg" />
+
+                {/* <img src="assets/images/proimg-1.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>ABC Adventures</h3>
@@ -41,7 +52,9 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg2 h-100">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/proimg-2.png" alt="" />
+          <Image src={proimg2} alt="proimg2" />
+
+                {/* <img src="assets/images/proimg-2.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>123 Numbers</h3>
@@ -57,7 +70,10 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg3">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/proimg-3.png" alt="" />
+          <Image src={proimg3} alt="proimg3" />
+
+
+                {/* <img src="assets/images/proimg-3.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>Reading Rockets</h3>
@@ -73,7 +89,9 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg4">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/pro-4.png" alt="" />
+          <Image src={pro4} alt="pro4" />
+
+                {/* <img src="assets/images/pro-4.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>Creative Arts and Crafts</h3>
@@ -89,7 +107,9 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg5">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/pro-5.png" alt="" />
+          <Image src={pro5} alt="pro5" />
+
+                {/* <img src="assets/images/pro-5.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>Science Explorers</h3>
@@ -105,7 +125,9 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg6">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/pro-6.png" alt="" />
+          <Image src={pro6} alt="pro6" />
+
+                {/* <img src="assets/images/pro-6.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>Music and Movement</h3>
@@ -121,7 +143,9 @@ function ProgramsComponents() {
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
             <div className="prog-colbg7">
               <div className="progimgcol text-center mb-3">
-                <img src="assets/images/pro-7.png" alt="" />
+          <Image src={pro7} alt="pro7" />
+
+                {/* <img src="assets/images/pro-7.png" alt="" /> */}
               </div>
               <div className="pro-coltext">
                 <h3 style={{ color: "#EC3C26" }}>Language Learning</h3>

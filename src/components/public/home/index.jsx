@@ -1,4 +1,27 @@
 import React from "react";
+import sidebar from "@/assets/public/images/slider-img.png"
+import sideImaga from "@/assets/public/images/abt-sideimg.png"
+import AbtImage from "@/assets/public/images/abt-img.png"
+import icon from "@/assets/public/images/icon-1.png"
+import iconCol from "@/assets/public/images/col-1icon-1.png"
+import icontwo from "@/assets/public/images/icon-2.png"
+import iconthree from "@/assets/public/images/col-2icon-2.png"
+import iconfour from "@/assets/public/images/icon-3.png"
+import iconfive from "@/assets/public/images/col-3icon3.png"
+import iconsix from "@/assets/public/images/img-1.png"
+import iconseven from "@/assets/public/images/img-2.png"
+import proimg from "@/assets/public/images/proimg-1.png"
+import proimgTwo from "@/assets/public/images/proimg-2.png"
+import proimgThree from "@/assets/public/images/proimg-3.png"
+import ageimg from "@/assets/public/images/ageimg.png"
+import ageimgTwo from "@/assets/public/images/age-1.png"
+import ageimgthree from "@/assets/public/images/age-2.png"
+import ageimgFour from "@/assets/public/images/age-3.png"
+import ageimgFive from "@/assets/public/images/age-4.png"
+import whych01 from "@/assets/public/images/whych01.png"
+import whych02 from "@/assets/public/images/whych02.png"
+
+import Image from "next/image";
 
 function PublicHome() {
   return (
@@ -21,7 +44,8 @@ function PublicHome() {
             </div>
             <div className="col-lg-7 col-md-6 col-sm-12">
               <div className="sliderimg">
-                <img src="assets/images/slider-img.png" alt="" />
+                <Image src={sidebar} alt="sidebar" />
+                {/* <img src="assets/images/slider-img.png" alt="" /> */}
               </div>
             </div>
           </div>
@@ -32,12 +56,15 @@ function PublicHome() {
           <div className="row align-items-center">
             <div className=" position-relative d-none d-sm-block">
               <div className="abt-sideimg text-center position-absolute end-0 ">
-                <img src="assets/images/abt-sideimg.png" alt="" />
+              <Image src={sideImaga} alt="sideImaga" />
+
+                {/* <img src="assets/images/abt-sideimg.png" alt="" /> */}
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12 mb-5 ms-sm-0">
               <div className="abt-img">
-                <img src="assets/images/abt-img.png" alt="" />
+                {/* <img src="assets/images/abt-img.png" alt="" /> */}
+              <Image src={AbtImage} alt="AbtImage" />
               </div>
             </div>
             <div className="col-lg-6 col-md-6 col-sm-12">
@@ -72,7 +99,9 @@ function PublicHome() {
             <div className="col-lg-4 col-md-6 col-sm-4 mb-3 mb-sm-5">
               <div className="col-bg d-md-flex justify-content-between gap-3">
                 <div className="gridimg">
-                  <img src="assets/images/icon-1.png" alt="" />
+                <Image src={icon} alt="sidebar" />
+
+                  {/* <img src="assets/images/icon-1.png" alt="" /> */}
                 </div>
                 <div className="ser-col-text">
                   <h3>Interactive Learning Games</h3>
@@ -84,14 +113,18 @@ function PublicHome() {
               </div>
               <div className=" position-relative d-none d-sm-block">
                 <div className="serv-sideimg position-absolute bottom-0 start-0 ">
-                  <img src="assets/images/col-1icon-1.png" alt="" />
+                <Image src={iconCol} alt="iconCol" />
+
+                  {/* <img src="assets/images/col-1icon-1.png" alt="" /> */}
                 </div>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-4 mb-3 mb-sm-5">
               <div className="col-bg d-md-flex justify-content-between gap-3">
                 <div className="gridimg">
-                  <img src="assets/images/icon-2.png" alt="" />
+                <Image src={icontwo} alt="icontwo" />
+
+                  {/* <img src="assets/images/icon-2.png" alt="" /> */}
                 </div>
                 <div className="ser-col-text">
                   <h3>Personalized Learning Paths</h3>
@@ -103,14 +136,18 @@ function PublicHome() {
               </div>
               <div className=" position-relative d-none d-sm-block">
                 <div className="serv-sideimg position-absolute bottom-0 start-0 ">
-                  <img src="assets/images/col-2icon-2.png" alt="" />
+                <Image src={iconthree} alt="iconthree" />
+
+                  {/* <img src="assets/images/col-2icon-2.png" alt="" /> */}
                 </div>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-4 mb-3 mb-sm-5">
               <div className="col-bg d-md-flex justify-content-between gap-3">
                 <div className="gridimg">
-                  <img src="assets/images/icon-3.png" alt="" />
+                <Image src={iconfour} alt="iconthree" />
+
+                  {/* <img src="assets/images/icon-3.png" alt="" /> */}
                 </div>
                 <div className="ser-col-text">
                   <h3>Parent and Teacher Resources</h3>
@@ -122,7 +159,9 @@ function PublicHome() {
               </div>
               <div className=" position-relative d-none d-sm-block">
                 <div className="serv-sideimg position-absolute bottom-0 start-0 ">
-                  <img src="assets/images/col-3icon3.png" alt="" />
+                <Image src={iconfive} alt="iconfive" />
+
+                  {/* <img src="assets/images/col-3icon3.png" alt="" /> */}
                 </div>
               </div>
             </div>
@@ -143,12 +182,16 @@ function PublicHome() {
           <div className="row mb-3 mb-sm-5">
             <div className=" position-relative d-none d-sm-block">
               <div className="prog-sideimg text-center position-absolute start-0 ">
-                <img src="assets/images/img-1.png" alt="" />
+              <Image src={iconsix} alt="iconfive" />
+
+                {/* <img src="assets/images/img-1.png" alt="" /> */}
               </div>
             </div>
             <div className=" position-relative d-none d-sm-block">
               <div className="prog-sideimg text-center position-absolute end-0 ">
-                <img src="assets/images/img-2.png" alt="" />
+              <Image src={iconseven} alt="iconfive" />
+
+                {/* <img src="assets/images/img-2.png" alt="" /> */}
               </div>
             </div>
             <div className="col-md-12">
@@ -162,7 +205,9 @@ function PublicHome() {
             <div className="col-lg-3 col-md-4 col-sm-12 mb-5 mb-sm-0">
               <div className="prog-colbg1">
                 <div className="progimgcol text-center mb-3">
-                  <img src="assets/images/proimg-1.png" alt="" />
+              <Image src={proimg} alt="proimg" />
+
+                  {/* <img src="assets/images/proimg-1.png" alt="" /> */}
                 </div>
                 <div className="pro-coltext">
                   <h3>ABC Adventures</h3>
@@ -176,7 +221,9 @@ function PublicHome() {
             <div className="col-lg-3 col-md-4 col-sm-12 mb-5 mb-sm-0">
               <div className="prog-colbg2">
                 <div className="progimgcol text-center mb-3">
-                  <img src="assets/images/proimg-2.png" alt="" />
+              <Image src={proimgTwo} alt="proimg" />
+                  
+                  {/* <img src="assets/images/proimg-2.png" alt="" /> */}
                 </div>
                 <div className="pro-coltext">
                   <h3>123 Numbers</h3>
@@ -190,7 +237,9 @@ function PublicHome() {
             <div className="col-lg-3 col-md-4 col-sm-12 mb-5 mb-sm-0">
               <div className="prog-colbg3">
                 <div className="progimgcol text-center mb-3">
-                  <img src="assets/images/proimg-3.png" alt="" />
+              <Image src={proimgThree} alt="proimg" />
+
+                  {/* <img src="assets/images/proimg-3.png" alt="" /> */}
                 </div>
                 <div className="pro-coltext">
                   <h3>Reading Rockets</h3>
@@ -219,7 +268,9 @@ function PublicHome() {
           <div className="row justify-content-center mb-3">
             <div className=" position-relative d-none d-sm-block">
               <div className="abt-sideimg position-absolute start-0 ">
-                <img src="assets/images/ageimg.png" alt="" />
+              <Image src={ageimg} alt="ageimg" />
+
+                {/* <img src="assets/images/ageimg.png" alt="" /> */}
               </div>
             </div>
             <div className="col-lg-8 col-md-10 col-sm-12">
@@ -236,7 +287,9 @@ function PublicHome() {
           <div className="row">
             <div className="col-lg-3 col-sm-3 col-md-3">
               <div className="text-center mb-3">
-                <img src="assets/images/age-1.png" alt="" />
+              <Image src={ageimgTwo} alt="ageimgTwo" />
+
+                {/* <img src="assets/images/age-1.png" alt="" /> */}
               </div>
               <div className="agesec-text">
                 <h3>Infants</h3>
@@ -245,7 +298,9 @@ function PublicHome() {
             </div>
             <div className="col-lg-3 col-sm-3 col-md-3">
               <div className="text-center mb-3">
-                <img src="assets/images/age-2.png" alt="" />
+              <Image src={ageimgthree} alt="ageimgthree" />
+
+                {/* <img src="assets/images/age-2.png" alt="" /> */}
               </div>
               <div className="agesec-text">
                 <h3>Toddler</h3>
@@ -254,7 +309,9 @@ function PublicHome() {
             </div>
             <div className="col-lg-3 col-sm-3 col-md-3">
               <div className="text-center mb-3">
-                <img src="assets/images/age-3.png" alt="" />
+              <Image src={ageimgFour} alt="ageimgFour" />
+
+                {/* <img src="assets/images/age-3.png" alt="" /> */}
               </div>
               <div className="agesec-text">
                 <h3>Preschool</h3>
@@ -263,7 +320,9 @@ function PublicHome() {
             </div>
             <div className="col-lg-3 col-sm-3 col-md-3">
               <div className="text-center mb-3">
-                <img src="assets/images/age-4.png" alt="" />
+              <Image src={ageimgFive} alt="ageimgFive" />
+
+                {/* <img src="assets/images/age-4.png" alt="" /> */}
               </div>
               <div className="agesec-text">
                 <h3>Flex-Care</h3>
@@ -348,12 +407,17 @@ function PublicHome() {
           <div className="row justify-content-center mb-3">
             <div className=" position-relative d-none d-sm-block">
               <div className="abt-sideimg text-center position-absolute start-0 ">
-                <img src="assets/images/whych01.png" alt="" />
+              <Image src={whych01} alt="whych01" />
+
+                {/* <img src="assets/images/whych01.png" alt="" /> */}
               </div>
             </div>
             <div className=" position-relative d-none d-sm-block">
               <div className="abt-sideimg text-center position-absolute end-0 ">
-                <img src="assets/images/whych02.png" alt="" />
+              <Image src={whych02} alt="whych02" />
+
+                
+                {/* <img src="assets/images/whych02.png" alt="" /> */}
               </div>
             </div>
             <div className="col-lg-8 col-md-10 col-sm-12">
