@@ -6,12 +6,15 @@ import Image from "next/image";
 import ImageUpload from "../imageUpload";
 import { useGetCategoryQuery } from "@/redux/services/categoryAPI";
 import { useGetlanguageQuery } from "@/redux/services/languageAPI";
+import Link from "next/link";
 
 function AddUpload({
   onchange,
   onClick,
   setFileVideoLocation,
   setFileImageLocation,
+  fileVideo,
+  VideoLoading
 }) {
   const { data: category, isLoading } = useGetCategoryQuery();
   const { data: language, isLoading: loading } = useGetlanguageQuery();
@@ -65,10 +68,12 @@ function AddUpload({
                               required
                               onChange={onchange}
                             >
+                              <option value="">Please Select </option>
+
                            {language &&
                                 language.results &&
                                 language.results.map((item) => (
-                                  <option key={item.id} value={item.id}>
+                                  <option key={item._id} value={item._id}>
                                     {item.name}
                                   </option>
                                 ))}
@@ -90,10 +95,12 @@ function AddUpload({
                               required
                               onChange={onchange}
                             >
+                              <option value="">Please Select </option>
                               {category &&
                                 category.results &&
                                 category.results.map((item) => (
-                                  <option key={item.id} value={item.id}>
+                                
+                                  <option key={item._id} value={item._id}>
                                     {item.name}
                                   </option>
                                 ))}
@@ -130,15 +137,16 @@ function AddUpload({
                           className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white"
                           form="inmate-form"
                           onClick={onClick}
+                          // disabled={}
                         >
                           <i className="fa fa-save" /> Save
                         </button>
-                        <a
+                        <Link
                           className="btn btn-flat btn-sm btn-light bg-gradient-light border"
-                          href=""
+                          href="/dashboard/upload-video"
                         >
                           <i className="fa fa-close" /> Cancel
-                        </a>
+                        </Link>
                       </div>
                     </form>
                   </div>

@@ -8,17 +8,12 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 function ViewUploadComponents({ id }) {
   const { data, isLoading } = useGetSingleVideoQuery(id);
 
-
-  if(isLoading){
+  if (isLoading) {
     return (
-    <>
-  
-    
-      <DotsLoader dark size={60} center={false} />
-     
-    </>
-    )
-  
+      <>
+        <DotsLoader dark size={60} center={false} />
+      </>
+    );
   }
 
   console.log(data, "data");
@@ -32,8 +27,11 @@ function ViewUploadComponents({ id }) {
                 <div className="row">
                   <div className="col-lg-12 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
-                      <Link href={"/dashboard/upload-video/"} className="control-label">
-                        <FaArrowLeftLong/>
+                      <Link
+                        href={"/dashboard/upload-video/"}
+                        className="control-label"
+                      >
+                        <FaArrowLeftLong />
                       </Link>
                     </div>
                   </div>
@@ -78,9 +76,7 @@ function ViewUploadComponents({ id }) {
                         Discribtion
                       </label>
 
-                      <p className="text-secondary">
-                        {data?.Description}{" "}
-                      </p>
+                      <p className="text-secondary">{data?.Description} </p>
                     </div>
                   </div>
 
@@ -92,7 +88,7 @@ function ViewUploadComponents({ id }) {
 
                       <div
                         className="position-relative"
-                        style={{ width: "200px", height: "20px" }}
+                        style={{ width: "150px", height: "150px" }}
                       >
                         <Image
                           src={`${process?.env?.NEXT_PUBLIC_CDN_URL}${data?.thumbnail}`}

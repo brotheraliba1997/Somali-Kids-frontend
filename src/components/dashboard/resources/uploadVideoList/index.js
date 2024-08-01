@@ -84,14 +84,14 @@ const deleteHandler = (id) => {
         <>
           <div
             className="position-relative"
-            style={{ width: "100px", height: "20px" }}
+            style={{ width: "40px", height: "40px", borderRadius: "50%" }}
           >
             <Image
               src={`${process?.env?.NEXT_PUBLIC_CDN_URL}${e?.thumbnail}`}
               layout="fill"
               alt="logo"
-              objectFit="cover"
-              // className="img-fluid"
+              objectFit="contain"
+              style={{borderRadius: "50%"}}
             />
           </div>
         </>
