@@ -17,7 +17,7 @@ function Sidebar() {
 
   return (
     <aside className="main-sidebar sidebar-dark-navy navbar-dark elevation-4 sidebar-no-expand">
-      <a href="index.html" className="brand-link bg-navy text-sm ">
+      <Link href="/dashboard" className="brand-link bg-navy text-sm ">
         <Image
           src={logo}
           alt="Store Logo"
@@ -26,7 +26,7 @@ function Sidebar() {
         <span className="brand-text font-weight-light text-light">
           Somali ABC
         </span>
-      </a>
+      </Link>
       <div className="sidebar os-host os-theme-light os-host-overflow os-host-overflow-y os-host-resize-disabled os-host-transition os-host-scrollbar-horizontal-hidden">
         <div className="os-resize-observer-host observed">
           <div className="os-resize-observer" />
@@ -52,13 +52,13 @@ function Sidebar() {
                   data-accordion="false"
                 >
                   <li className="nav-item dropdown">
-                    <a
-                      href="index.html"
+                    <Link
+                      href="/dashboard"
                       className="nav-link nav-home active bg-gradient-navy"
                     >
                       <i className="nav-icon fas fa-tachometer-alt" />
                       <p>Dashboard</p>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item dropdown">
                     <Link

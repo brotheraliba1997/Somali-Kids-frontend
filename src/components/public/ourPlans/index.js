@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 function OurPlansComponents() {
@@ -29,13 +30,13 @@ function OurPlansComponents() {
                 <p className="border-bottom-0">$20 per monthly</p>
               </div>
               <div className="plancard-footer">
-                <a
-                  href="sign-up.html"
+                <Link
+                  href="register"
                   type="button"
                   className="btn btn-danger btn-lg px-5 rounded-5 "
                 >
                   Sign Up
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -51,13 +52,13 @@ function OurPlansComponents() {
                 <p className="border-bottom-0">(612) 205-2351</p>
               </div>
               <div className="plancard-footer">
-                <a
-                  href="#"
+                <Link
+                  href="register"
                   type="button"
                   className="btn btn-danger btn-lg px-5 rounded-5 "
                 >
                   Sign Up
-                </a>
+                </Link>
               </div>
             </div>
           </div>

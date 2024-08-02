@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import logoHeader from "@/assets/images/avatars/1.png";
 import Image from "next/image";
+import Link from "next/link";
 
 function Header() {
   const [openDropDown, setOpenDropDown] = useState(false);
@@ -20,14 +21,14 @@ function Header() {
       {/* Left navbar links */}
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link" data-widget="pushmenu" href="#" role="button">
+          <Link className="nav-link" data-widget="pushmenu" href="/dashboard" role="button">
             <i className="fas fa-bars" />
-          </a>
+          </Link>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
-          <a href="index.html" className="nav-link">
+          <Link href="/dashboard" className="nav-link">
             Somali ABC Kids - Admin
-          </a>
+          </Link>
         </li>
       </ul>
       {/* Right navbar links */}
