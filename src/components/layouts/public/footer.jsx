@@ -5,6 +5,7 @@ import { FaAngleRight } from "react-icons/fa";
 import { RiPhoneFill } from "react-icons/ri";
 import { TiWorld } from "react-icons/ti";
 import { MdLocationOn } from "react-icons/md";
+import Link from "next/link";
 
 function Footer() {
   return (
@@ -14,9 +15,9 @@ function Footer() {
           <div className="row">
             <div className="col-lg-4 col-md-6 col-sm-12">
               <div className="footer-logo">
-                <a href="index.html">
+                <Link href="/">
                   <Image src={footer} alt="footer-logo" />
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-12">
@@ -29,32 +30,32 @@ function Footer() {
                     <i>
                       <FaAngleRight style={{ color: "white" }} />
                     </i>
-                    <a href="index.html">Home </a>
+                    <Link href="/">Home </Link>
                   </li>
                   <li>
                     <i>
                       <FaAngleRight style={{ color: "white" }} />
                     </i>
-                    <a href="#">About Us </a>
+                    <Link href="about-us">About Us </Link>
                   </li>
                   <li>
                     <i>
                       <FaAngleRight style={{ color: "white" }} />
                     </i>
-                    <a href="#">Services </a>
+                    <Link href="services">Services </Link>
                   </li>
                   <li>
                     <i>
                       <FaAngleRight style={{ color: "white" }} />
                     </i>
-                    <a href="#">Programs </a>
+                    <Link href="programs">Programs </Link>
                   </li>
                   <li>
                     <i>
                       <FaAngleRight style={{ color: "white" }} />
                     </i>
 
-                    <a href="#">Contact Us </a>
+                    <Link href="contact-us">Contact Us </Link>
                   </li>
                 </ul>
               </div>

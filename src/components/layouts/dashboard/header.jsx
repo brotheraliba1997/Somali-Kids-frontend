@@ -67,7 +67,7 @@ function Header() {
               <div className="dropdown-divider" />
               <div
                 className="dropdown-item"
-                href="login.html"
+                
                 onClick={logoutHandler}
               >
                 <span className="fas fa-sign-out-alt" /> Logout

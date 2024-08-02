@@ -188,6 +188,15 @@ table td {
 }
 
 
+.media{
+  display: none;
+}
 
+
+@media (max-width:900px) {
+  .media{
+    display: block;
+  }
+}
 
 

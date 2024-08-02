@@ -3,10 +3,17 @@ import Link from "next/link";
 import React, { useState } from "react";
 import logo from "../../../assets/images/logo.png";
 import Image from "next/image";
+import { useDispatch } from "react-redux";
+import { logout } from "@/redux/slices/auth";
 
 function Sidebar() {
   const [upload, setUpload] = useState(false);
   const [setting, setSetting] = useState(false);
+  const dispatch = useDispatch();
+
+  const logoutHandler = async () => {
+    dispatch(logout());
+  };
 
   return (
     <aside className="main-sidebar sidebar-dark-navy navbar-dark elevation-4 sidebar-no-expand">
@@ -165,11 +172,12 @@ function Sidebar() {
                       </li>
                     </ul>
                   </li>
-                  <li className="nav-item dropdown">
-                    <a href="login.html" className="nav-link nav-system_info">
+                  <li className="nav-item dropdown" onClick={logoutHandler}>
+
+                    <div  className="nav-link nav-system_info">
                       <i className="nav-icon fas fa-sign-out-alt" />
                       <p>Logout</p>
-                    </a>
+                    </div>
                   </li>
                 </ul>
               </nav>
