@@ -140,6 +140,7 @@ function UploadVideo({setVideo}) {
             id="customFile1"
             name="img"
             onChange={handleFileChange}
+           
           />
           <label className="custom-file-label rounded-0" htmlFor="customFile1">
             Choose file

@@ -14,10 +14,13 @@ function AddUpload({
   setFileVideoLocation,
   setFileImageLocation,
   fileVideo,
-  VideoLoading
+  VideoLoading,
+  formatData
 }) {
   const { data: category, isLoading } = useGetCategoryQuery();
   const { data: language, isLoading: loading } = useGetlanguageQuery();
+
+  console.log(formatData, "formatData")
 
   console.log(category?.results, "category");
 
@@ -50,6 +53,7 @@ function AddUpload({
                               id="video-name"
                               required
                               onChange={onchange}
+                              value={formatData?.name}
                             />
                           </div>
                         </div>
@@ -67,6 +71,8 @@ function AddUpload({
                               id="select-language"
                               required
                               onChange={onchange}
+                              value={formatData?.language}
+
                             >
                               <option value="">Please Select </option>
 
@@ -94,6 +100,7 @@ function AddUpload({
                               id="select-categories"
                               required
                               onChange={onchange}
+                              value={formatData?.category}
                             >
                               <option value="">Please Select </option>
                               {category &&
@@ -110,8 +117,8 @@ function AddUpload({
                             </select>
                           </div>
                         </div>
-                        <ImageUpload setImage={setFileImageLocation} />
-                        <UploadVideo setVideo={setFileVideoLocation} />
+                        <ImageUpload setImage={setFileImageLocation}   />
+                        <UploadVideo setVideo={setFileVideoLocation}   />
                         <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                           <div className="form-group">
                             <label
@@ -127,6 +134,7 @@ function AddUpload({
                               required
                               defaultValue=""
                               onChange={onchange}
+                              value={formatData?.Description}
                             />
                           </div>
                         </div>

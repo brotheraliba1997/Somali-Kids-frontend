@@ -80,6 +80,7 @@ function ImageUpload({setImage}) {
           id="thumbnail"
           required
           onChange={handleFileChange}
+         
         />
       </div>
     </div>

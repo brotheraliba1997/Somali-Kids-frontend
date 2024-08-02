@@ -1,19 +1,26 @@
-import React, { useState } from "react";
+"use client"
+import React, { useEffect, useState } from "react";
 import AddUpload from "../../addUploadVideo";
-import { useCreateVideoMutation } from "@/redux/services/videoAPI";
+import { useCreateVideoMutation, useGetSingleVideoQuery, useUpdateVideoMutation } from "@/redux/services/videoAPI";
 import { notifyFailure, notifySuccess } from "@/components/toast/toast";
 import { useRouter } from "next/navigation";
 
-function AddVideoComponents() {
-  const router = useRouter()
-  const [formatData, setFormatData] = useState(null);
-  const [fileImageLocation, setFileImageLocation] = useState(null);
-  const [fileVideoLocation, setFileVideoLocation] = useState(null);
+function EditVideoComponents({id}) {
+
+    const { data: singleData } = useGetSingleVideoQuery(id);
+    const router = useRouter()
+    const [formatData, setFormatData] = useState();
+    const [fileImageLocation, setFileImageLocation] = useState(null);
+    const [fileVideoLocation, setFileVideoLocation] = useState(null);
+
+
+    
+ 
 
   console.log(fileImageLocation, "fileImageLocation");
   console.log(fileVideoLocation, "fileVideoLocation");
 
-  const [createVideo, { data, isloading }] = useCreateVideoMutation();
+  const [updateVideo, { data, isloading }] = useUpdateVideoMutation();
 
   const valueVideoUploadDataHandler = (event) => {
     const { name, value } = event.target;
@@ -33,7 +40,7 @@ function AddVideoComponents() {
       };
       try {
         if (updatedData) {
-          await createVideo(updatedData).unwrap();
+          await updateVideo({payload:updatedData , id}).unwrap();
           router.push("/dashboard/upload-video");
           notifySuccess("create video successfully!");
         }
@@ -43,6 +50,17 @@ function AddVideoComponents() {
       }
     }
   };
+
+
+  useEffect(() => {
+    if(singleData){
+      const {_id, updatedAt,createdAt,  ...res} = singleData 
+    
+      setFormatData({...res, category: res?.category?._id , language: res?.language?._id});
+    }
+   
+  }, [singleData]);
+  console.log(formatData, "formatData");
 
   return (
     <AddUpload
@@ -59,4 +77,4 @@ function AddVideoComponents() {
   );
 }
 
-export default AddVideoComponents;
+export default EditVideoComponents;
