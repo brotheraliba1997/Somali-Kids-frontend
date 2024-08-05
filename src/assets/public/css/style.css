@@ -33,23 +33,207 @@
   /* Black weight */
 }
 
+
+.container,
+.container-fluid,
+.container-xxl,
+.container-xl,
+.container-lg,
+.container-md,
+.container-sm {
+    width: 100%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container-sm,
+    .container {
+        max-width: 540px !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 720px !important;
+    }
+}
+
+@media (min-width: 992px) {
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 960px !important;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1140px !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1320px !important;
+    }
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) / 2);
+    padding-left: calc(var(--bs-gutter-x) / 2);
+    margin-top: var(--bs-gutter-y);
+}
+
+.col {
+    flex: 1 0 0%;
+}
+
+.row-cols-auto>* {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.row-cols-1>* {
+    flex: 0 0 auto;
+    width: 100%;
+}
+
+.row-cols-2>* {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.row-cols-3>* {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+}
+
+.row-cols-4>* {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.row-cols-5>* {
+    flex: 0 0 auto;
+    width: 20%;
+}
+
+.row-cols-6>* {
+    flex: 0 0 auto;
+    width: 16.6666666667%;
+}
+
+.col-auto {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.col-1 {
+    flex: 0 0 auto;
+    width: 8.3333333333%;
+}
+
+.col-2 {
+    flex: 0 0 auto;
+    width: 16.6666666667%;
+}
+
+.col-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+.col-4 {
+    flex: 0 0 auto;
+    width: 33.3333333333%;
+}
+
+.col-5 {
+    flex: 0 0 auto;
+    width: 41.6666666667%;
+}
+
+.col-6 {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.col-7 {
+    flex: 0 0 auto;
+    width: 58.3333333333%;
+}
+
+.col-8 {
+    flex: 0 0 auto;
+    width: 66.6666666667%;
+}
+
+.col-9 {
+    flex: 0 0 auto;
+    width: 75%;
+}
+
+.col-10 {
+    flex: 0 0 auto;
+    width: 83.3333333333%;
+}
+
+.col-11 {
+    flex: 0 0 auto;
+    width: 91.6666666667%;
+}
+
+.col-12 {
+    flex: 0 0 auto;
+    width: 100%;
+}
 .body {
   font-family: "Poppins", sans-serif;
   background-color: white !important;
 }
 
 p {
-  font-size: 16px;
-  font-weight: 500;
-  font-family: "Poppins", sans-serif;
-  line-height: 1.7em;
-  color: #5a5454;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  font-family: "Poppins", sans-serif !important;
+  line-height: 1.7em !important;
+  color: #5a5454 ;
 }
 
-ul li {
-  font-family: "Poppins", sans-serif;
-  line-height: normal;
-}
+/* ul li {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+  line-height: normal !important;
+} */
+
+/* --bs-font-sans-serif:  */
 
 .h1,
 .h2,
@@ -63,8 +247,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Chennai", sans-serif;
-  line-height: normal;
+  /* font-family: "Chennai", sans-serif !important; */
+  line-height: normal !important;
 }
 
 img {
@@ -105,7 +289,7 @@ img {
 }
 
 .navbar-brand:hover {
-  color: #ec3c26;
+  color: #ec3c26 !important;
 }
 
 .paraxdo-header-section {
@@ -157,15 +341,15 @@ img {
 }
 
 .btn-danger {
-  background-color: #ec3c26;
-  border: #ec3c26;
+  background-color: #ec3c26 !important;
+  border: #ec3c26 !important;
   font-family: "Chennai", sans-serif;
   font-weight: 700;
 }
 
 .btn-danger:hover {
-  background-color: #ec3c26;
-  border: #ec3c26;
+  background-color: #ec3c26 !important;
+  border: #ec3c26 !important;
 }
 
 .slider-section {
@@ -235,16 +419,22 @@ img {
   margin: auto;
 }
 
-.btn-primary {
-  background-color: #78438e;
-  border: #78438e;
+.public-btn-primary{
+  background-color: #78438e !important;
+  border: #78438e !important;
   font-family: "Chennai", sans-serif;
   font-weight: 700;
+  color: white !important;
+
 }
 
-.btn-primary:hover {
-  background-color: #78438e;
-  border: #78438e;
+.d-grid {
+  display: grid !important;
+}
+
+.public-btn-primary:hover {
+  background-color: #78438e !important;
+  border: #78438e !important;
 }
 
 .serhom-section {
@@ -279,7 +469,7 @@ img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 40px;
+  padding: 54px 26px;
 }
 
 .gridimg img {
@@ -476,17 +666,17 @@ img {
 }
 
 #foot-icon {
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 14px;
   font-weight: 400;
 }
 
 .footer-menu ul li a {
-  color: #fff;
-  text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
   font-size: 14px;
   font-weight: 400;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
   padding-left: 15px;
 }
 
@@ -543,14 +733,21 @@ img {
   width: 100%;
 }
 
+.app-text{
+  width: 100%;
+}
+
 .app-text p {
   text-align: center;
-  font-family: 'Chennai', sans-serif;
-  font-size: 28px;
-  font-weight: 900;
+  font-family: 'Chennai', sans-serif !important;
+  font-size: 28px !important;
+  font-weight: 900 !important;
   line-height: normal;
-  color: #D7D7D7;
+  color: #D7D7D7 !important;
+  
 }
+
+
 
 .cont-text h2 {
   font-family: 'Chennai' sans-serif;
@@ -1359,11 +1556,11 @@ img {
     padding: 0px 0px;
   }
   .footer-menu ul li a {
-    color: #fff;
-    text-decoration: none;
+    color: #fff !important;
+    text-decoration: none !important;
     font-size: 14px;
     font-weight: 400;
-    font-family: "Poppins", sans-serif;
+    /* font-family: "Poppins", sans-serif; */
     padding-left: 2px;
   }
   .mission-section {

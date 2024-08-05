@@ -55,7 +55,7 @@ function PublicHome() {
         <div className="container">
           <div className="row align-items-center">
             <div className=" position-relative d-none d-sm-block">
-              <div className="abt-sideimg text-center position-absolute end-0 ">
+              <div className="abt-sideimg text-center position-absolute end-0 " style={{right: 0}}>
               <Image src={sideImaga} alt="sideImaga" />
 
                 {/* <img src="assets/images/abt-sideimg.png" alt="" /> */}
@@ -79,7 +79,7 @@ function PublicHome() {
                   fostering a love for learning through creative activities,
                   games, and a supportive community.
                 </p>
-                <button className="btn btn-primary px-4 rounded-pill">
+                <button className="btn public-btn-primary px-4 rounded-pill">
                   Read More
                 </button>
               </div>
@@ -97,7 +97,7 @@ function PublicHome() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-4 mb-3 mb-sm-5">
-              <div className="col-bg d-md-flex justify-content-between gap-3">
+              <div className="col-bg d-md-flex justify-content-between gap-3" style={{gap: "20px"}}>
                 <div className="gridimg">
                 <Image src={icon} alt="sidebar" />
 
@@ -112,7 +112,7 @@ function PublicHome() {
                 </div>
               </div>
               <div className=" position-relative d-none d-sm-block">
-                <div className="serv-sideimg position-absolute bottom-0 start-0 ">
+                <div className="serv-sideimg position-absolute bottom-0 start-0 " style={{bottom: 0, }}>
                 <Image src={iconCol} alt="iconCol" />
 
                   {/* <img src="assets/images/col-1icon-1.png" alt="" /> */}
@@ -120,7 +120,7 @@ function PublicHome() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-4 mb-3 mb-sm-5">
-              <div className="col-bg d-md-flex justify-content-between gap-3">
+              <div className="col-bg d-md-flex justify-content-between gap-3" style={{gap: "20px"}}>
                 <div className="gridimg">
                 <Image src={icontwo} alt="icontwo" />
 
@@ -135,7 +135,7 @@ function PublicHome() {
                 </div>
               </div>
               <div className=" position-relative d-none d-sm-block">
-                <div className="serv-sideimg position-absolute bottom-0 start-0 ">
+                <div className="serv-sideimg position-absolute bottom-0 start-0 " style={{bottom: 0, }}>
                 <Image src={iconthree} alt="iconthree" />
 
                   {/* <img src="assets/images/col-2icon-2.png" alt="" /> */}
@@ -143,7 +143,7 @@ function PublicHome() {
               </div>
             </div>
             <div className="col-lg-4 col-md-6 col-sm-4 mb-3 mb-sm-5">
-              <div className="col-bg d-md-flex justify-content-between gap-3">
+              <div className="col-bg d-md-flex justify-content-between gap-3" style={{gap: "20px"}}>
                 <div className="gridimg">
                 <Image src={iconfour} alt="iconthree" />
 
@@ -158,7 +158,7 @@ function PublicHome() {
                 </div>
               </div>
               <div className=" position-relative d-none d-sm-block">
-                <div className="serv-sideimg position-absolute bottom-0 start-0 ">
+                <div className="serv-sideimg position-absolute bottom-0 start-0 " style={{bottom: 0, }}>
                 <Image src={iconfive} alt="iconfive" />
 
                   {/* <img src="assets/images/col-3icon3.png" alt="" /> */}
@@ -169,7 +169,7 @@ function PublicHome() {
           <div className="row justify-content-center">
             <div className=" col-sm-3 col-md-3">
               <div className="d-grid">
-                <button className="btn btn-primary px-4 rounded-pill">
+                <button className="btn public-btn-primary px-4 rounded-pill">
                   View All
                 </button>
               </div>
@@ -181,7 +181,7 @@ function PublicHome() {
         <div className="container">
           <div className="row mb-3 mb-sm-5">
             <div className=" position-relative d-none d-sm-block">
-              <div className="prog-sideimg text-center position-absolute start-0 ">
+              <div className="prog-sideimg text-center position-absolute start-0 " style={{right: 0}}>
               <Image src={iconsix} alt="iconfive" />
 
                 {/* <img src="assets/images/img-1.png" alt="" /> */}
@@ -255,7 +255,7 @@ function PublicHome() {
           <div className="row justify-content-center mb-3 mb-sm-0">
             <div className="col-lg-3 col-sm-3 col-md-3">
               <div className="d-grid">
-                <button className="btn btn-primary px-4 rounded-pill">
+                <button className="btn public-btn-primary px-4 rounded-pill">
                   View All
                 </button>
               </div>
@@ -413,7 +413,7 @@ function PublicHome() {
               </div>
             </div>
             <div className=" position-relative d-none d-sm-block">
-              <div className="abt-sideimg text-center position-absolute end-0 ">
+              <div className="abt-sideimg text-center position-absolute end-0 " style={{right: 0}}>
               <Image src={whych02} alt="whych02" />
 
                 
@@ -434,7 +434,7 @@ function PublicHome() {
           <div className="row justify-content-center">
             <div className="col-lg-2 col-sm-3 col-md-3">
               <div className="d-grid">
-                <button className="btn btn-primary px-4 rounded-pill">
+                <button className="btn public-btn-primary px-4 rounded-pill">
                   Contact Us
                 </button>
               </div>

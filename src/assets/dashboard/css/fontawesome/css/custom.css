@@ -318,3 +318,7 @@ a.card.product-item:hover .product-cover {
 .sidebar a.nav-link.active {
     color: #fff !important
 }
+
+.sidebar a.nav-link.active:hover {
+    color: #fff !important
+}

@@ -7,7 +7,7 @@ function Contact() {
     <div className="pages-section">
       <div className="container">
         <div className="row">
-          <div className="col-mad-12">
+          <div className="col-md-12">
             <div className="bannertext">
               <h1>Contact Us</h1>
             </div>
@@ -27,7 +27,7 @@ function Contact() {
                 don't hesitate to reach out to us.
               </p>
             </div>
-            <div className="d-flex gap-3 align-items-center">
+            <div className="d-flex gap-3 align-items-center" style={{gap: "15px"}}>
               <div className="icongbg">
                 <i className="fa fa-phone" />
               </div>
@@ -35,7 +35,7 @@ function Contact() {
                 <p className="mt-3">(612) 205-2351</p>
               </div>
             </div>
-            <div className="d-flex gap-3 align-items-center">
+            <div className="d-flex gap-3 align-items-center" style={{gap: "20px"}}>
               <div className="icongbg">
                 <i className="fa fa-envelope" style={{ fontSize: 20 }} />
               </div>
@@ -43,7 +43,7 @@ function Contact() {
                 <p className="mt-3">support@Somaliabckidslearning.com</p>
               </div>
             </div>
-            <div className="d-flex gap-3 align-items-center">
+            <div className="d-flex gap-3 align-items-center" style={{gap: "15px"}}>
               <div className="icongbg">
                 <i
                   className="fa fa-map-marker"
@@ -56,7 +56,7 @@ function Contact() {
                 </p>
               </div>
             </div>
-            <div className="d-flex gap-3 align-items-center">
+            <div className="d-flex gap-3 align-items-center" style={{gap: "15px"}}>
               <div className="icongbg">
                 {/* <i className="fa fa-clock-o" /> */}
                 <i>

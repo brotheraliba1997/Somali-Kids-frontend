@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+
 import { ReduxProvider } from "@/redux/provider";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { Toaster } from "react-hot-toast";

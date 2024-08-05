@@ -7,7 +7,7 @@ function LoginComponents({ handleChange,submitHandler, Loading}) {
   <div className="pages-section">
     <div className="container">
       <div className="row">
-        <div className="col-mad-12">
+        <div className="col-md-12">
           <div className="bannertext">
             <h1>Authentication</h1>
           </div>

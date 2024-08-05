@@ -9,7 +9,7 @@ function About() {
   <div className="pages-section">
     <div className="container">
       <div className="row">
-        <div className="col-mad-12">
+        <div className="col-md-12">
           <div className="bannertext">
             <h1>About Us</h1>
           </div>
@@ -99,7 +99,7 @@ function About() {
       <div className="row justify-content-center">
         <div className="col-lg-2 col-sm-3 col-md-3">
           <div className="d-grid">
-            <button className="btn btn-primary px-4 rounded-pill">
+            <button className="btn public-btn-primary px-4 rounded-pill">
               Contact Us
             </button>
           </div>

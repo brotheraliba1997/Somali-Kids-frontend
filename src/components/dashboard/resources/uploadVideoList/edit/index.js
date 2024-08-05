@@ -56,7 +56,7 @@ function EditVideoComponents({id}) {
     if(singleData){
       const {_id, updatedAt,createdAt,  ...res} = singleData 
     
-      setFormatData({...res, category: res?.category?._id , language: res?.language?._id});
+      setFormatData({...res, category: res?.category?._id , language: res?.language?._id , program: res?.program?._id});
     }
    
   }, [singleData]);

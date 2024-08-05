@@ -1,6 +1,12 @@
 // import PublicLayout from "../../components/layouts/public";
 import dynamic from "next/dynamic";
 import "./../../assets/public/css/style.css";
+// @import url("../assets/dashboard/css/fontawesome/css/adminlte.css");
+// /* @import url("../assets/dashboard/css/fontawesome/css/adminlte.min.css"); */
+// @import url("../assets/dashboard/css/fontawesome/css/custom.css");
+// @import url("../assets/dashboard/css/fontawesome/css/dataTables.bootstrap4.css");
+ import "../../assets/dashboard/css/fontawesome/css/dataTables.bootstrap4.css"
+ import "../../assets/dashboard/css/fontawesome/css/adminlte.css"
 
 import { Suspense } from "react";
 const DynamicPublicLayout = dynamic(

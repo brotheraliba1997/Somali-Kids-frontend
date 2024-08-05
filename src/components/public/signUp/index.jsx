@@ -6,7 +6,7 @@ function SignUpComponents() {
   <div className="pages-section">
     <div className="container">
       <div className="row">
-        <div className="col-mad-12">
+        <div className="col-md-12">
           <div className="bannertext">
             <h1>Sign Up</h1>
           </div>

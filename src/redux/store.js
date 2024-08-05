@@ -6,6 +6,7 @@ import { userAPI } from "./services/userApi";
 import { categoryAPI } from "./services/categoryAPI";
 import { LanguageAPI } from "./services/languageAPI";
 import { VideoUploadAPI } from "./services/videoAPI";
+import { ProgramAPI } from "./services/programAPI";
 
 export const store = configureStore({
   reducer: {
@@ -15,8 +16,9 @@ export const store = configureStore({
     [categoryAPI.reducerPath]: categoryAPI.reducer,
     [LanguageAPI.reducerPath]: LanguageAPI.reducer,
     [VideoUploadAPI.reducerPath]: VideoUploadAPI.reducer,
+    [ProgramAPI.reducerPath]: ProgramAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(authAPI.middleware, userAPI.middleware, categoryAPI.middleware, LanguageAPI.middleware, VideoUploadAPI.middleware),
+    getDefaultMiddleware().concat(authAPI.middleware, userAPI.middleware, categoryAPI.middleware, LanguageAPI.middleware, VideoUploadAPI.middleware, ProgramAPI.middleware),
 });
 setupListeners(store.dispatch);

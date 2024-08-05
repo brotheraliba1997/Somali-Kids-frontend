@@ -13468,13 +13468,13 @@ body.sidebar-collapse:not(.sidebar-mini-md):not(.sidebar-mini) .main-header::bef
   top: 50%;
 }
 
-.sidebar .nav-link p,
+/* .sidebar .nav-link p,
 .main-sidebar .brand-text,
 .main-sidebar .logo-xs,
 .main-sidebar .logo-xl,
 .sidebar .user-panel .info {
   transition: margin-left 0.3s linear, opacity 0.3s ease, visibility 0.3s ease;
-}
+} */
 
 @media (prefers-reduced-motion: reduce) {
   .sidebar .nav-link p,

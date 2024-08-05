@@ -3984,7 +3984,7 @@ body.text-sm .input-group-text {
 .bg-purple .btn-tool:hover,
 .bg-gradient-purple .btn-tool:hover,
 .card-purple:not(.card-outline) .btn-tool:hover {
-  color: #fff;
+  color: #fff !important;
 }
 
 .card.bg-purple .bootstrap-datetimepicker-widget .table td,

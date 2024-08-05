@@ -54,7 +54,7 @@ function Sidebar() {
                   <li className="nav-item dropdown">
                     <Link
                       href="/dashboard"
-                      className="nav-link nav-home active bg-gradient-navy"
+                      className="nav-link nav-customer bg-gradient-navy"
                     >
                       <i className="nav-icon fas fa-tachometer-alt" />
                       <p>Dashboard</p>
@@ -63,7 +63,7 @@ function Sidebar() {
                   <li className="nav-item dropdown">
                     <Link
                       href="/dashboard/customer-registration"
-                      className="nav-link nav-customer"
+                      className="nav-link nav-customer "
                     >
                       <i className="nav-icon fas fa-users" />
                       <p>Customer Registration</p>
@@ -169,6 +169,16 @@ function Sidebar() {
                           <i className="far fa-circle nav-icon" />
                           <p>Permission</p>
                         </a>
+                      </li>
+
+                      <li className="nav-item">
+                        <Link
+                          href="/dashboard/program"
+                          className="nav-link tree-item nav-permission"
+                        >
+                          <i className="far fa-circle nav-icon" />
+                          <p>Program</p>
+                        </Link>
                       </li>
                     </ul>
                   </li>

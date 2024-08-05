@@ -12,7 +12,7 @@ function ServicesComponents() {
     <div className="pages-section">
       <div className="container">
         <div className="row">
-          <div className="col-mad-12">
+          <div className="col-md-12">
             <div className="bannertext">
               <h1>Services</h1>
             </div>
@@ -29,7 +29,7 @@ function ServicesComponents() {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
-            <div className="d-sm-flex justify-content-between gap-5">
+            <div className="d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
           <Image src={ser1} alt="ser1" />
 
@@ -47,7 +47,7 @@ function ServicesComponents() {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
-            <div className="d-sm-flex justify-content-between gap-5">
+            <div className="d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
           <Image src={ser2} alt="ser2" />
 
@@ -64,7 +64,7 @@ function ServicesComponents() {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
-            <div className="d-sm-flex justify-content-between gap-5">
+            <div className="d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
           <Image src={ser3} alt="ser2" />
 
@@ -82,7 +82,7 @@ function ServicesComponents() {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
-            <div className="d-sm-flex justify-content-between gap-5">
+            <div className="d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
           <Image src={ser3} alt="ser3" />
 
@@ -100,7 +100,7 @@ function ServicesComponents() {
             </div>
           </div>
           <div className="col-lg-6 col-md-6 col-sm-12">
-            <div className=" d-sm-flex justify-content-between gap-5">
+            <div className=" d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
           <Image src={ser4} alt="ser4" />
               
@@ -136,7 +136,7 @@ function ServicesComponents() {
         <div className="row justify-content-center">
           <div className="col-lg-2 col-sm-3 col-md-3">
             <div className="d-grid">
-              <button className="btn btn-primary px-4 rounded-pill">
+              <button className="btn public-btn-primary px-4 rounded-pill">
                 Contact Us
               </button>
             </div>

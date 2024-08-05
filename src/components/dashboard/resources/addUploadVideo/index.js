@@ -7,6 +7,7 @@ import ImageUpload from "../imageUpload";
 import { useGetCategoryQuery } from "@/redux/services/categoryAPI";
 import { useGetlanguageQuery } from "@/redux/services/languageAPI";
 import Link from "next/link";
+import { useGetProgramQuery } from "@/redux/services/programAPI";
 
 function AddUpload({
   onchange,
@@ -19,6 +20,7 @@ function AddUpload({
 }) {
   const { data: category, isLoading } = useGetCategoryQuery();
   const { data: language, isLoading: loading } = useGetlanguageQuery();
+  const { data: program, isLoading: loadingProgram } = useGetProgramQuery();
 
   console.log(formatData, "formatData")
 
@@ -106,6 +108,37 @@ function AddUpload({
                               {category &&
                                 category.results &&
                                 category.results.map((item) => (
+                                
+                                  <option key={item._id} value={item._id}>
+                                    {item.name}
+                                  </option>
+                                ))}
+                            
+                            </select>
+                          </div>
+                        </div>
+
+
+                        <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div className="form-group">
+                            <label
+                              htmlFor="select-categories"
+                              className="control-label"
+                            >
+                              Programs
+                            </label>
+                            <select
+                              className="form-control form-control-sm rounded-0"
+                              name="program"
+                              id="select-categories"
+                              required
+                              onChange={onchange}
+                              value={formatData?.program}
+                            >
+                              <option value="">Please Select </option>
+                              {program &&
+                                program.results &&
+                                program.results.map((item) => (
                                 
                                   <option key={item._id} value={item._id}>
                                     {item.name}

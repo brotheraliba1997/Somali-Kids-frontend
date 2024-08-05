@@ -3,7 +3,7 @@ import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
 import { notifyFailure } from "@/components/toast/toast";
 import { useUpdateCategoryMutation } from "@/redux/services/categoryAPI";
-import { useGetVideoQuery } from "@/redux/services/videoAPI";
+import { useGetVideoQuery, useUpdateVideoMutation } from "@/redux/services/videoAPI";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -14,8 +14,8 @@ function UploadVideoList() {
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
 
-  const [uploadCategory, { data: dataUpload, isLoading: loading }] =
-  useUpdateCategoryMutation();
+  const [uploadVideo, { data: dataUpload, isLoading: loading }] =
+  useUpdateVideoMutation();
 
 const deleteHandler = (id) => {
   Swal.fire({
@@ -29,7 +29,7 @@ const deleteHandler = (id) => {
   }).then(async (result) => {
     if (result.isConfirmed) {
       try {
-        await uploadCategory({
+        await uploadVideo({
           payload: { softDelete: true },
           id: id,
         }).unwrap();
