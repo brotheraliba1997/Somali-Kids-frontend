@@ -74,7 +74,6 @@ function AddUpload({
                               required
                               onChange={onchange}
                               value={formatData?.language}
-
                             >
                               <option value="">Please Select </option>
 

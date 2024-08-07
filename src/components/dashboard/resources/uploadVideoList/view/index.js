@@ -35,7 +35,6 @@ function ViewUploadComponents({ id }) {
                       </Link>
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="firstname" className="control-label">
@@ -45,7 +44,6 @@ function ViewUploadComponents({ id }) {
                       <p className="text-secondary fs-4">{data?.name} </p>
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="firstname" className="control-label">

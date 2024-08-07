@@ -199,4 +199,8 @@ table td {
   }
 }
 
+.react-datepicker-wrapper{
+  display: inline !important;
+}
+
 

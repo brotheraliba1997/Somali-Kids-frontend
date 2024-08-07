@@ -156,10 +156,10 @@ function Sidebar() {
                         </Link>
                       </li>
                       <li className="nav-item">
-                        <a href="#" className="nav-link tree-item nav-packages">
+                        <Link href="/dashboard/package" className="nav-link tree-item nav-packages">
                           <i className="far fa-circle nav-icon" />
                           <p>Packages</p>
-                        </a>
+                        </Link>
                       </li>
                       <li className="nav-item">
                         <a
