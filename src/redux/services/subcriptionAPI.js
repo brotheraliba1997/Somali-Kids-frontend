@@ -9,7 +9,7 @@ export const SubcriptionAPI = createApi({
   endpoints: (builder) => ({
     getSubcription: builder.query({
       query: () => ({
-        url: "/subcription",
+        url: "/subscription",
         method: "GET",
       }),
       providesTags: ["refetchSubcription"],
@@ -28,7 +28,7 @@ export const SubcriptionAPI = createApi({
 
     getSingleSubcription: builder.query({
       query: (id) => ({
-        url: `/subcription/${id}`,
+        url: `/subscription/${id}`,
         method: "GET",
        
       }),
@@ -36,7 +36,7 @@ export const SubcriptionAPI = createApi({
 
     updateSubcription: builder.mutation({
       query: ({payload, id}) => ({
-        url: `/subcription/${id}`,
+        url: `/subscription/${id}`,
         method: "PATCH",
         body: payload
       }),

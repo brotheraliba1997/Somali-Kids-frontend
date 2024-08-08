@@ -161,6 +161,13 @@ function Sidebar() {
                           <p>Packages</p>
                         </Link>
                       </li>
+
+                      <li className="nav-item">
+                        <Link href="/dashboard/subcription" className="nav-link tree-item nav-packages">
+                          <i className="far fa-circle nav-icon" />
+                          <p>Subcription</p>
+                        </Link>
+                      </li>
                       <li className="nav-item">
                         <a
                           href="#"
