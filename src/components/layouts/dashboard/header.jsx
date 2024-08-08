@@ -6,6 +6,7 @@ import logoHeader from "@/assets/images/avatars/1.png";
 import Image from "next/image";
 import Link from "next/link";
 
+
 function Header() {
   const [openDropDown, setOpenDropDown] = useState(false);
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ function Header() {
     dispatch(logout());
   };
 
-  console.log(openDropDown, "openDropDown");
+ 
 
   return (
     <nav className="main-header navbar navbar-expand navbar-light shadow text-sm">

@@ -123,7 +123,7 @@ function ProgramsComponents() {
             </div>
           </div>
           <div className="col-lg-3 col-md-6 col-sm-12 mb-3">
-            <div className="prog-colbg6">
+            <div className="prog-co lbg6">
               <div className="progimgcol text-center mb-3">
           <Image src={pro6} alt="pro6" />
 

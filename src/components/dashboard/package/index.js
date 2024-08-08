@@ -11,35 +11,7 @@ import Swal from "sweetalert2";
 function PackageList() {
   const { data, isLoading } = useGetPackagesQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
-
-  console.log(data, "data");
-
-
-  const calculateEndDate = (validity) => {
-    const now = moment();
-    const validityParts = validity.split(' '); // Assuming validity is in the format 'X days' or 'Y months'
-  
-    if (validityParts.length === 2) {
-      const value = parseInt(validityParts[0], 10);
-      const unit = validityParts[1].toLowerCase(); // Convert unit to lowercase to handle case insensitivity
-  
-      if (unit === 'days' || unit === 'day') {
-        return now.add(value, 'days').toDate();
-      } else if (unit === 'months' || unit === 'month') {
-        return now.add(value, 'months').toDate();
-      }
-    }
-  
-    throw new Error('Invalid validity format');
-  };
-  
-  // Test the function
-  const endDate = calculateEndDate("4 months");
-  console.log(endDate, "calculateEndDate");
-
-  
-
-  
+ 
   const [uploadPackage, { data: dataUpload, isLoading: loading }] =
   useUpdatePackagesMutation();
 

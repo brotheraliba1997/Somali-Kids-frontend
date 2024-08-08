@@ -9,6 +9,8 @@ import { VideoUploadAPI } from "./services/videoAPI";
 import { ProgramAPI } from "./services/programAPI";
 import { PackageAPI } from "./services/packageAPI";
 import { ContactAPI } from "./services/contactAPI";
+import { SubcriptionAPI } from "./services/subcriptionAPI";
+import { StateAPI } from "./services/stateAPI";
 
 export const store = configureStore({
   reducer: {
@@ -21,6 +23,8 @@ export const store = configureStore({
     [ProgramAPI.reducerPath]: ProgramAPI.reducer,
     [PackageAPI.reducerPath]: PackageAPI.reducer,
     [ContactAPI.reducerPath]: ContactAPI.reducer,
+    [SubcriptionAPI.reducerPath]: SubcriptionAPI.reducer,
+    [StateAPI.reducerPath]: StateAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -31,7 +35,9 @@ export const store = configureStore({
       VideoUploadAPI.middleware,
       ProgramAPI.middleware,
       PackageAPI.middleware,
-      ContactAPI.middleware
+      ContactAPI.middleware,
+      SubcriptionAPI.middleware,
+      StateAPI.middleware,
       
     ),
 });

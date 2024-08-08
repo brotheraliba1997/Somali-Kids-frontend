@@ -1,7 +1,8 @@
 import React from "react";
 import UsersDashboard from "../users";
 
-function AdminDashboard() {
+function AdminDashboard({data}) {
+  
   return (
     <div className="container-fluid">
       <h1 className="">Welcome, Adminstrator Admin!</h1>
@@ -14,7 +15,7 @@ function AdminDashboard() {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">Customer List</span>
-              <span className="info-box-number text-right h5">500 </span>
+              <span className="info-box-number text-right h5">{data?.visit?.totalUser} </span>
             </div>
             {/* /.info-box-content */}
           </div>
@@ -28,7 +29,7 @@ function AdminDashboard() {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">Videos Uploaded</span>
-              <span className="info-box-number text-right h5">55 </span>
+              <span className="info-box-number text-right h5">{data?.visit?.totalVideo} </span>
             </div>
             {/* /.info-box-content */}
           </div>
@@ -55,7 +56,7 @@ function AdminDashboard() {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">Today's Visits</span>
-              <span className="info-box-number text-right h5">100 </span>
+              <span className="info-box-number text-right h5">{data?.visit?.todayVisit} </span>
             </div>
             {/* /.info-box-content */}
           </div>

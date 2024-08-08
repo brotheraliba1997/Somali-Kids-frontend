@@ -1,7 +1,9 @@
+import CustomButton from '@/components/customButton';
 import React from 'react'
 import { LuClock9 } from "react-icons/lu";
 
-function Contact() {
+function Contact({ format,isLoading, ContactValueHandler, handleContactTypeChange}) {
+  console.log(format)
   return (
     <>
     <div className="pages-section">
@@ -73,7 +75,7 @@ function Contact() {
             </div>
           </div>
           <div className="col-lg-6 col-md-12 col-sm-12 mb-3">
-            <form action="#" className="row form-bg">
+            <form onSubmit={ContactValueHandler} className="row form-bg">
               <div className="col-md-12">
                 <div className="cont-text mb-5">
                   <h2>Contact Form</h2>
@@ -89,6 +91,9 @@ function Contact() {
                     className="form-control"
                     id="fname"
                     required=""
+                    name="fullName"
+                    value={format?.fullName}
+                    onChange={handleContactTypeChange}
                   />
                 </div>
               </div>
@@ -102,6 +107,9 @@ function Contact() {
                     className="form-control"
                     id="email"
                     required=""
+                    name="email"
+                    value={format?.email}
+                    onChange={handleContactTypeChange}
                   />
                 </div>
               </div>
@@ -111,10 +119,13 @@ function Contact() {
                     Your Phone <span className="text-danger">*</span>
                   </label>
                   <input
-                    type="tel"
+                    type="number"
                     className="form-control"
                     id="Phonenumber"
                     required=""
+                    name="phone"
+                    value={format?.phone}
+                    onChange={handleContactTypeChange}
                   />
                 </div>
               </div>
@@ -123,7 +134,11 @@ function Contact() {
                   <label htmlFor="subject" className="form-label">
                     Your Subject <span className="text-danger">*</span>
                   </label>
-                  <input type="text" className="form-control" id="subject" />
+                  <input type="text"
+                   name="Subject"
+                   onChange={handleContactTypeChange}
+                   value={format?.Subject}
+                  className="form-control" id="subject" />
                 </div>
               </div>
               <div className="col-md-12">
@@ -136,14 +151,21 @@ function Contact() {
                     id="mesaage"
                     rows={5}
                     defaultValue={""}
+                    name="Message"
+                    value={format?.Message}
+                    onChange={handleContactTypeChange}
                   />
                 </div>
               </div>
               <div className="col-md-12">
                 <div className="">
-                  <button className="btn btn-primary px-4 rounded-1">
-                    Submit
-                  </button>
+                <CustomButton
+                      title=" Submit"
+                      type="submit"
+                      className="btn btn-primary px-4 rounded-1"
+                      isLoading={isLoading}
+                    />
+                  
                 </div>
               </div>
             </form>
