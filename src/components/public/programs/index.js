@@ -71,8 +71,6 @@ function ProgramsComponents() {
             <div className="prog-colbg3">
               <div className="progimgcol text-center mb-3">
           <Image src={proimg3} alt="proimg3" />
-
-
                 {/* <img src="assets/images/proimg-3.png" alt="" /> */}
               </div>
               <div className="pro-coltext">

@@ -115,10 +115,7 @@ function PackageList() {
       displayName: "Status",
       displayField: (e) => (
         <>
-        
-          
             <span className="text-capitalize badge bg-danger"> Active</span>
-         
         </>
       ),
     },

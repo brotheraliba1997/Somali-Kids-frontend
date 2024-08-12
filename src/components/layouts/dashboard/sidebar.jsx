@@ -5,15 +5,112 @@ import logo from "../../../assets/images/logo.png";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { logout } from "@/redux/slices/auth";
+import { usePathname } from "next/navigation";
 
 function Sidebar() {
-  const [upload, setUpload] = useState(false);
-  const [setting, setSetting] = useState(false);
+  const [activeIndices, setActiveIndices] = useState({
+    mainIndex: null,
+    dropIndex: null,
+  });
+
+  const handleMainClick = (index) => {
+    setActiveIndices({
+      mainIndex: index,
+      dropIndex: null, // Reset dropdown when main menu changes
+    });
+  };
+
   const dispatch = useDispatch();
 
   const logoutHandler = async () => {
     dispatch(logout());
   };
+
+  const pathname = usePathname();
+  console.log(pathname, "location");
+
+  const sidebarList = [
+    {
+      text: "Dashboard",
+      url: "/dashboard",
+      icon: "nav-icon fas fa-tachometer-alt",
+    },
+    {
+      text: "Customer Registration",
+      url: "/dashboard/customer-registration",
+      icon: "nav-icon fas fa-users",
+    },
+
+    {
+      text: "Resources",
+      url: "",
+      icon: "nav-icon fas fa-video",
+
+      dropDown: [
+        {
+          url: "/dashboard/upload-video",
+          text: "Upload Video",
+          icon: "nav-icon fas fa-users",
+        },
+      ],
+    },
+
+    {
+      text: "Maintenance",
+      url: "",
+      icon: "",
+    },
+
+    {
+      text: "Users",
+      url: "/dashboard/users",
+      icon: "nav-icon fas fa-video",
+    },
+
+    {
+      text: "Setting",
+
+      url: "",
+      icon: "nav-icon fas fa-tools",
+
+      dropDown: [
+        {
+          url: "/dashboard/categories",
+          text: "Categories",
+          icon: "far fa-circle nav-icon",
+        },
+        {
+          url: "/dashboard/language",
+          text: "Languages",
+          icon: "nav-icon fas fa-users",
+        },
+
+        {
+          url: "/dashboard/package",
+          text: "Packages",
+          icon: "nav-icon fas fa-users",
+        },
+
+        {
+          url: "/dashboard/subcription",
+          text: "Subcription",
+          icon: "nav-icon fas fa-users",
+        },
+
+        {
+          url: "/dashboard/permission",
+          text: "Permission",
+          icon: "nav-icon fas fa-users",
+        },
+
+        {
+          url: "/dashboard/program",
+          text: "Program",
+          icon: "nav-icon fas fa-users",
+        },
+      ],
+    },
+  ];
 
   return (
     <aside className="main-sidebar sidebar-dark-navy navbar-dark elevation-4 sidebar-no-expand">
@@ -21,7 +118,7 @@ function Sidebar() {
         <Image
           src={logo}
           alt="Store Logo"
-          className="brand-image  elevation-3 "
+          className="brand-image  elevation-3"
         />
         <span className="brand-text font-weight-light text-light">
           Somali ABC
@@ -51,147 +148,55 @@ function Sidebar() {
                   role="menu"
                   data-accordion="false"
                 >
-                  <li className="nav-item dropdown">
-                    <Link
-                      href="/dashboard"
-                      className="nav-link nav-customer bg-gradient-navy"
+                  {sidebarList?.map((items, index) => (
+                    <li
+                      key={index}
+                      className={`nav-item dropdown  ${
+                        items?.url === pathname ? "bg-gradient-navy" : ""
+                      } `}
+                      onClick={() => handleMainClick(index)}
                     >
-                      <i className="nav-icon fas fa-tachometer-alt" />
-                      <p>Dashboard</p>
-                    </Link>
-                  </li>
-                  <li className="nav-item dropdown">
-                    <Link
-                      href="/dashboard/customer-registration"
-                      className="nav-link nav-customer "
-                    >
-                      <i className="nav-icon fas fa-users" />
-                      <p>Customer Registration</p>
-                    </Link>
-                  </li>
-                  <li
-                    className={`nav-item `}
-                    // className={`nav-item ${
-                    //   upload ? "menu-is-opening menu-open" : ""
-                    // }`}
-                  >
-                    <div
-                      href="#"
-                      className="nav-link"
-                      onClick={() => setUpload(!upload)}
-                    >
-                      <i className="nav-icon fas fa-video" />
-                      <p>
-                        Resources
-                        <i className="right fas fa-angle-left" />
-                      </p>
-                    </div>
-                    <ul
-                      className={`nav nav-subitem ${upload ? "show" : ""}`}
-                      // style={{ display: upload ? "none" : "block" }}
-                      // style={{
-                      //   // width: upload ? "100%" : "",
-                      //   height: upload ? "400px" : "0px",
+                      <Link href={items?.url} className="nav-link nav-customer">
+                        <span style={{ cursor: "pointer" }}>
+                          <i className={items?.icon} />
+                          <p>{items?.text}</p>
+                        </span>
+                      </Link>
 
-                      //   transition: "all 5s",
-                      // }}
-                    >
-                      <li className="nav-item">
-                        <Link
-                          href="/dashboard/upload-video"
-                          className="nav-link tree-item nav-upload_video"
-                        >
-                          <i className="far fa-circle nav-icon" />
-                          <p>Upload Video</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
-                  <li className="nav-header">Maintenance</li>
-                  <li className="nav-item dropdown">
-                    <Link
-                      href="/dashboard/users"
-                      className="nav-link nav-user_list"
-                    >
-                      <i className="nav-icon fas fa-users-cog" />
-                      <p>Users</p>
-                    </Link>
-                  </li>
-                  <li
-                    className={`nav-item ${
-                      setting ? "menu-is-opening menu-open" : ""
-                    }`}
-                  >
-                    <span
-                      href="#"
-                      className="nav-link"
-                      onClick={() => setSetting(!setting)}
-                    >
-                      <i className="nav-icon fas fa-tools" />
-                      <p>
-                        Setting
-                        <i className="right fas fa-angle-left" />
-                      </p>
-                    </span>
-                    <ul
-                      className="nav nav-treeview"
-                      style={{ display: setting ? "none" : "block" }}
-                    >
-                      <li className="nav-item">
-                        <Link
-                          href="/dashboard/categories"
-                          className="nav-link tree-item nav-categories"
-                        >
-                          <i className="far fa-circle nav-icon" />
-                          <p>Categories</p>
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link
-                          href="/dashboard/language"
-                          className="nav-link tree-item nav-languages"
-                        >
-                          <i className="far fa-circle nav-icon" />
-                          <p>Languages</p>
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <Link href="/dashboard/package" className="nav-link tree-item nav-packages">
-                          <i className="far fa-circle nav-icon" />
-                          <p>Packages</p>
-                        </Link>
-                      </li>
-
-                      <li className="nav-item">
-                        <Link href="/dashboard/subcription" className="nav-link tree-item nav-packages">
-                          <i className="far fa-circle nav-icon" />
-                          <p>Subcription</p>
-                        </Link>
-                      </li>
-                      <li className="nav-item">
-                        <a
-                          href="#"
-                          className="nav-link tree-item nav-permission"
-                        >
-                          <i className="far fa-circle nav-icon" />
-                          <p>Permission</p>
-                        </a>
-                      </li>
-
-                      <li className="nav-item">
-                        <Link
-                          href="/dashboard/program"
-                          className="nav-link tree-item nav-permission"
-                        >
-                          <i className="far fa-circle nav-icon" />
-                          <p>Program</p>
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
+                      <ul
+                        className={`nav nav-treeview nav-subitem  ${
+                          activeIndices.mainIndex === index ? "show" : "hide"
+                        }`}
+                      >
+                        {items?.dropDown?.map((itemsDrop, dropIndex) => (
+                          <li
+                            key={dropIndex}
+                            className={`nav-item w-100 ${
+                              activeIndices.mainIndex === index
+                                ? "d-block"
+                                : "d-none"
+                            } ${
+                              itemsDrop?.url === pathname
+                                ? " bg-gradient-navy"
+                                : ""
+                            }`}
+                          >
+                            <Link
+                              href={itemsDrop?.url}
+                              className="nav-link tree-item nav-categories"
+                            >
+                              <span style={{ cursor: "pointer" }}>
+                                <i className="far fa-circle nav-icon" />
+                                <p>{itemsDrop?.text}</p>
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </li>
+                  ))}
                   <li className="nav-item dropdown" onClick={logoutHandler}>
-
-                    <div  className="nav-link nav-system_info">
+                    <div className="nav-link nav-system_info">
                       <i className="nav-icon fas fa-sign-out-alt" />
                       <p>Logout</p>
                     </div>
