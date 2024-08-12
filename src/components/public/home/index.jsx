@@ -20,7 +20,6 @@ import ageimgFour from "@/assets/public/images/age-3.png";
 import ageimgFive from "@/assets/public/images/age-4.png";
 import whych01 from "@/assets/public/images/whych01.png";
 import whych02 from "@/assets/public/images/whych02.png";
-
 import Image from "next/image";
 
 function PublicHome() {
