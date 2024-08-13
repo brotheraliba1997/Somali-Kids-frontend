@@ -45,7 +45,7 @@ function Sidebar() {
       text: "Resources",
       url: "",
       icon: "nav-icon fas fa-video",
-
+      dropDownArrow: "right fas fa-angle-left",
       dropDown: [
         {
           url: "/dashboard/upload-video",
@@ -69,10 +69,9 @@ function Sidebar() {
 
     {
       text: "Setting",
-
       url: "",
       icon: "nav-icon fas fa-tools",
-
+      dropDownArrow: "right fas fa-angle-left",
       dropDown: [
         {
           url: "/dashboard/categories",
@@ -151,15 +150,26 @@ function Sidebar() {
                   {sidebarList?.map((items, index) => (
                     <li
                       key={index}
-                      className={`nav-item dropdown  ${
-                        items?.url === pathname ? "bg-gradient-navy" : ""
+                      className={`nav-item dropdown   ${
+                        (items?.url === pathname ? "bg-gradient-navy " : "",
+                        activeIndices.mainIndex === index
+                          ? "menu-is-opening menu-open"
+                          : " ")
                       } `}
                       onClick={() => handleMainClick(index)}
                     >
                       <Link href={items?.url} className="nav-link nav-customer">
                         <span style={{ cursor: "pointer" }}>
-                          <i className={items?.icon} />
-                          <p>{items?.text}</p>
+                          <div className="d-flex justify-content-between">
+                            <p>
+                              <i className={items?.icon} />
+                              {items?.text}{" "}
+                            </p>
+                            <p>
+                              {" "}
+                              <i className={items?.dropDownArrow} />
+                            </p>
+                          </div>
                         </span>
                       </Link>
 

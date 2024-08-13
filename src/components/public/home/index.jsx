@@ -54,7 +54,7 @@ function PublicHome() {
           <div className="row align-items-center">
             <div className=" position-relative d-none d-sm-block">
               <div
-                className="abt-sideimg text-center position-absolute end-0 "
+                className="abt-sideimg text-center position-absolute end-0"
                 style={{ right: 0 }}
               >
                 <Image src={sideImaga} alt="sideImaga" />
@@ -115,9 +115,9 @@ function PublicHome() {
                   </p>
                 </div>
               </div>
-              <div className=" position-relative d-none d-sm-block">
+              <div className="position-relative d-none d-sm-block">
                 <div
-                  className="serv-sideimg position-absolute bottom-0 start-0 "
+                  className="serv-sideimg position-absolute bottom-0 start-0"
                   style={{ bottom: 0 }}
                 >
                   <Image src={iconCol} alt="iconCol" />
