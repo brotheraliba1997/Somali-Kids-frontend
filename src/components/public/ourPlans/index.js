@@ -47,7 +47,7 @@ function OurPlansComponents() {
               </div>
               <div className="plancard-body">
                 <p>This was custom.</p>
-                <p>All the business-like schools, universities, Clubs, etcs</p>
+                <p>All the business-like schools, universities, Clubs, etc</p>
                 <p>Please contact</p>
                 <p className="border-bottom-0">(612) 205-2351</p>
               </div>
