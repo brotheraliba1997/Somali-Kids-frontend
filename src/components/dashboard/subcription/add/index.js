@@ -54,7 +54,6 @@ function AddSubcriptionComponents({ categoryValueHandler, handleChange, values }
                       </select>
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="amount" className="control-label">
@@ -68,12 +67,10 @@ function AddSubcriptionComponents({ categoryValueHandler, handleChange, values }
                         required="required"
                         defaultValue=""
                         value={values?.amount}
-
                         onChange={handleChange}
                       />
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="validity" className="control-label">
@@ -89,7 +86,6 @@ function AddSubcriptionComponents({ categoryValueHandler, handleChange, values }
                         value={values?.validity}
                       >
                         <option value="">Please Select </option>
-
                         <option value="7 day">7 day </option>
                         <option value="1 Months">1 Months </option>
                         <option value="3 Months">3 Months </option>
@@ -97,7 +93,6 @@ function AddSubcriptionComponents({ categoryValueHandler, handleChange, values }
                       </div>
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="Describtion" className="control-label">

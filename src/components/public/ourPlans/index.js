@@ -33,7 +33,7 @@ function OurPlansComponents() {
                 <Link
                   href="register"
                   type="button"
-                  className="btn btn-danger btn-lg px-5 rounded-5 "
+                  className="btn btn-danger btn-lg px-5 rounded-5"
                 >
                   Sign Up
                 </Link>

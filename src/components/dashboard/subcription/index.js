@@ -72,8 +72,6 @@ function SubcriptionList() {
       ),
       searchable: true,
     },
-
-
     {
       displayName: "validity",
       displayField: (e) => (
@@ -85,9 +83,6 @@ function SubcriptionList() {
       ),
       searchable: true,
     },
-
-
-
     {
       displayName: "Start Date",
       displayField: (e) => (
@@ -99,7 +94,6 @@ function SubcriptionList() {
       ),
       searchable: true,
     },
-
     {
       displayName: "End Date",
       displayField: (e) => (
@@ -111,14 +105,12 @@ function SubcriptionList() {
       ),
       searchable: true,
     },
-
-
     {
       displayName: "Amount",
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.amount} </p>
+            <p className="text-secondary"> {e?.amount}</p>
           </div>
         </>
       ),
@@ -130,17 +122,12 @@ function SubcriptionList() {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-capitalize badge bg-danger"> {e?.status} </p>
+            <p className="text-capitalize badge bg-danger">{e?.status}</p>
           </div>
         </>
       ),
       searchable: true,
     },
-
-    
-
-  
-   
     {
       displayName: "Action",
       key: "",

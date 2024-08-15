@@ -28,7 +28,6 @@ function AddPackageComponents({ categoryValueHandler, handleChange, values }) {
                         required="required"
                         defaultValue=""
                         value={values?.name}
-
                         onChange={handleChange}
                       />
                     </div>

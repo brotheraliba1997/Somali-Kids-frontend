@@ -78,25 +78,35 @@ const deleteHandler = (id) => {
     },
 
     {
-      key: "Thumbnail",
-      displayName: "Thumbnail",
+      key: "Description",
+      displayName: "Description",
       displayField: (e) => (
         <>
-          <div
-            className="position-relative"
-            style={{ width: "40px", height: "40px", borderRadius: "50%" }}
-          >
-            <Image
-              src={`${process?.env?.NEXT_PUBLIC_CDN_URL}${e?.thumbnail}`}
-              layout="fill"
-              alt="logo"
-              objectFit="contain"
-              style={{borderRadius: "50%"}}
-            />
-          </div>
+          <p className="text-secondary"> {e?.Description}</p>
         </>
       ),
     },
+
+    // {
+    //   key: "Thumbnail",
+    //   displayName: "Thumbnail",
+    //   displayField: (e) => (
+    //     <>
+    //       <div
+    //         className="position-relative"
+    //         style={{ width: "40px", height: "40px", borderRadius: "50%" }}
+    //       >
+    //         <Image
+    //           src={`${process?.env?.NEXT_PUBLIC_CDN_URL}${e?.thumbnail}`}
+    //           layout="fill"
+    //           alt="logo"
+    //           objectFit="contain"
+    //           style={{borderRadius: "50%"}}
+    //         />
+    //       </div>
+    //     </>
+    //   ),
+    // },
     {
       displayName: "Action",
       key: "",

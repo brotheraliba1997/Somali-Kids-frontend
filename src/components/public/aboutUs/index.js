@@ -53,7 +53,7 @@ function About() {
   </div>
   <div className="mission-section">
     <div className="container">
-      <div className="row justify-content-center gap-lg-5 ">
+      <div className="row justify-content-center gap-lg-5">
         <div className="col-lg-5 col-md-6 col-sm-12">
           <div className="abthome-text">
             <h3>Mission</h3>
