@@ -54,19 +54,16 @@ function Sidebar() {
         },
       ],
     },
-
     {
       text: "Maintenance",
       url: "",
       icon: "",
     },
-
     {
       text: "Users",
       url: "/dashboard/users",
       icon: "nav-icon fas fa-video",
     },
-
     {
       text: "Setting",
       url: "",

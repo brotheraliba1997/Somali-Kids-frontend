@@ -43,7 +43,7 @@ function PublicHome() {
             <div className="col-lg-7 col-md-6 col-sm-12">
               <div className="sliderimg">
                 <Image src={sidebar} alt="sidebar" />
-                {/* <img src="assets/images/slider-img.png" alt="" /> */}
+              
               </div>
             </div>
           </div>
@@ -104,7 +104,6 @@ function PublicHome() {
               >
                 <div className="gridimg">
                   <Image src={icon} alt="sidebar" />
-
                   {/* <img src="assets/images/icon-1.png" alt="" /> */}
                 </div>
                 <div className="ser-col-text">
@@ -133,8 +132,6 @@ function PublicHome() {
               >
                 <div className="gridimg">
                   <Image src={icontwo} alt="icontwo" />
-
-                  {/* <img src="assets/images/icon-2.png" alt="" /> */}
                 </div>
                 <div className="ser-col-text">
                   <h3>Personalized Learning Paths</h3>
@@ -146,7 +143,7 @@ function PublicHome() {
               </div>
               <div className=" position-relative d-none d-sm-block">
                 <div
-                  className="serv-sideimg position-absolute bottom-0 start-0 "
+                  className="serv-sideimg position-absolute bottom-0 start-0"
                   style={{ bottom: 0 }}
                 >
                   <Image src={iconthree} alt="iconthree" />
@@ -201,16 +198,16 @@ function PublicHome() {
           <div className="row mb-3 mb-sm-5">
             <div className=" position-relative d-none d-sm-block">
               <div
-                className="prog-sideimg text-center position-absolute start-0 "
+                className="prog-sideimg text-center position-absolute start-0"
                 style={{ right: 0 }}
               >
                 <Image src={iconsix} alt="iconfive" />
 
-                {/* <img src="assets/images/img-1.png" alt="" /> */}
+              
               </div>
             </div>
             <div className=" position-relative d-none d-sm-block">
-              <div className="prog-sideimg text-center position-absolute end-0 ">
+              <div className="prog-sideimg text-center position-absolute end-0">
                 <Image src={iconseven} alt="iconfive" />
 
                 {/* <img src="assets/images/img-2.png" alt="" /> */}
@@ -291,8 +288,6 @@ function PublicHome() {
             <div className=" position-relative d-none d-sm-block">
               <div className="abt-sideimg position-absolute start-0 ">
                 <Image src={ageimg} alt="ageimg" />
-
-                {/* <img src="assets/images/ageimg.png" alt="" /> */}
               </div>
             </div>
             <div className="col-lg-8 col-md-10 col-sm-12">
@@ -311,7 +306,7 @@ function PublicHome() {
               <div className="text-center mb-3">
                 <Image src={ageimgTwo} alt="ageimgTwo" />
 
-                {/* <img src="assets/images/age-1.png" alt="" /> */}
+              
               </div>
               <div className="agesec-text">
                 <h3>Infants</h3>
