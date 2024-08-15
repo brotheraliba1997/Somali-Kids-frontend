@@ -69,7 +69,6 @@ function UploadVideo({setVideo}) {
           onUploadProgress: (event) => {
             uploadedBytes += event.loaded;
             totalBytes += event.total;
-
             uploadProgress += event.progress;
             const uploadPercante = uploadProgress * 100;
             // setProgress(Math.round(uploadPercante));

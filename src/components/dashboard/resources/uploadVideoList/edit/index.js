@@ -13,10 +13,6 @@ function EditVideoComponents({id}) {
     const [fileImageLocation, setFileImageLocation] = useState(null);
     const [fileVideoLocation, setFileVideoLocation] = useState(null);
 
-
-    
- 
-
   console.log(fileImageLocation, "fileImageLocation");
   console.log(fileVideoLocation, "fileVideoLocation");
 
