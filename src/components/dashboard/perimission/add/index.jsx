@@ -52,13 +52,22 @@ function PermissionControlAccess() {
 
   return (
     <div className="container-fluid">
-      <div className="card p-4">
-        <h3
-          className="card-title "
-          style={{ fontSize: "20px", fontWeight: "600" }}
-        >
-          Edit Permission
-        </h3>
+      <div className="card p-4 ">
+        <div className="d-flex justify-content-between">
+          <h3
+            className="card-title mb-3"
+            style={{ fontSize: "20px", fontWeight: "600" }}
+          >
+            Edit Permission
+          </h3>
+
+          <h3
+            className="card-title mb-3"
+            style={{ fontSize: "18px" }}
+          >
+            {action?.role}
+          </h3>
+        </div>
 
         <table>
           <tr className="table-head">
@@ -135,17 +144,15 @@ function PermissionControlAccess() {
           submit
         </button> */}
         <div className="d-flex justify-content-end">
-
-      
-
-        <CustomButton
-          title=" submit"
-          type="submit"
-          className=" btn btn-primary rounded my-2 " style={{width: "100px" }}
-          onClick={permissionValueHandler}
-          isLoading={loadingPermission}
-        />
-          </div>
+          <CustomButton
+            title=" submit"
+            type="submit"
+            className=" btn btn-primary rounded my-2 "
+            style={{ width: "100px" }}
+            onClick={permissionValueHandler}
+            isLoading={loadingPermission}
+          />
+        </div>
       </div>
     </div>
   );
