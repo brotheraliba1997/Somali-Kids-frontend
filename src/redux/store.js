@@ -11,6 +11,7 @@ import { PackageAPI } from "./services/packageAPI";
 import { ContactAPI } from "./services/contactAPI";
 import { SubcriptionAPI } from "./services/subcriptionAPI";
 import { StateAPI } from "./services/stateAPI";
+import { PermissionAPI } from "./services/permissionAPI";
 
 export const store = configureStore({
   reducer: {
@@ -25,6 +26,7 @@ export const store = configureStore({
     [ContactAPI.reducerPath]: ContactAPI.reducer,
     [SubcriptionAPI.reducerPath]: SubcriptionAPI.reducer,
     [StateAPI.reducerPath]: StateAPI.reducer,
+    [PermissionAPI.reducerPath]: PermissionAPI.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(
@@ -38,6 +40,7 @@ export const store = configureStore({
       ContactAPI.middleware,
       SubcriptionAPI.middleware,
       StateAPI.middleware,
+      PermissionAPI.middleware,
       
     ),
 });
