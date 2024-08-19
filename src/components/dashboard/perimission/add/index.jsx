@@ -61,10 +61,7 @@ function PermissionControlAccess() {
             Edit Permission
           </h3>
 
-          <h3
-            className="card-title mb-3"
-            style={{ fontSize: "18px" }}
-          >
+          <h3 className="card-title mb-3" style={{ fontSize: "18px" }}>
             {action?.role}
           </h3>
         </div>
@@ -136,13 +133,6 @@ function PermissionControlAccess() {
           ))}
         </table>
 
-        {/* <button
-          type="submit"
-          className="btn btn-primary rounded my-2"
-          onClick={permissionValueHandler}
-        >
-          submit
-        </button> */}
         <div className="d-flex justify-content-end">
           <CustomButton
             title=" submit"

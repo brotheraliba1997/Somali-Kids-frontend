@@ -98,15 +98,13 @@ function PermissionCompoments() {
                 <div className="text-right">
                   <button
                     type="submit"
-                    className="btn btn-primary rounded mr-2"
+                    className="btn btn-primary rounded "
                     onClick={()=> HandleChange(per?._id)}
 
                   >
                     Edit
                   </button>
-                  <button type="submit" className="btn btn-danger  rounded">
-                    Delete
-                  </button>
+                 
                 </div>
               </div>
             </div>

@@ -9,7 +9,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function UploadVideoList() {
+function UploadVideoList({PermissionFinalValue}) {
   const { data, isLoading } = useGetVideoQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
@@ -120,6 +120,7 @@ const deleteHandler = (id) => {
             deleteHandler={() => deleteHandler(e?._id)}
             viewRouteChange={`/dashboard/upload-video/${e?._id}/view`}
             showView={false}
+            PermissionFinalValue={PermissionFinalValue}
           />
         </>
       ),
@@ -131,20 +132,7 @@ const deleteHandler = (id) => {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   return (
-    <div className="container-fluid">
-      <div className="card card-outline rounded-0 card-navy">
-        <div className="card-header">
-          <h3 className="card-title">List of Uploaded Videos</h3>
-          <div className="card-tools">
-            <Link
-              href="/dashboard/upload-video/add"
-              id="create_new"
-              className="btn btn-flat btn-primary"
-            >
-              <span className="fas fa-plus" /> Upload Video
-            </Link>
-          </div>
-        </div>
+
 
         <Table
           dataSource={data?.results || []}
@@ -157,8 +145,7 @@ const deleteHandler = (id) => {
           pageSize={pageSize}
           setPageSize={setPageSize}
         />
-      </div>
-    </div>
+ 
   );
 }
 

@@ -9,7 +9,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function SubcriptionList() {
+function SubcriptionList({PermissionFinalValue}) {
   const { data, isLoading } = useGetSubcriptionQuery();
 
   console.log(data, "data")
@@ -140,6 +140,7 @@ function SubcriptionList() {
             routeChange={`/dashboard/subcription/${e?._id}/edit`}
             deleteHandler={()=> deleteHandler(e?._id)}
             showView={true}
+            PermissionFinalValue={PermissionFinalValue}
           />
         </>
       ),

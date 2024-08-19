@@ -210,7 +210,6 @@ function PublicHome() {
               <div className="prog-sideimg text-center position-absolute end-0">
                 <Image src={iconseven} alt="iconfive" />
 
-                {/* <img src="assets/images/img-2.png" alt="" /> */}
               </div>
             </div>
             <div className="col-md-12">
@@ -226,7 +225,6 @@ function PublicHome() {
                 <div className="progimgcol text-center mb-3">
                   <Image src={proimg} alt="proimg" />
 
-                  {/* <img src="assets/images/proimg-1.png" alt="" /> */}
                 </div>
                 <div className="pro-coltext">
                   <h3>ABC Adventures</h3>
@@ -305,8 +303,6 @@ function PublicHome() {
             <div className="col-lg-3 col-sm-3 col-md-3">
               <div className="text-center mb-3">
                 <Image src={ageimgTwo} alt="ageimgTwo" />
-
-              
               </div>
               <div className="agesec-text">
                 <h3>Infants</h3>

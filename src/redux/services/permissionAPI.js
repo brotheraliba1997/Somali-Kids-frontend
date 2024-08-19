@@ -32,6 +32,7 @@ export const PermissionAPI = createApi({
         method: "GET",
        
       }),
+      providesTags: ["refetchPermission"],
     }),
 
     updatePermission: builder.mutation({

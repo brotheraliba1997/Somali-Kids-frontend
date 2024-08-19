@@ -7,7 +7,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function ProgramList() {
+function ProgramList({PermissionFinalValue}) {
   const { data, isLoading } = useGetProgramQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
@@ -85,6 +85,7 @@ function ProgramList() {
             routeChange={`/dashboard/program/${e?._id}/edit`}
             deleteHandler={()=> deleteHandler(e?._id)}
             showView={true}
+            PermissionFinalValue={PermissionFinalValue}
           />
         </>
       ),

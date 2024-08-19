@@ -7,7 +7,7 @@ import { useGetUsersQuery } from "@/redux/services/userApi";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function UsersDashboard() {
+function UsersDashboard({PermissionFinalValue}) {
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const { data, isLoading } = useGetUsersQuery();
@@ -89,15 +89,7 @@ function UsersDashboard() {
       searchable: true,
     },
 
-    {
-      displayName: "Address",
-      displayField: (e) => (
-        <>
-          <p className="text-secondary"> {e?.address}</p>
-        </>
-      ),
-      searchable: true,
-    },
+ 
 
     {
       displayName: "City",
@@ -131,6 +123,7 @@ function UsersDashboard() {
             routeChange={`/dashboard/users/${e?._id}/edit`}
             deleteHandler={() => deleteHandler(e?._id)}
             viewRouteChange={`/dashboard/users/${e?._id}/edit`}
+            PermissionFinalValue={PermissionFinalValue}
           />
         </>
       ),

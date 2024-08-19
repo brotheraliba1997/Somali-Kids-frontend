@@ -1,8 +1,16 @@
+"use client"
 import UsersDashboard from '@/components/dashboard/users'
+import Permission from '@/components/permission';
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 import React from 'react'
 
 function Users() {
+  const pathName = usePathname();
+  const pathSpread = pathName.split("/")[1];
+  console.log(pathSpread, "pathSpread");
+
+  const PermissionFinalValue = Permission(pathSpread);
   return (
 
 
@@ -10,6 +18,7 @@ function Users() {
       <div className="card card-outline rounded-0 card-navy">
         <div className="card-header">
           <h3 className="card-title">List of Users</h3>
+          {PermissionFinalValue?.create && 
           <div className="card-tools">
             <Link
               href="/dashboard/users/add"
@@ -19,9 +28,10 @@ function Users() {
               <span className="fas fa-plus" /> Add User
             </Link>
           </div>
+          }
         </div>
 
-        <UsersDashboard />
+        <UsersDashboard PermissionFinalValue={PermissionFinalValue} />
       </div>
     </div>
    

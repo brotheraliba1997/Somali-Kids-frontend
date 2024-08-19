@@ -8,7 +8,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function PackageList() {
+function PackageList({PermissionFinalValue}) {
   const { data, isLoading } = useGetPackagesQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
  
@@ -131,6 +131,7 @@ function PackageList() {
             routeChange={`/dashboard/package/${e?._id}/edit`}
             deleteHandler={()=> deleteHandler(e?._id)}
             showView={true}
+            PermissionFinalValue={PermissionFinalValue}
           />
         </>
       ),

@@ -2,12 +2,18 @@
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
 import { useGetlanguageQuery, useUpdateLanguageMutation } from "@/redux/services/languageAPI";
+import { useGetPermissionQuery } from "@/redux/services/permissionAPI";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function LanguageList() {
+function LanguageList({PermissionFinalValue}) {
   const { data, isLoading } = useGetlanguageQuery();
+  
+
+  
+
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
   console.log(data, "data");
@@ -84,6 +90,8 @@ function LanguageList() {
             routeChange={`/dashboard/language/${e?._id}/edit`}
             deleteHandler={()=> deleteHandler(e?._id)}
             showView={true}
+            PermissionFinalValue={PermissionFinalValue}
+          
           />
         </>
       ),

@@ -12,7 +12,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function CategoryList() {
+function CategoryList({PermissionFinalValue}) {
   const { data, isLoading } = useGetCategoryQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
@@ -81,6 +81,7 @@ function CategoryList() {
             routeChange={`/dashboard/categories/${e?._id}/edit`}
             deleteHandler={() => deleteHandler(e?._id)}
             showView={true}
+            PermissionFinalValue={PermissionFinalValue}
           />
         </>
       ),

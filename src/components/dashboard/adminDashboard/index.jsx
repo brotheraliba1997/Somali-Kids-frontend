@@ -1,7 +1,15 @@
+"use client"
 import React from "react";
 import UsersDashboard from "../users";
+import { usePathname } from "next/navigation";
+import Permission from "@/components/permission";
 
 function AdminDashboard({data}) {
+  const pathName = usePathname();
+  const pathSpread = pathName.split("/")[1];
+  console.log(pathSpread, "pathSpread");
+
+  const PermissionFinalValue = Permission(pathSpread);
   
   return (
     <div className="container-fluid">
@@ -70,7 +78,7 @@ function AdminDashboard({data}) {
             <h3 className="card-title">List of Customer</h3>
           </div>
           
-          <UsersDashboard />
+          <UsersDashboard PermissionFinalValue={PermissionFinalValue} />
         
         </div>
       </div>

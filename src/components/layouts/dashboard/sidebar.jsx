@@ -147,12 +147,10 @@ function Sidebar() {
                   {sidebarList?.map((items, index) => (
                     <li
                       key={index}
-                      className={`nav-item dropdown   ${
-                        (items?.url === pathname ? "bg-gradient-navy " : "",
-                        activeIndices.mainIndex === index
-                          ? "menu-is-opening menu-open"
-                          : " ")
-                      } `}
+                      className={`nav-item dropdown 
+                        ${items?.url === pathname ? "bg-gradient-navy bg-dark" : ""} 
+                        ${activeIndices.mainIndex === index ? "menu-is-opening menu-open" : ""} 
+                      `}
                       onClick={() => handleMainClick(index)}
                     >
                       <Link href={items?.url} className="nav-link nav-customer">
