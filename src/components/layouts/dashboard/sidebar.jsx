@@ -3,7 +3,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import logo from "../../../assets/images/logo.png";
 import Image from "next/image";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/slices/auth";
 import { usePathname } from "next/navigation";
 
@@ -12,6 +12,8 @@ function Sidebar() {
     mainIndex: null,
     dropIndex: null,
   });
+  const user = useSelector((state) => state?.auth?.user?.role);
+  console.log(user, "user");
 
   const handleMainClick = (index) => {
     setActiveIndices({
@@ -34,23 +36,37 @@ function Sidebar() {
       text: "Dashboard",
       url: "/dashboard",
       icon: "nav-icon fas fa-tachometer-alt",
+      role: ["admin", "teacher", "parent"],
     },
     {
       text: "Customer Registration",
       url: "/dashboard/customer-registration",
       icon: "nav-icon fas fa-users",
+      role: ["admin", "teacher"],
     },
+
+    {
+      url: "/dashboard/package",
+      text: "Packages",
+      icon: "nav-icon fas fa-users",
+      role: ["parent"],
+    },
+
+
+   
 
     {
       text: "Resources",
       url: "",
       icon: "nav-icon fas fa-video",
       dropDownArrow: "right fas fa-angle-left",
+      role: ["admin", "teacher"],
       dropDown: [
         {
           url: "/dashboard/upload-video",
           text: "Upload Video",
           icon: "nav-icon fas fa-users",
+          role: ["admin", "teacher"],
         },
       ],
     },
@@ -58,51 +74,60 @@ function Sidebar() {
       text: "Maintenance",
       url: "",
       icon: "",
+      role: ["admin", "teacher"],
     },
     {
       text: "Users",
       url: "/dashboard/users",
       icon: "nav-icon fas fa-video",
+      role: ["admin", "teacher"],
     },
     {
       text: "Setting",
       url: "",
       icon: "nav-icon fas fa-tools",
       dropDownArrow: "right fas fa-angle-left",
+      role: ["admin", "teacher"],
       dropDown: [
         {
           url: "/dashboard/categories",
           text: "Categories",
           icon: "far fa-circle nav-icon",
+          role: ["admin", "teacher", "parent"],
         },
         {
           url: "/dashboard/language",
           text: "Languages",
           icon: "nav-icon fas fa-users",
+          role: ["admin", "teacher", "parent"],
         },
 
         {
           url: "/dashboard/package",
           text: "Packages",
           icon: "nav-icon fas fa-users",
+          role: ["admin", "teacher", "parent"],
         },
 
         {
           url: "/dashboard/subcription",
           text: "Subcription",
           icon: "nav-icon fas fa-users",
+          role: ["admin", "teacher", "parent"],
         },
 
         {
           url: "/dashboard/permission",
           text: "Permission",
           icon: "nav-icon fas fa-users",
+          role: ["admin","teacher", "parent"],
         },
 
         {
           url: "/dashboard/program",
           text: "Program",
           icon: "nav-icon fas fa-users",
+          role: ["admin", "teacher", "parent"],
         },
       ],
     },
@@ -144,62 +169,75 @@ function Sidebar() {
                   role="menu"
                   data-accordion="false"
                 >
-                  {sidebarList?.map((items, index) => (
-                    <li
-                      key={index}
-                      className={`nav-item dropdown 
-                        ${items?.url === pathname ? "bg-gradient-navy bg-dark" : ""} 
-                        ${activeIndices.mainIndex === index ? "menu-is-opening menu-open" : ""} 
+                  {sidebarList
+                    ?.filter((access) => access?.role?.includes(user))
+                    ?.map((items, index) => (
+                      <li
+                        key={index}
+                        className={`nav-item dropdown 
+                        ${
+                          items?.url === pathname
+                            ? "bg-gradient-navy bg-dark"
+                            : ""
+                        } 
+                        ${
+                          activeIndices.mainIndex === index
+                            ? "menu-is-opening menu-open"
+                            : ""
+                        } 
                       `}
-                      onClick={() => handleMainClick(index)}
-                    >
-                      <Link href={items?.url} className="nav-link nav-customer">
-                        <span style={{ cursor: "pointer" }}>
-                          <div className="d-flex justify-content-between">
-                            <p>
-                              <i className={items?.icon} />
-                              {items?.text}{" "}
-                            </p>
-                            <p>
-                              {" "}
-                              <i className={items?.dropDownArrow} />
-                            </p>
-                          </div>
-                        </span>
-                      </Link>
-
-                      <ul
-                        className={`nav nav-treeview nav-subitem  ${
-                          activeIndices.mainIndex === index ? "show" : "hide"
-                        }`}
+                        onClick={() => handleMainClick(index)}
                       >
-                        {items?.dropDown?.map((itemsDrop, dropIndex) => (
-                          <li
-                            key={dropIndex}
-                            className={`nav-item w-100 ${
-                              activeIndices.mainIndex === index
-                                ? "d-block"
-                                : "d-none"
-                            } ${
-                              itemsDrop?.url === pathname
-                                ? " bg-gradient-navy"
-                                : ""
-                            }`}
-                          >
-                            <Link
-                              href={itemsDrop?.url}
-                              className="nav-link tree-item nav-categories"
+                        <Link
+                          href={items?.url}
+                          className="nav-link nav-customer"
+                        >
+                          <span style={{ cursor: "pointer" }}>
+                            <div className="d-flex justify-content-between">
+                              <p>
+                                <i className={items?.icon} />
+                                {items?.text}{" "}
+                              </p>
+                              <p>
+                                {" "}
+                                <i className={items?.dropDownArrow} />
+                              </p>
+                            </div>
+                          </span>
+                        </Link>
+
+                        <ul
+                          className={`nav nav-treeview nav-subitem  ${
+                            activeIndices.mainIndex === index ? "show" : "hide"
+                          }`}
+                        >
+                          {items?.dropDown?.filter((access) => access?.role?.includes(user))?.map((itemsDrop, dropIndex) => (
+                            <li
+                              key={dropIndex}
+                              className={`nav-item w-100 ${
+                                activeIndices.mainIndex === index
+                                  ? "d-block"
+                                  : "d-none"
+                              } ${
+                                itemsDrop?.url === pathname
+                                  ? " bg-gradient-navy"
+                                  : ""
+                              }`}
                             >
-                              <span style={{ cursor: "pointer" }}>
-                                <i className="far fa-circle nav-icon" />
-                                <p>{itemsDrop?.text}</p>
-                              </span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  ))}
+                              <Link
+                                href={itemsDrop?.url}
+                                className="nav-link tree-item nav-categories"
+                              >
+                                <span style={{ cursor: "pointer" }}>
+                                  <i className="far fa-circle nav-icon" />
+                                  <p>{itemsDrop?.text}</p>
+                                </span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </li>
+                    ))}
                   <li className="nav-item dropdown" onClick={logoutHandler}>
                     <div className="nav-link nav-system_info">
                       <i className="nav-icon fas fa-sign-out-alt" />

@@ -1,11 +1,10 @@
 "use client";
 import { logout } from "@/redux/slices/auth";
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import logoHeader from "@/assets/images/avatars/1.png";
 import Image from "next/image";
 import Link from "next/link";
-
 
 function Header() {
   const [openDropDown, setOpenDropDown] = useState(false);
@@ -15,20 +14,25 @@ function Header() {
     dispatch(logout());
   };
 
- 
+  const user = useSelector((state) => state?.auth?.user);
 
   return (
     <nav className="main-header navbar navbar-expand navbar-light shadow text-sm">
       {/* Left navbar links */}
       <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link" data-widget="pushmenu" href="/dashboard" role="button">
+          <Link
+            className="nav-link"
+            data-widget="pushmenu"
+            href="/dashboard"
+            role="button"
+          >
             <i className="fas fa-bars" />
           </Link>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <Link href="/dashboard" className="nav-link">
-            Somali ABC Kids - Admin
+            Somali ABC Kids -   {user?.role === "parent" ? "Parent" : user?.role === "admin" ?  "Admin" : "Teacher" }  
           </Link>
         </li>
       </ul>
@@ -49,29 +53,29 @@ function Header() {
                 <Image
                   src={logoHeader}
                   className="img-circle elevation-2 user-img"
-                  alt="User Image "
+                  alt="User Image"
                 />
               </span>
-              <span className="ml-4 " style={{ color: "black" }}>
-                {" "}
-                Admin
+              <span className="pl-4 m-0" style={{ color: "black" }}>
+                {user?.firstName}
               </span>
+
+              <span className=" pl-2 m-0"  style={{ color: "black" }}>
+                {user?.lastName}
+              </span>
+
               <span className="sr-only">Toggle Dropdown</span>
             </button>
             <div
-              className={`dropdown-menu ${openDropDown ? "show" : " "}  `}
+              className={`dropdown-menu ${openDropDown ? "show" : " "}`}
               role="menu"
-              style={{ left: 0, right: "inherit" }}
+              style={{ left: 0, top: "40px"}}
             >
               <a className="dropdown-item" href="#">
                 <span className="fa fa-user" /> My Account
               </a>
               <div className="dropdown-divider" />
-              <div
-                className="dropdown-item"
-                
-                onClick={logoutHandler}
-              >
+              <div className="dropdown-item" onClick={logoutHandler}>
                 <span className="fas fa-sign-out-alt" /> Logout
               </div>
             </div>

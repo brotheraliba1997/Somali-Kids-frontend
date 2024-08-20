@@ -8,22 +8,7 @@ import { useSelector } from "react-redux";
 import { useCheckUserAuthMutation } from "@/redux/services/userApi";
 
 function DashboardLayout({ children }) {
-  // const [checkAuth, { data: userCheckAvaibaleAccount, isLoading }] =
-  //   useCheckUserAuthMutation();
 
-  // const userCheckHandler = async () => {
-  //   try {
-  //     await checkAuth().unwrap();
-  //   } catch (err) {
-  //     console.log("err=>", err);
-  //     // notifyFailure(err?.data?.message);
-  //     router.push("/login");
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   userCheckHandler();
-  // }, []);
 
   const router = useRouter();
 

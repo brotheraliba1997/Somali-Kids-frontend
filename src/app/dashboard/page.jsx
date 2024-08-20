@@ -1,13 +1,28 @@
-"use client"
-import AdminDashboard from '@/components/dashboard/adminDashboard'
-import { useGetSatateQuery } from '@/redux/services/stateAPI'
-import React from 'react'
+"use client";
+import AdminDashboard from "@/components/dashboard/adminDashboard";
+import Parent from "@/components/dashboard/parentDashboard";
+import { useGetSatateQuery } from "@/redux/services/stateAPI";
+import React, { useEffect } from "react";
+import { useSelector } from "react-redux";
+
 
 function Dashboard() {
-  const {data, isLoading} = useGetSatateQuery()
+  const { data, isLoading } = useGetSatateQuery();
+
+ 
+
+
+
+  const user = useSelector((state) => state?.auth?.user?.role);
   return (
-    <AdminDashboard data={data}/>
-  )
+    <>
+      {user === "parent" ? (
+        <Parent data={data} />
+      ) : (
+        <AdminDashboard data={data} />
+      )}
+    </>
+  );
 }
 
-export default Dashboard
+export default Dashboard;

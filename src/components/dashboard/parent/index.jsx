@@ -1,20 +1,22 @@
-"use client";
+"use client"
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
 import { notifyFailure } from "@/components/toast/toast";
-import { useGetPackagesQuery, useUpdatePackagesMutation } from "@/redux/services/packageAPI";
-import moment from "moment";
-import Link from "next/link";
+import { useUpdateCategoryMutation } from "@/redux/services/categoryAPI";
+import { useGetUsersQuery } from "@/redux/services/userApi";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function PackageList({PermissionFinalValue}) {
-  const { data, isLoading } = useGetPackagesQuery();
-  const [openActionBtn, setOpenActionBtn] = useState(null);
- 
-  const [uploadPackage, { data: dataUpload, isLoading: loading }] =
-  useUpdatePackagesMutation();
+function ParentDashboard({PermissionFinalValue}) {
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
+  const { data, isLoading } = useGetUsersQuery();
 
+  console.log(data, "datais");
+  const [openActionBtn, setOpenActionBtn] = useState(null);
+
+  const [uploadCategory, { data: dataUpload, isLoading: loading }] =
+    useUpdateCategoryMutation();
 
   const deleteHandler = (id) => {
     Swal.fire({
@@ -28,7 +30,7 @@ function PackageList({PermissionFinalValue}) {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await uploadPackage({
+          await uploadCategory({
             payload: { softDelete: true },
             id: id,
           }).unwrap();
@@ -48,47 +50,9 @@ function PackageList({PermissionFinalValue}) {
       displayName: "Name",
       displayField: (e) => (
         <>
-          <div>
-            <p className="text-secondary"> {e?.name} </p>
-          </div>
-        </>
-      ),
-      searchable: true,
-    },
-
-
-    {
-      displayName: "Package Type",
-      displayField: (e) => (
-        <>
-          <div>
-            <p className="text-secondary"> {e?.type} </p>
-          </div>
-        </>
-      ),
-      searchable: true,
-    },
-
-
-    {
-      displayName: "Validity",
-      displayField: (e) => (
-        <>
-          <div>
-            <p className="text-secondary"> {e?.validity}  </p>
-          </div>
-        </>
-      ),
-      searchable: true,
-    },
-
-
-    {
-      displayName: "Amount",
-      displayField: (e) => (
-        <>
-          <div>
-            <p className="text-secondary"> {e?.amount} </p>
+          <div className="d-flex gap-2">
+            <p className="text-secondary"> {e?.firstName} </p>
+            <p className="text-secondary"> {e?.lastName} </p>
           </div>
         </>
       ),
@@ -96,29 +60,57 @@ function PackageList({PermissionFinalValue}) {
     },
 
     {
-      displayName: "Contant",
+      displayName: "Email",
       displayField: (e) => (
         <>
-          <div>
-            <p className="text-secondary"> {e?.content} </p>
-          </div>
+          <p className="text-secondary"> {e?.email} </p>
         </>
       ),
       searchable: true,
     },
 
-    
-
-  
     {
-      key: "status",
-      displayName: "Status",
+      displayName: "Phone",
       displayField: (e) => (
         <>
-            <span className="text-capitalize badge bg-danger"> Active</span>
+          <p className="text-secondary"> {e?.phone}</p>
         </>
       ),
+      searchable: true,
     },
+
+    {
+      displayName: "Role",
+      displayField: (e) => (
+        <>
+          <p className="text-secondary"> {e?.role}</p>
+        </>
+      ),
+      searchable: true,
+    },
+
+ 
+
+    {
+      displayName: "City",
+      displayField: (e) => (
+        <>
+          <p className="text-secondary"> {e?.city}</p>
+        </>
+      ),
+      searchable: true,
+    },
+
+    {
+      displayName: "State",
+      displayField: (e) => (
+        <>
+          <p className="text-secondary"> {e?.state}</p>
+        </>
+      ),
+      searchable: true,
+    },
+
     {
       displayName: "Action",
       key: "",
@@ -128,9 +120,9 @@ function PackageList({PermissionFinalValue}) {
             data={e?._id}
             openActionBtn={openActionBtn}
             setOpenActionBtn={setOpenActionBtn}
-            routeChange={`/dashboard/package/${e?._id}/edit`}
-            deleteHandler={()=> deleteHandler(e?._id)}
-            showView={true}
+            routeChange={`/dashboard/users/${e?._id}/edit`}
+            deleteHandler={() => deleteHandler(e?._id)}
+            viewRouteChange={`/dashboard/users/${e?._id}/edit`}
             PermissionFinalValue={PermissionFinalValue}
           />
         </>
@@ -138,24 +130,23 @@ function PackageList({PermissionFinalValue}) {
       searchAble: true,
     },
   ];
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
-  
+
   return (
-    <>
-      <Table
-        dataSource={data?.results || []}
-        isLoading={isLoading}
-        columns={columns}
-        totalPages={data?.totalPages}
-        totalEntries={data?.totalResults}
-        page={page}
-        setPage={setPage}
-        pageSize={pageSize}
-        setPageSize={setPageSize}
-      />
-    </>
+    
+    <Table
+    dataSource={data?.results || []}
+    isLoading={isLoading}
+    columns={columns}
+    totalPages={data?.totalPages}
+    totalEntries={data?.totalResults}
+    page={page}
+    setPage={setPage}
+    pageSize={pageSize}
+    setPageSize={setPageSize}
+  />
+      
+    
   );
 }
 
-export default PackageList;
+export default ParentDashboard;
