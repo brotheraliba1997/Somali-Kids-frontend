@@ -1,6 +1,7 @@
+import Link from "next/link";
 import React from "react";
 
-function AddUserDashboard({ categoryValueHandler, handleChange, values , hidePassword}) {
+function AddUserDashboard({ routeBack="#", categoryValueHandler, handleChange, values , hidePassword}) {
   return (
   
       <div className="row mt-n3 justify-content-center align-items-center flex-column">
@@ -190,15 +191,15 @@ function AddUserDashboard({ categoryValueHandler, handleChange, values , hidePas
                   </div>
 
                   <div className=" py-1 text-center">
-                    <button className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white">
+                    <button className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white btnhover">
                       <i className="fa fa-save" /> Save
                     </button>
-                    <a
+                    <Link
                       className="btn btn-flat btn-sm btn-light bg-gradient-light border"
-                      href=""
+                      href={routeBack}
                     >
                       <i className="fa fa-close" /> Cancel
-                    </a>
+                    </Link>
                   </div>
                 </form>
               </div>

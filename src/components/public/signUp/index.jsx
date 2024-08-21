@@ -97,7 +97,7 @@ function SignUpComponents() {
                 <select
                   className="form-control"
                   id="packageType"
-                  onchange="handlePackageSelection()"
+                  
                 >
                   <option value="">--Select--</option>
                   <option value="individual">Individual</option>

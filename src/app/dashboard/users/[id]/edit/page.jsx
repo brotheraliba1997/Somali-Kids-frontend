@@ -36,7 +36,7 @@ function EditCategory() {
   };
   useEffect(() => {
     if (singleData) {
-      const { id, ...res } = singleData;
+      const { _id,createdAt, updatedAt, ...res } = singleData;
       setFormatData(res);
     }
   }, [singleData]);
@@ -54,6 +54,7 @@ function EditCategory() {
           handleChange={handleChange}
           values={formatData}
           hidePassword={true}
+          routeBack={"/dashboard/users"}
         />
       </div>
     </>

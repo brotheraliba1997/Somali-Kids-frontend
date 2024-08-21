@@ -13,7 +13,7 @@ function Header() {
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
-      <div className="top-bar-section d-none d-sm-block ">
+      <div className="top-bar-section d-none d-sm-block">
         <div className="container">
           <div className="row">
             <div className="col-md-6" />

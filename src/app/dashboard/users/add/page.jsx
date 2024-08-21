@@ -40,6 +40,7 @@ function AddUser() {
           categoryValueHandler={categoryValueHandler}
           handleChange={handleChange}
           values={formatData}
+          routeBack={"/dashboard/users"}
         />
       </div>
     </>

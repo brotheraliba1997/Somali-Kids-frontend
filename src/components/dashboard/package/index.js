@@ -124,15 +124,20 @@ function PackageList({PermissionFinalValue}) {
       key: "",
       displayField: (e) => (
         <>
+       
+
+       
           <ActionButton
             data={e?._id}
             openActionBtn={openActionBtn}
             setOpenActionBtn={setOpenActionBtn}
             routeChange={`/dashboard/package/${e?._id}/edit`}
             deleteHandler={()=> deleteHandler(e?._id)}
-            showView={true}
+            showView={false}
             PermissionFinalValue={PermissionFinalValue}
+            
           />
+          
         </>
       ),
       searchAble: true,

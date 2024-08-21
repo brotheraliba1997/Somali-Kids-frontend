@@ -11,6 +11,8 @@ function ActionButton({
   deleteHandler,
   viewRouteChange = "#",
 }) {
+
+  console.log(PermissionFinalValue, "actionPermission")
   return (
     <>
       <div className="position-relative " style={{ width: "fit-content" }}>
@@ -28,7 +30,7 @@ function ActionButton({
         <div
           className={`dropdown-menu ${
             openActionBtn === data &&
-            (PermissionFinalValue?.update || PermissionFinalValue?.delete)
+            (PermissionFinalValue?.update || PermissionFinalValue?.delete|| PermissionFinalValue?.read )
               ? "ActionClosedAndOpen"
               : ""
           }`}

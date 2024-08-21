@@ -31,9 +31,8 @@ function ServicesComponents() {
           <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
             <div className="d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
-          <Image src={ser1} alt="ser1" />
+                  <Image src={ser1} alt="ser1" />
 
-                {/* <img src="assets/images/ser1.png" alt="" /> */}
               </div>
               <div className="ser-col-text">
                 <h3>Interactive Learning Games</h3>
@@ -49,9 +48,8 @@ function ServicesComponents() {
           <div className="col-lg-6 col-md-6 col-sm-12 mb-3">
             <div className="d-sm-flex justify-content-between gap-5" style={{gap: "35px"}}>
               <div className="gridimg">
-          <Image src={ser2} alt="ser2" />
+                  <Image src={ser2} alt="ser2" />
 
-                {/* <img src="assets/images/ser2.png" alt="" /> */}
               </div>
               <div className="ser-col-text">
                 <h3>Personalized Learning Paths</h3>

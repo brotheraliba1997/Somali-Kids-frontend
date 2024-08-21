@@ -1,22 +1,23 @@
-"use client"
+"use client";
 import ActionButton from "@/components/actionButton";
 import Table from "@/components/table";
 import { notifyFailure } from "@/components/toast/toast";
 import { useUpdateCategoryMutation } from "@/redux/services/categoryAPI";
 import { useGetUsersQuery } from "@/redux/services/userApi";
+import {
+  useGetVideoQuery,
+  useUpdateVideoMutation,
+} from "@/redux/services/videoAPI";
 import React, { useState } from "react";
 import Swal from "sweetalert2";
 
-function ParentDashboard({PermissionFinalValue}) {
-  const [page, setPage] = useState(1);
-  const [pageSize, setPageSize] = useState(10);
-  const { data, isLoading } = useGetUsersQuery();
-
-  console.log(data, "datais");
+function ParentDashboard({ PermissionFinalValue }) {
+  console.log(PermissionFinalValue, "PermissionFinalValuessss");
+  const { data, isLoading } = useGetVideoQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
-  const [uploadCategory, { data: dataUpload, isLoading: loading }] =
-    useUpdateCategoryMutation();
+  const [uploadVideo, { data: dataUpload, isLoading: loading }] =
+    useUpdateVideoMutation();
 
   const deleteHandler = (id) => {
     Swal.fire({
@@ -30,7 +31,7 @@ function ParentDashboard({PermissionFinalValue}) {
     }).then(async (result) => {
       if (result.isConfirmed) {
         try {
-          await uploadCategory({
+          await uploadVideo({
             payload: { softDelete: true },
             id: id,
           }).unwrap();
@@ -50,9 +51,8 @@ function ParentDashboard({PermissionFinalValue}) {
       displayName: "Name",
       displayField: (e) => (
         <>
-          <div className="d-flex gap-2">
-            <p className="text-secondary"> {e?.firstName} </p>
-            <p className="text-secondary"> {e?.lastName} </p>
+          <div>
+            <p className="text-secondary"> {e?.name} </p>
           </div>
         </>
       ),
@@ -60,55 +60,33 @@ function ParentDashboard({PermissionFinalValue}) {
     },
 
     {
-      displayName: "Email",
+      displayName: "Language",
       displayField: (e) => (
         <>
-          <p className="text-secondary"> {e?.email} </p>
+          <p className="text-secondary"> {e?.language?.name}</p>
         </>
       ),
       searchable: true,
     },
 
     {
-      displayName: "Phone",
+      key: "Category",
+      displayName: "Category",
       displayField: (e) => (
         <>
-          <p className="text-secondary"> {e?.phone}</p>
+          <p className="text-secondary"> {e?.category?.name}</p>
         </>
       ),
-      searchable: true,
     },
 
     {
-      displayName: "Role",
+      key: "Description",
+      displayName: "Description",
       displayField: (e) => (
         <>
-          <p className="text-secondary"> {e?.role}</p>
+          <p className="text-secondary"> {e?.Description}</p>
         </>
       ),
-      searchable: true,
-    },
-
- 
-
-    {
-      displayName: "City",
-      displayField: (e) => (
-        <>
-          <p className="text-secondary"> {e?.city}</p>
-        </>
-      ),
-      searchable: true,
-    },
-
-    {
-      displayName: "State",
-      displayField: (e) => (
-        <>
-          <p className="text-secondary"> {e?.state}</p>
-        </>
-      ),
-      searchable: true,
     },
 
     {
@@ -116,36 +94,38 @@ function ParentDashboard({PermissionFinalValue}) {
       key: "",
       displayField: (e) => (
         <>
-          <ActionButton
-            data={e?._id}
-            openActionBtn={openActionBtn}
-            setOpenActionBtn={setOpenActionBtn}
-            routeChange={`/dashboard/users/${e?._id}/edit`}
-            deleteHandler={() => deleteHandler(e?._id)}
-            viewRouteChange={`/dashboard/users/${e?._id}/edit`}
-            PermissionFinalValue={PermissionFinalValue}
-          />
+          <div className="d-flex justify-content-center">
+            <ActionButton
+              data={e?._id}
+              openActionBtn={openActionBtn}
+              setOpenActionBtn={setOpenActionBtn}
+              routeChange={`/dashboard/upload-video/${e?._id}/edit`}
+              deleteHandler={() => deleteHandler(e?._id)}
+              viewRouteChange={`/dashboard/upload-video/${e?._id}/view`}
+              showView={false}
+              PermissionFinalValue={PermissionFinalValue}
+            />
+          </div>
         </>
       ),
       searchAble: true,
     },
   ];
+  const [page, setPage] = useState(1);
+  const [pageSize, setPageSize] = useState(10);
 
   return (
-    
     <Table
-    dataSource={data?.results || []}
-    isLoading={isLoading}
-    columns={columns}
-    totalPages={data?.totalPages}
-    totalEntries={data?.totalResults}
-    page={page}
-    setPage={setPage}
-    pageSize={pageSize}
-    setPageSize={setPageSize}
-  />
-      
-    
+      dataSource={data?.results || []}
+      isLoading={isLoading}
+      columns={columns}
+      totalPages={data?.totalPages}
+      totalEntries={data?.totalResults}
+      page={page}
+      setPage={setPage}
+      pageSize={pageSize}
+      setPageSize={setPageSize}
+    />
   );
 }
 

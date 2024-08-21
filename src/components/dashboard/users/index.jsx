@@ -124,6 +124,9 @@ function UsersDashboard({PermissionFinalValue}) {
             deleteHandler={() => deleteHandler(e?._id)}
             viewRouteChange={`/dashboard/users/${e?._id}/edit`}
             PermissionFinalValue={PermissionFinalValue}
+            showView={true}
+          
+
           />
         </>
       ),

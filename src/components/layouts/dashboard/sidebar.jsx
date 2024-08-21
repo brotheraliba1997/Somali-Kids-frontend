@@ -51,10 +51,6 @@ function Sidebar() {
       icon: "nav-icon fas fa-users",
       role: ["parent"],
     },
-
-
-   
-
     {
       text: "Resources",
       url: "",

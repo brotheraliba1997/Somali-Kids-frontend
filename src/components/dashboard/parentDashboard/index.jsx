@@ -11,10 +11,11 @@ function Parent({data}) {
   console.log(pathSpread, "pathSpread");
 
   const PermissionFinalValue = Permission(pathSpread);
+  console.log(PermissionFinalValue, "PermissionFinalValue")
   
   return (
     <div className="container-fluid">
-      <h1 className="">Welcome, User Deshboard!</h1>
+      <h1 className="">Welcome, User Dashboard!</h1>
       <hr />
       <div className="row">
         <div className="col-12 col-sm-3 col-md-3">
@@ -73,10 +74,10 @@ function Parent({data}) {
         </div>
         {/* /.col */}
       </div>
-      <div className="container-fluid text-center">
+      <div className="container-fluid text-center py-2">
         <div className="card card-outline rounded-0 card-navy">
           <div className="card-header">
-            <h3 className="card-title">List of Customer</h3>
+            <h3 className="card-title">List of Program</h3>
           </div>
           
           <ParentDashboard PermissionFinalValue={PermissionFinalValue} />

@@ -17,7 +17,7 @@
 @import url("../assets/dashboard/css/fontawesome/css/alt/adminlte.pages.min.css");
 @import url("../assets/dashboard/css/fontawesome/css/alt/adminlte.plugins.css"); */
 
-/* @import url("../assets/dashboard/css/styles.css"); */
+@import url("../assets/dashboard/css/styles.css");
 
 .login-page {
   background-image: url("../assets/images/login-cover.jpg");
@@ -206,3 +206,6 @@ table td {
 }
 
 
+.btnhover:hover{
+  color: white !important;
+}

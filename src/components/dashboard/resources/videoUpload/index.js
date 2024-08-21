@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { ProgressBar } from "react-bootstrap";
 import { notifyFailure, notifySuccess } from "../../../toast/toast";
+import { useRouter } from "next/navigation";
 
 function UploadVideo({setVideo}) {
   const [file, setFile] = useState(null);
   const [isUploading, setIsUploading] = useState(false);
   const [progress, setProgress] = useState(0);
+  const router = useRouter()
 
   const handleFileChange = (event) => {
     const files = event.target.files;
@@ -109,6 +111,7 @@ function UploadVideo({setVideo}) {
       if (completeUpload) {
         setIsUploading(false);
         notifySuccess("Upload Successfully");
+        
         setVideo(fileLocation)
         // setProgress(0);
       } else {

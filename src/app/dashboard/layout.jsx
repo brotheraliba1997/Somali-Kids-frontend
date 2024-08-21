@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import React, { Suspense } from "react";
 // import "./globals.css";
 import "../../app/globals.css";
-import "../../assets/dashboard/css/styles.css"
+
 // import DashboardLayout from "../../components/layouts/dashboard";
 const DynamicDashboardLayout = dynamic(
   () => import("../../components/layouts/dashboard"),

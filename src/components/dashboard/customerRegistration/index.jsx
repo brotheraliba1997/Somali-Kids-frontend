@@ -158,7 +158,7 @@ function CustomerRegistrationDashboard() {
           </div>
           <div className="card-footer py-1 text-center">
             <button
-              className="btn btn-flat btn-sm btn-navy bg-gradient-navy"
+              className="btn btn-flat btn-sm btn-navy bg-gradient-navy btnhover text-white"
               form="inmate-form"
             >
               <i className="fa fa-save" /> Save

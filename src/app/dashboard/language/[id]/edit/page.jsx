@@ -37,7 +37,7 @@ function EditCategory() {
   };
   useEffect(() => {
     if (singleData) {
-      const { id, ...res } = singleData;
+      const { _id,createdAt, updatedAt, ...res } = singleData;
       setFormatData(res);
     }
   }, [singleData]);

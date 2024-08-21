@@ -72,7 +72,7 @@ function AdminDashboard({data}) {
         </div>
         {/* /.col */}
       </div>
-      <div className="container-fluid text-center">
+      <div className="container-fluid text-center py-2">
         <div className="card card-outline rounded-0 card-navy">
           <div className="card-header">
             <h3 className="card-title">List of Customer</h3>

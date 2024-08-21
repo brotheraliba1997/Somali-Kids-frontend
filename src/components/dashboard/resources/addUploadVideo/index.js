@@ -174,12 +174,13 @@ function AddUpload({
 
                       <div className=" py-1 text-center">
                         <button
-                          className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white"
+                          className="btn btn-flat btn-sm btn-navy bg-gradient-navy btnhover"
                           form="inmate-form"
                           onClick={onClick}
+                          style={{color: "white"}}
                           // disabled={}
                         >
-                          <i className="fa fa-save" /> Save
+                          <i className="fa fa-save text-white" /> Save
                         </button>
                         <Link
                           className="btn btn-flat btn-sm btn-light bg-gradient-light border"
