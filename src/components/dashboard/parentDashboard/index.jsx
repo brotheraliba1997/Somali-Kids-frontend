@@ -39,7 +39,7 @@ function Parent({data}) {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">123 Numbers</span>
-              <span className="info-box-number text-right h5">{data?.visit?.totalVideo} </span>
+              <span className="info-box-number text-right h5">{data?.visit?.totalVideo}</span>
             </div>
             {/* /.info-box-content */}
           </div>

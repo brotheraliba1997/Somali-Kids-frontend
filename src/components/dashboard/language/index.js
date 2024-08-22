@@ -10,10 +10,6 @@ import Swal from "sweetalert2";
 
 function LanguageList({PermissionFinalValue}) {
   const { data, isLoading } = useGetlanguageQuery();
-  
-
-  
-
   const [openActionBtn, setOpenActionBtn] = useState(null);
 
   console.log(data, "data");

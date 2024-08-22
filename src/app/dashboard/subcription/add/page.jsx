@@ -18,7 +18,6 @@ function AddSubcription() {
 
   const categoryValueHandler = async (e) => {
     e.preventDefault();
-
     try {
       await createPackage(formatData).unwrap();
       notifySuccess("create category successfully!");
@@ -39,21 +38,16 @@ function AddSubcription() {
   console.log(formatData, "formatData");
   return (
     <>
+      <div className="container-fluid">
+        <div className="content py-4 bg-gradient-navy px-3">
+          <h4 className="mb-0"> Add Subcription</h4>
+        </div>
 
-<div className="container-fluid">
-      <div className="content py-4 bg-gradient-navy px-3">
-        <h4 className="mb-0"> Add Subcription</h4>
+        <AddSubcriptionComponents
+          categoryValueHandler={categoryValueHandler}
+          handleChange={handleChange}
+        />
       </div>
-
-
-    
-      <AddSubcriptionComponents
-        categoryValueHandler={categoryValueHandler}
-        handleChange={handleChange}
-       
-
-      />
-       </div>
     </>
   );
 }

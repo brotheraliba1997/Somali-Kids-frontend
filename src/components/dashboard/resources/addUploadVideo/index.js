@@ -107,7 +107,6 @@ function AddUpload({
                               {category &&
                                 category.results &&
                                 category.results.map((item) => (
-                                
                                   <option key={item._id} value={item._id}>
                                     {item.name}
                                   </option>

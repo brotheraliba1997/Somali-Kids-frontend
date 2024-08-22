@@ -88,7 +88,6 @@ function AddPackageComponents({ categoryValueHandler, handleChange, values }) {
                         value={values?.validity}
                       >
                         <option value="">Please Select </option>
-
                         <option value="7 day">7 day </option>
                         <option value="1 Months">1 Months </option>
                         <option value="3 Months">3 Months </option>
@@ -96,7 +95,6 @@ function AddPackageComponents({ categoryValueHandler, handleChange, values }) {
                       </div>
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="Describtion" className="control-label">
@@ -121,8 +119,7 @@ function AddPackageComponents({ categoryValueHandler, handleChange, values }) {
                   </button>
                   <Link
                     className="btn btn-flat btn-sm btn-light bg-gradient-light border"
-                    href="/dashboard/package"
-                  >
+                    href="/dashboard/package">
                     <i className="fa fa-close" /> Cancel
                   </Link>
                 </div>
