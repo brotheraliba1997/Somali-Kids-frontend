@@ -28,12 +28,10 @@ function AddSubcriptionComponents({ categoryValueHandler, handleChange, values }
                         required="required"
                         defaultValue=""
                         value={values?.name}
-
                         onChange={handleChange}
                       />
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="type" className="control-label">

@@ -51,25 +51,18 @@ function ProgramList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e.name} </p>
+            <p className="text-secondary tablePara"> {e.name} </p>
           </div>
         </>
       ),
       searchable: true,
     },
-
-    
-
-  
     {
       key: "status",
       displayName: "Status",
       displayField: (e) => (
         <>
-        
-          
-            <span className="text-capitalize badge bg-danger"> Active</span>
-         
+            <span className="text-capitalize badge bg-danger "> Active</span>
         </>
       ),
     },

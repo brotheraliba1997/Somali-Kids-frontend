@@ -32,7 +32,7 @@ function Header() {
           </Link>
         </li>
         <li className="nav-item d-none d-sm-inline-block">
-          <Link href="/dashboard" className="nav-link">
+          <Link href="/dashboard" className="nav-link dashPara">
             Somali ABC Kids -{" "}
             {user?.role === "parent"
               ? "Parent"
@@ -62,11 +62,11 @@ function Header() {
                   alt="User Image"
                 />
               </span>
-              <span className="pl-4 m-0" style={{ color: "black" }}>
+              <span className="pl-4 m-0 dashPara" style={{ color: "black" }}>
                 {user?.firstName}
               </span>
 
-              <span className=" pl-2 m-0" style={{ color: "black" }}>
+              <span className=" pl-2 m-0 dashPara" style={{ color: "black" }}>
                 {user?.lastName}
               </span>
 

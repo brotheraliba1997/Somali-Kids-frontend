@@ -17,13 +17,13 @@ function Users() {
     <div className="container-fluid">
       <div className="card card-outline rounded-0 card-navy">
         <div className="card-header">
-          <h3 className="card-title">List of Users</h3>
+          <h3 className="card-title ">List of Users</h3>
           {PermissionFinalValue?.create && 
           <div className="card-tools">
             <Link
               href="/dashboard/users/add"
               id="create_new"
-              className="btn btn-flat btn-primary"
+              className="btn btn-flat btn-primary dashPara"
             >
               <span className="fas fa-plus" /> Add User
             </Link>

@@ -52,7 +52,7 @@ function LanguageList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e.name} </p>
+            <p className="text-secondary tablepara"> {e.name} </p>
           </div>
         </>
       ),

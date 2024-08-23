@@ -59,14 +59,12 @@ function SubcriptionList({PermissionFinalValue}) {
       ),
       searchable: true,
     },
-
-
     {
       displayName: "Package",
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.package?.name} </p>
+            <p className="text-secondary"> {e?.package?.name}</p>
           </div>
         </>
       ),
@@ -88,7 +86,7 @@ function SubcriptionList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary">  {moment(e?.startDate).format("YYYY-MM-DD")} </p>
+            <p className="text-secondary">{moment(e?.startDate).format("YYYY-MM-DD")}</p>
           </div>
         </>
       ),
@@ -99,7 +97,7 @@ function SubcriptionList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary">  {moment(e?.endDate).format("YYYY-MM-DD")}  </p>
+            <p className="text-secondary">{moment(e?.endDate).format("YYYY-MM-DD")}</p>
           </div>
         </>
       ),
@@ -110,13 +108,12 @@ function SubcriptionList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.amount}</p>
+            <p className="text-secondary">{e?.amount}</p>
           </div>
         </>
       ),
       searchable: true,
     },
-
     {
       displayName: "Status",
       displayField: (e) => (

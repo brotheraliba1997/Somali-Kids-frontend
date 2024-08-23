@@ -49,7 +49,7 @@ function PackageList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.name} </p>
+            <p className="text-secondary tablePara"> {e?.name} </p>
           </div>
         </>
       ),
@@ -62,7 +62,7 @@ function PackageList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.type} </p>
+            <p className="text-secondary tablePara"> {e?.type} </p>
           </div>
         </>
       ),
@@ -75,7 +75,7 @@ function PackageList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.validity}  </p>
+            <p className="text-secondary tablePara"> {e?.validity}  </p>
           </div>
         </>
       ),
@@ -88,7 +88,7 @@ function PackageList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.amount} </p>
+            <p className="text-secondary tablePara"> {e?.amount} </p>
           </div>
         </>
       ),
@@ -100,16 +100,12 @@ function PackageList({PermissionFinalValue}) {
       displayField: (e) => (
         <>
           <div>
-            <p className="text-secondary"> {e?.content} </p>
+            <p className="text-secondary tablePara"> {e?.content} </p>
           </div>
         </>
       ),
       searchable: true,
-    },
-
-    
-
-  
+    },  
     {
       key: "status",
       displayName: "Status",
@@ -124,9 +120,6 @@ function PackageList({PermissionFinalValue}) {
       key: "",
       displayField: (e) => (
         <>
-       
-
-       
           <ActionButton
             data={e?._id}
             openActionBtn={openActionBtn}
@@ -134,10 +127,8 @@ function PackageList({PermissionFinalValue}) {
             routeChange={`/dashboard/package/${e?._id}/edit`}
             deleteHandler={()=> deleteHandler(e?._id)}
             showView={false}
-            PermissionFinalValue={PermissionFinalValue}
-            
+            PermissionFinalValue={PermissionFinalValue}  
           />
-          
         </>
       ),
       searchAble: true,

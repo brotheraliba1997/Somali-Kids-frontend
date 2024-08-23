@@ -240,7 +240,7 @@ function Sidebar() {
                   <li className="nav-item dropdown" onClick={logoutHandler}>
                     <div className="nav-link nav-system_info">
                       <i className="nav-icon fas fa-sign-out-alt" />
-                      <p>Logout</p>
+                      <p className="dashPara">Logout</p>
                     </div>
                   </li>
                 </ul>

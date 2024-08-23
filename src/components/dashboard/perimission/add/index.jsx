@@ -55,14 +55,14 @@ function PermissionControlAccess() {
       <div className="card p-4 ">
         <div className="d-flex justify-content-between">
           <h3
-            className="card-title mb-3"
+            className="card-title mb-3 "
             style={{ fontSize: "20px", fontWeight: "600" }}
           >
             Edit Permission
           </h3>
 
-          <h3 className="card-title mb-3" style={{ fontSize: "18px" }}>
-            {action?.role}
+          <h3 className="card-title mb-3" style={{ fontSize: "16px" }}>
+          {action?.role ? action.role.charAt(0).toUpperCase() + action.role.slice(1) : ''}
           </h3>
         </div>
 
@@ -79,7 +79,7 @@ function PermissionControlAccess() {
           {action?.actions?.map((x, index) => (
             <tr key={x.id + index}>
               <td className="form-switch  detailed">
-                <p>{x?.resource}</p>
+                <p className="tablePara">{x?.resource}</p>
               </td>
               <td
                 className="form-switch detailed"
@@ -132,7 +132,6 @@ function PermissionControlAccess() {
             </tr>
           ))}
         </table>
-
         <div className="d-flex justify-content-end">
           <CustomButton
             title=" submit"
