@@ -78,7 +78,7 @@ function ImageUpload({setImage}) {
           className="form-control form-control-sm rounded-0"
           name="thumbnail"
           id="thumbnail"
-          required
+        
           onChange={handleFileChange}
          
         />

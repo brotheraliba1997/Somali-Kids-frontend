@@ -5,13 +5,14 @@ import logo from "../../../assets/images/logo.png";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "@/redux/slices/auth";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 function Sidebar() {
   const [activeIndices, setActiveIndices] = useState({
     mainIndex: null,
     dropIndex: null,
   });
+  const router = useRouter();
   const user = useSelector((state) => state?.auth?.user?.role);
   console.log(user, "user");
 
@@ -26,6 +27,8 @@ function Sidebar() {
 
   const logoutHandler = async () => {
     dispatch(logout());
+ 
+   
   };
 
   const pathname = usePathname();
@@ -190,7 +193,7 @@ function Sidebar() {
                         >
                           <span style={{ cursor: "pointer" }}>
                             <div className="d-flex justify-content-between">
-                              <p>
+                              <p className="dashPara">
                                 <i className={items?.icon} />
                                 {items?.text}{" "}
                               </p>
@@ -225,8 +228,8 @@ function Sidebar() {
                                 className="nav-link tree-item nav-categories"
                               >
                                 <span style={{ cursor: "pointer" }}>
-                                  <i className="far fa-circle nav-icon" />
-                                  <p>{itemsDrop?.text}</p>
+                                  <i className="far fa-circle nav-icon " />
+                                  <p className="dashPara">{itemsDrop?.text}</p>
                                 </span>
                               </Link>
                             </li>

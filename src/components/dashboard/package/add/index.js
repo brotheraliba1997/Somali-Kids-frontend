@@ -32,7 +32,6 @@ function AddPackageComponents({ categoryValueHandler, handleChange, values }) {
                       />
                     </div>
                   </div>
-
                   <div className="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                     <div className="form-group">
                       <label htmlFor="type" className="control-label">
@@ -47,7 +46,6 @@ function AddPackageComponents({ categoryValueHandler, handleChange, values }) {
                         value={values?.type}
                       >
                         <option value="">Please Select </option>
-
                         <option value="Individual">Individual </option>
                         <option value="Business">Business </option>
                       </select>

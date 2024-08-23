@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import Header from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
-import { useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useCheckUserAuthMutation } from "@/redux/services/userApi";
 
@@ -11,6 +11,8 @@ function DashboardLayout({ children }) {
 
 
   const router = useRouter();
+  const pathName = useParams()
+  console.log(pathName, "pathName")
 
   const { user } = useSelector((state) => state.auth);
 

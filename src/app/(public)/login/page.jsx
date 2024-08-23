@@ -33,7 +33,9 @@ function Login() {
       const { data } = await loginUser(formData).unwrap();
       console.log(data, "respones");
         notifySuccess("Logged in successfully!");
-      router.push("/dashboard");
+        router.push("/dashboard");
+        
+       
     } catch (error) {
       console.log("err", error.data.message);
         notifyFailure(error.data.message);

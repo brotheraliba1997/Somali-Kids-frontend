@@ -1,13 +1,15 @@
 "use client";
 import AdminDashboard from "@/components/dashboard/adminDashboard";
 import Parent from "@/components/dashboard/parentDashboard";
-import { useGetSatateQuery } from "@/redux/services/stateAPI";
+import { useGetSatateParentQuery, useGetSatateQuery } from "@/redux/services/stateAPI";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 
 
 function Dashboard() {
   const { data, isLoading } = useGetSatateQuery();
+  const { data:ParentState, isLoading:loading } = useGetSatateParentQuery();
+  
 
  
 
@@ -17,7 +19,7 @@ function Dashboard() {
   return (
     <>
       {user === "parent" ? (
-        <Parent data={data} />
+        <Parent data={ParentState} />
       ) : (
         <AdminDashboard data={data} />
       )}

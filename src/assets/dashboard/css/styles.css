@@ -161,6 +161,12 @@ p {
     font-size: 14px !important;
 }
 
+.dashPara {
+    margin-top: 0;
+    /* margin-bottom: 1rem; */
+    font-size: 0.875rem !important;
+}
+
 abbr[title],
 abbr[data-bs-original-title] {
     -webkit-text-decoration: underline dotted;

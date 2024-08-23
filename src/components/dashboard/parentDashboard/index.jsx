@@ -25,7 +25,7 @@ function Parent({data}) {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">ABC Adventures</span>
-              <span className="info-box-number text-right h5">{data?.visit?.totalUser} </span>
+              <span className="info-box-number text-right h5">{data?.visit?.Adventures} </span>
             </div>
             {/* /.info-box-content */}
           </div>
@@ -39,7 +39,7 @@ function Parent({data}) {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">123 Numbers</span>
-              <span className="info-box-number text-right h5">{data?.visit?.totalVideo}</span>
+              <span className="info-box-number text-right h5">{data?.visit?.CountingProgram}</span>
             </div>
             {/* /.info-box-content */}
           </div>
@@ -53,7 +53,7 @@ function Parent({data}) {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">Reading Rockets</span>
-              <span className="info-box-number text-right h5">1000 </span>
+              <span className="info-box-number text-right h5">{data?.visit?.ReadingRockets} </span>
             </div>
             {/* /.info-box-content */}
           </div>
@@ -66,7 +66,7 @@ function Parent({data}) {
             </span>
             <div className="info-box-content">
               <span className="info-box-text">Languge Learning</span>
-              <span className="info-box-number text-right h5">{data?.visit?.todayVisit} </span>
+              <span className="info-box-number text-right h5">{data?.visit?.LangugeLearning} </span>
             </div>
             {/* /.info-box-content */}
           </div>

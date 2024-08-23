@@ -12,6 +12,7 @@ function Header() {
 
   const logoutHandler = async () => {
     dispatch(logout());
+    
   };
 
   const user = useSelector((state) => state?.auth?.user);
@@ -32,7 +33,12 @@ function Header() {
         </li>
         <li className="nav-item d-none d-sm-inline-block">
           <Link href="/dashboard" className="nav-link">
-            Somali ABC Kids -   {user?.role === "parent" ? "Parent" : user?.role === "admin" ?  "Admin" : "Teacher" }  
+            Somali ABC Kids -{" "}
+            {user?.role === "parent"
+              ? "Parent"
+              : user?.role === "admin"
+              ? "Admin"
+              : "Teacher"}
           </Link>
         </li>
       </ul>
@@ -60,7 +66,7 @@ function Header() {
                 {user?.firstName}
               </span>
 
-              <span className=" pl-2 m-0"  style={{ color: "black" }}>
+              <span className=" pl-2 m-0" style={{ color: "black" }}>
                 {user?.lastName}
               </span>
 
@@ -69,7 +75,7 @@ function Header() {
             <div
               className={`dropdown-menu ${openDropDown ? "show" : " "}`}
               role="menu"
-              style={{ left: 0, top: "40px"}}
+              style={{ left: 0, top: "40px" }}
             >
               <a className="dropdown-item" href="#">
                 <span className="fa fa-user" /> My Account

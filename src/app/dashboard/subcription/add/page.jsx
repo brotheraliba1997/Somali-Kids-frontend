@@ -5,8 +5,6 @@ import AddPackageComponents from "@/components/dashboard/package/add";
 import AddProgramComponents from "@/components/dashboard/program/add";
 import AddSubcriptionComponents from "@/components/dashboard/subcription/add";
 import { notifyFailure, notifySuccess } from "@/components/toast/toast";
-import { useCreateCategoryMutation } from "@/redux/services/categoryAPI";
-import { useCreateLanguageMutation } from "@/redux/services/languageAPI";
 import { useCreatePackagesMutation } from "@/redux/services/packageAPI";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";

@@ -16,6 +16,15 @@ export const StateAPI = createApi({
     }),
 
 
+    getSatateParent: builder.query({
+      query: () => ({
+        url: "/visit/parent",
+        method: "GET",
+      }),
+      providesTags: ["refetchstate"],
+    }),
+
+
     createState: builder.query({
       query: () => ({
         url: "/visit/create",
@@ -30,7 +39,6 @@ export const StateAPI = createApi({
       query: (id) => ({
         url: `/program/${id}`,
         method: "GET",
-       
       }),
     }),
 
@@ -43,13 +51,12 @@ export const StateAPI = createApi({
       invalidatesTags: ["refetchstate"],
     }),
   }),
-
-
 });
 
 export const {
   useCreateStateQuery,
   useGetSingleProgramQuery,
   useGetSatateQuery,
-  useUpdateProgramMutation
+  useUpdateProgramMutation,
+  useGetSatateParentQuery
 } = StateAPI;

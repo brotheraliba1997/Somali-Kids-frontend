@@ -22,7 +22,7 @@ function AddUpload({
   const { data: language, isLoading: loading } = useGetlanguageQuery();
   const { data: program, isLoading: loadingProgram } = useGetProgramQuery();
 
-  console.log(formatData, "formatData")
+  console.log(program?.results, "results")
 
   console.log(category?.results, "category");
 
@@ -138,8 +138,8 @@ function AddUpload({
                                 program.results &&
                                 program.results.map((item) => (
                                 
-                                  <option key={item._id} value={item._id}>
-                                    {item.name}
+                                  <option key={item?._id} value={item?._id}>
+                                    {item?.name}
                                   </option>
                                 ))}
                               {/* <option value="Culture">Culture</option>
