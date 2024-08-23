@@ -12,7 +12,6 @@ function Header() {
 
   const logoutHandler = async () => {
     dispatch(logout());
-    
   };
 
   const user = useSelector((state) => state?.auth?.user);
@@ -46,7 +45,7 @@ function Header() {
       <ul className="navbar-nav ml-auto">
         {/* Messages Dropdown Menu */}
         <li className="nav-item">
-          <div className="btn-group nav-link">
+          <div className="btn-group nav-link " style={{width: 180}}>
             <button
               type="button"
               onClick={() => setOpenDropDown(!openDropDown)}
@@ -62,13 +61,15 @@ function Header() {
                   alt="User Image"
                 />
               </span>
-              <span className="pl-4 m-0 dashPara" style={{ color: "black" }}>
-                {user?.firstName}
-              </span>
+           
+                <span className="pl-4 m-0 dashPara" style={{ color: "black" }}>
+                  {user?.firstName}
+                </span>
 
-              <span className=" pl-2 m-0 dashPara" style={{ color: "black" }}>
-                {user?.lastName}
-              </span>
+                <span className=" pl-2 m-0 dashPara" style={{ color: "black" }}>
+                  {user?.lastName}
+                </span>
+           
 
               <span className="sr-only">Toggle Dropdown</span>
             </button>
