@@ -15,7 +15,6 @@ function ParentDashboard({ PermissionFinalValue }) {
   console.log(PermissionFinalValue, "PermissionFinalValuessss");
   const { data, isLoading } = useGetVideoQuery();
   const [openActionBtn, setOpenActionBtn] = useState(null);
-
   const [uploadVideo, { data: dataUpload, isLoading: loading }] =
     useUpdateVideoMutation();
 
@@ -68,7 +67,6 @@ function ParentDashboard({ PermissionFinalValue }) {
       ),
       searchable: true,
     },
-
     {
       key: "Category",
       displayName: "Category",
