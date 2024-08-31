@@ -114,9 +114,7 @@ function AddUserDashboard({ routeBack="#", categoryValueHandler, handleChange, v
                           onChange={handleChange}
                         />
                       </div>
-                    </div> }
-                   
-
+                    </div> }                 
                     <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="password" className="control-label">
@@ -152,7 +150,6 @@ function AddUserDashboard({ routeBack="#", categoryValueHandler, handleChange, v
                         />
                       </div>
                     </div>
-
                     <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="password" className="control-label">
@@ -170,14 +167,13 @@ function AddUserDashboard({ routeBack="#", categoryValueHandler, handleChange, v
                         />
                       </div>
                     </div>
-
                     <div className="col-lg-6 col-md-12 col-sm-12 col-xs-12">
                       <div className="form-group">
                         <label htmlFor="password" className="control-label">
                           ZipCode{" "}
                         </label>
                         <input
-                           type="text"
+                          type="text"
                           className="form-control form-control-sm rounded-0"
                           name="zipCode"
                           id="Password"
@@ -189,7 +185,6 @@ function AddUserDashboard({ routeBack="#", categoryValueHandler, handleChange, v
                       </div>
                     </div>
                   </div>
-
                   <div className=" py-1 text-center">
                     <button className="btn btn-flat btn-sm btn-navy bg-gradient-navy text-white btnhover">
                       <i className="fa fa-save" /> Save

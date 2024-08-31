@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import logoHeader from "@/assets/images/avatars/1.png";
 import Image from "next/image";
 import Link from "next/link";
+import Notification from "@/components/notification/notification";
+import { useGetNotificationQuery } from "@/redux/services/notificationAPI";
 
 function Header() {
   const [openDropDown, setOpenDropDown] = useState(false);
@@ -13,6 +15,9 @@ function Header() {
   const logoutHandler = async () => {
     dispatch(logout());
   };
+
+  const {data, isLoading} = useGetNotificationQuery()
+  console.log(data, "datadata")
 
   const user = useSelector((state) => state?.auth?.user);
 
@@ -44,6 +49,7 @@ function Header() {
       {/* Right navbar links */}
       <ul className="navbar-nav ml-auto">
         {/* Messages Dropdown Menu */}
+        <Notification  data={data} isLoading={isLoading} />
         <li className="nav-item">
           <div className="btn-group nav-link " style={{width: 180}}>
             <button

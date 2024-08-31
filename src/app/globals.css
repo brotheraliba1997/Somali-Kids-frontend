@@ -209,3 +209,119 @@ table td {
 .btnhover:hover{
   color: white !important;
 }
+
+/* notification */
+
+
+.noti-details {
+  color: #989c9e;
+  margin-bottom: 0;
+  /* height: 45px !important; */
+}
+
+.noti-title {
+  color: #333;
+}
+
+.notifications .noti-content {
+  height: 290px;
+  width: 350px;
+  overflow-y: auto;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.notification-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notifications ul.notification-list > li {
+  margin-top: 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.notifications ul.notification-list > li:last-child {
+  border-bottom: none;
+}
+
+.notifications ul.notification-list > li a {
+  display: block;
+  padding: 10px 15px;
+  border-radius: 2px;
+}
+
+.notifications ul.notification-list > li a:hover {
+  background-color: #fafafa;
+}
+
+.notifications ul.notification-list > li .list-item {
+  border: 0;
+  padding: 0;
+  position: relative;
+}
+
+.topnav-dropdown-header .notification-title {
+  color: #333;
+  display: block;
+  float: left;
+  font-size: 14px;
+}
+
+.topnav-dropdown-header .clear-noti {
+  color: #f83f37;
+  float: right;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.noti-time {
+  margin: 0;
+}
+
+.dropdown-menu-notification{
+  position: absolute;
+  top: 100%;
+right: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 10rem;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  font-size: 1rem;
+  color: #212529;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 0.25rem;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-bange{
+  position: relative !important;
+}
+
+
+ .badge-noti {
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 700;
+  min-height: 18px;
+  min-width: 18px;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: -6px;
+  height: 20px;
+  width: 20px;
+}
+
+
+/* notification */

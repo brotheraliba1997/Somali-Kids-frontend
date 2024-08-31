@@ -16,7 +16,6 @@ function AddCategory() {
 
   const categoryValueHandler = async (e) => {
     e.preventDefault();
-
     try {
       await createProgram(formatData).unwrap();
       notifySuccess("create category successfully!");

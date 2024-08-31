@@ -176,8 +176,6 @@ function PublicHome() {
                   style={{ bottom: 0 }}
                 >
                   <Image src={iconfive} alt="iconfive" />
-
-                  {/* <img src="assets/images/col-3icon3.png" alt="" /> */}
                 </div>
               </div>
             </div>
@@ -209,7 +207,6 @@ function PublicHome() {
             <div className=" position-relative d-none d-sm-block">
               <div className="prog-sideimg text-center position-absolute end-0">
                 <Image src={iconseven} alt="iconfive" />
-
               </div>
             </div>
             <div className="col-md-12">

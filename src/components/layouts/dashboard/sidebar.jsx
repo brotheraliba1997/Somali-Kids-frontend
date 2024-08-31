@@ -27,8 +27,6 @@ function Sidebar() {
 
   const logoutHandler = async () => {
     dispatch(logout());
- 
-   
   };
 
   const pathname = usePathname();
@@ -247,6 +245,7 @@ function Sidebar() {
               </nav>
             </div>
           </div>
+        
         </div>
         <div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
           <div className="os-scrollbar-track">
