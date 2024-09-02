@@ -6,8 +6,13 @@ import Footer from "./footer";
 import { useParams, usePathname, useRouter } from "next/navigation";
 import { useSelector } from "react-redux";
 import { useCheckUserAuthMutation } from "@/redux/services/userApi";
+import socket from "../../../services/socket";
+
 
 function DashboardLayout({ children }) {
+  let isInitialized = false;
+
+
 
 
   const router = useRouter();
@@ -21,6 +26,30 @@ function DashboardLayout({ children }) {
       router.push("/login");
     }
   }, [user]);
+
+  useEffect(() => {
+    // if (user)
+    if (!isInitialized) {
+      if (!socket?.connected) socket.connect();
+      isInitialized = true;
+    }
+    console.log("socket status=>", socket, socket?.connected);
+    socket.on("connection", (data) => {
+      console.log("Connected to server", data);
+     
+    });
+
+    return () => {
+      socket.off("disconnect");
+
+      // socket.disconnect((data) => {
+      //   console.log("disconnect", data);
+      // });
+    };
+  }, []);
+
+
+
   return (
     <>
       <Header />

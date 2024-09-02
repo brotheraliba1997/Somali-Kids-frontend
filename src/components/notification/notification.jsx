@@ -2,11 +2,20 @@
 import Link from "next/link";
 import React, { useEffect, useRef, useState } from "react";
 import DotsLoader from "../loaders/dotsLoader";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import socket from "@/services/socket";
+import {
+  NotificationAPI,
+  useUpdateNotificationMutation,
+} from "@/redux/services/notificationAPI";
+import { notifyFailure } from "../toast/toast";
 
 function Notification({ data, isLoading }) {
+  console.log(data, "datassssss");
+  const dispatch = useDispatch();
   const notificationRef = useRef(null);
   const [notification, setNotification] = useState(false);
+  const [page, setPage] = useState(1);
   const [NotificationReadCount, setNotificationReadCount] = useState(null);
   const dropdownRef = useRef(null);
   const auth = useSelector((state) => state?.auth?.user?._id);
@@ -32,12 +41,60 @@ function Notification({ data, isLoading }) {
   }, []);
 
   useEffect(() => {
-    let Count = data?.results?.filter((items) =>
-      items?.isRead?.find((x) => x !== auth)
-    );
+    let Count = data?.results?.filter((items) => {
+      return (
+        items?.isRead.length == 0 || items?.isRead?.find((x) => x !== auth)
+      );
+    });
+    console.log(Count, data?.results, "showdata");
     setNotificationReadCount(Count);
   }, [data]);
   console.log(NotificationReadCount, "NotificationReadCount");
+
+  const [ReadNotification, { data: noti }] = useUpdateNotificationMutation();
+  const ReadNotificationHandler = async (id) => {
+    console.log(id, "getNotificationAPI");
+    try {
+      await ReadNotification(id).unwrap();
+      dispatch(
+        NotificationAPI.util.updateQueryData(
+          "getNotification",
+          { page: 1, pageSize: 10 },
+          (draft) => {
+            console.log(draft, "getNotificationAPI");
+            draft.results = draft.results.map((x, i) =>
+              x?._id == id ? { ...x, isRead: [auth] } : x
+            );
+          }
+        )
+      );
+    } catch (err) {
+      notifyFailure(err?.data?.message);
+      console.log(err?.data, "data");
+    }
+  };
+
+  useEffect(() => {
+    const handleNewNotification = (notificationData) => {
+      console.log("chal raha hai", notificationData);
+      dispatch(
+        NotificationAPI.util.updateQueryData(
+          "getNotification", // The name of the query you want to update
+          { page: 1, pageSize: 10 },
+          (draft) => {
+            // A callback function that receives the current cache data (draft)
+            console.log(draft, "draft");
+            draft.results.unshift(notificationData); // Modify the draft data (optimistic update)
+          }
+        )
+      );
+    };
+    socket.on("new-notification", handleNewNotification);
+
+    return () => {
+      socket.off("new-notification", handleNewNotification);
+    };
+  }, [data]);
 
   return (
     <>
@@ -63,10 +120,13 @@ function Notification({ data, isLoading }) {
             <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
             <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
           </svg>
-
-          <span className="badge-noti rounded-pill ">
-            {NotificationReadCount?.length}
-          </span>
+          {NotificationReadCount?.length >= 1 ? (
+            <>
+              <span className="badge-noti rounded-pill ">
+                {NotificationReadCount?.length}
+              </span>
+            </>
+          ) : null}
 
           {/* <span className="badge rounded-pill">5</span> */}
         </Link>
@@ -103,7 +163,10 @@ function Notification({ data, isLoading }) {
                     {data?.results?.map((items) => (
                       <li className="notification-message">
                         <Link href="#">
-                          <div className="media d-flex">
+                          <div
+                            className="media d-flex"
+                            onClick={() => ReadNotificationHandler(items?._id)}
+                          >
                             <div className="media-body w-100">
                               <p className="noti-details ">
                                 <span className="noti-title text-truncate line-clamp-2">

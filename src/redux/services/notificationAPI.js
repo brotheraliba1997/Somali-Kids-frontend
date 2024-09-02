@@ -11,23 +11,33 @@ export const NotificationAPI = createApi({
       query: () => ({
         url: "/notification",
         method: "GET",
+        
       }),
       providesTags: ["refetchNotification"],
+      serializeQueryArgs: ({ endpointName }) => {
+        return endpointName;
+      },
+      merge: (currentCache, newItems) => {
+        if (
+          currentCache.page !== newItems.page
+        )
+          currentCache.data.push(...newItems.data);
+      },
+      forceRefetch({ currentArg, previousArg }) {
+        return currentArg !== previousArg;
+      },
     }),
 
 
 
     updateNotification: builder.mutation({
-      query: ({payload, id}) => ({
+      query: (id) => ({
         url: `/notification/${id}`,
-        method: "PATCH",
-        body: payload
+        method: "GET",
       }),
       invalidatesTags: ["refetchNotification"],
     }),
   }),
-
-
 });
 
 export const {
