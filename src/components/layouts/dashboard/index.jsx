@@ -37,14 +37,14 @@ function DashboardLayout({ children }) {
     socket.on("connection", (data) => {
       console.log("Connected to server", data);
      
-    });
+    });            
 
     return () => {
-      socket.off("disconnect");
-
+      socket.off("disconnect");           
+ 
       // socket.disconnect((data) => {
       //   console.log("disconnect", data);
-      // });
+      // });                     
     };
   }, []);
 
@@ -52,7 +52,7 @@ function DashboardLayout({ children }) {
 
   return (
     <>
-      <Header />
+      <Header />        
       <Sidebar />
       <div className="content-wrapper pt-3">
         <div className="content text-dark"> {children} </div>

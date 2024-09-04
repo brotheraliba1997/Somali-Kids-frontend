@@ -122,7 +122,7 @@ function Notification({ data, isLoading }) {
           </svg>
           {NotificationReadCount?.length >= 1 ? (
             <>
-              <span className="badge-noti rounded-pill ">
+              <span className="badge-noti rounded-pill">
                 {NotificationReadCount?.length}
               </span>
             </>
@@ -138,10 +138,7 @@ function Notification({ data, isLoading }) {
         >
           <div className="topnav-dropdown-header">
             <span className="notification-title px-3">Notifications</span>
-            {/* <Link href="/" className="clear-noti">
-          {" "}
-          Clear All
-        </Link> */}
+         
           </div>
           <div
             className="noti-content"

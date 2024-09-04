@@ -243,19 +243,19 @@ function Sidebar() {
                   </li>
                 </ul>
               </nav>
-            </div>
+            </div>      
           </div>
         
         </div>
         <div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden">
           <div className="os-scrollbar-track">
-            <div className="os-scrollbar-handle" />
-          </div>
+            <div className="os-scrollbar-handle" />      
+          </div>                            
         </div>
         <div className="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden">
           <div className="os-scrollbar-track">
-            <div className="os-scrollbar-handle" />
-          </div>
+            <div className="os-scrollbar-handle" />        
+          </div>                
         </div>
         <div className="os-scrollbar-corner" />
       </div>

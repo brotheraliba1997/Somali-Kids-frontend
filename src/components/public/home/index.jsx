@@ -43,7 +43,6 @@ function PublicHome() {
             <div className="col-lg-7 col-md-6 col-sm-12">
               <div className="sliderimg">
                 <Image src={sidebar} alt="sidebar" />
-              
               </div>
             </div>
           </div>
@@ -148,7 +147,6 @@ function PublicHome() {
                 >
                   <Image src={iconthree} alt="iconthree" />
 
-                  {/* <img src="assets/images/col-2icon-2.png" alt="" /> */}
                 </div>
               </div>
             </div>
@@ -172,7 +170,7 @@ function PublicHome() {
               </div>
               <div className=" position-relative d-none d-sm-block">
                 <div
-                  className="serv-sideimg position-absolute bottom-0 start-0 "
+                  className="serv-sideimg position-absolute bottom-0 start-0"
                   style={{ bottom: 0 }}
                 >
                   <Image src={iconfive} alt="iconfive" />
@@ -200,8 +198,6 @@ function PublicHome() {
                 style={{ right: 0 }}
               >
                 <Image src={iconsix} alt="iconfive" />
-
-              
               </div>
             </div>
             <div className=" position-relative d-none d-sm-block">
@@ -221,7 +217,6 @@ function PublicHome() {
               <div className="prog-colbg1">
                 <div className="progimgcol text-center mb-3">
                   <Image src={proimg} alt="proimg" />
-
                 </div>
                 <div className="pro-coltext">
                   <h3>ABC Adventures</h3>
