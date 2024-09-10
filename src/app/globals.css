@@ -323,5 +323,9 @@ right: 0;
   width: 20px;
 }
 
+.dropdownPadding{
+  padding: 3px 10px !important;
+}
+
 
 /* notification */

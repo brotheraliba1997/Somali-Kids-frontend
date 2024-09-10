@@ -101,7 +101,9 @@ function Notification({ data, isLoading }) {
       <li className="nav-item dropdown-bange pr-4" ref={notificationRef}>
         <Link
           href="#"
-          className="dropdown-toggle nav-link"
+          className="dropdown-toggle nav-link dropdownPadding"
+      
+         
           data-bs-toggle="dropdown"
           onClick={() => setNotification(!notification)}
         >

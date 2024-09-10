@@ -267,7 +267,7 @@ img {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.7em;
-  padding: 0px 25px !important;
+  /* padding: 0px 25px !important; */
   text-transform: capitalize;
 }
 
